@@ -2,174 +2,235 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Carta Ramalan 4D | Carta Lotto GDL Perdana & MTP</title>
+<title>Carta Ramalan 4D | Carta Lotto & GDL Perdana</title>
 
-<meta name="description" content="Latest Carta Ramalan 4D and Carta Lotto forecast information with daily GDL Perdana charts and scheduled MTP & SGP updates.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Explore the latest Carta Ramalan 4D and Carta Lotto forecast information, including daily GDL Perdana charts and scheduled MTP and SGP updates.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.cartalotto.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Carta Ramalan 4D | Carta Lotto">
-<meta property="og:description" content="Latest daily Carta Lotto, GDL Perdana and Ramalan 4D MTP & SGP chart information.">
-<meta property="og:url" content="https://www.cartalotto.com/">
 <meta property="og:site_name" content="Carta Lotto">
+<meta property="og:title" content="Carta Ramalan 4D | Carta Lotto & GDL Perdana">
+<meta property="og:description" content="Latest Carta Lotto forecast information with daily GDL Perdana and scheduled Ramalan 4D MTP and SGP charts.">
+<meta property="og:url" content="https://www.cartalotto.com/">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Carta Lotto",
+  "url":"https://www.cartalotto.com/",
+  "description":"Carta Ramalan 4D and Carta Lotto forecast information with GDL Perdana and scheduled MTP and SGP chart updates."
+}
+</script>
 
 <style>
 :root{
-  --bg:#f4f6f9;
-  --white:#fff;
-  --text:#172033;
-  --muted:#667085;
-  --border:#e4e7ec;
   --red:#b42318;
-  --red2:#7f1d1d;
-  --redSoft:#fee4e2;
-  --yellow:#a06f00;
-  --yellowSoft:#fff1a8;
-  --dark:#111827;
-  --green:#087443;
-  --radius:18px;
+  --red-dark:#861b13;
+  --red-soft:#fff0ee;
+  --gold:#a87500;
+  --gold-dark:#765300;
+  --gold-soft:#fff4c7;
+  --ink:#172033;
+  --heading:#101828;
+  --muted:#667085;
+  --bg:#f5f7fa;
+  --white:#fff;
+  --border:#e4e7ec;
+  --dark:#171b26;
   --shadow:0 8px 28px rgba(16,24,40,.08);
+  --radius:16px;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   background:var(--bg);
-  color:var(--text);
+  color:var(--ink);
   font-family:Arial,Helvetica,sans-serif;
   line-height:1.65;
 }
 
-button,a{font:inherit}
+body.menu-open{
+  overflow:hidden;
+}
 
-a{color:inherit}
+a{
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
 
 .container{
   width:min(1100px,calc(100% - 30px));
   margin:auto;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .site-header{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(10px);
+  z-index:1000;
+  background:linear-gradient(135deg,var(--red),#c92b1d);
+  box-shadow:0 3px 18px rgba(0,0,0,.14);
 }
 
 .header-inner{
-  min-height:66px;
+  min-height:68px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
 
 .logo{
+  color:#fff;
   text-decoration:none;
   font-size:23px;
   font-weight:900;
   letter-spacing:-.7px;
 }
 
-.logo span{color:var(--red)}
+.logo span{
+  color:#ffe082;
+}
 
-.nav{
+.desktop-nav{
   display:flex;
-  gap:20px;
+  align-items:center;
+  gap:24px;
+}
+
+.desktop-nav a{
+  color:#fff;
+  text-decoration:none;
   font-size:14px;
   font-weight:700;
 }
 
-.nav a{
-  text-decoration:none;
+.desktop-nav a:hover{
+  color:#ffe082;
 }
 
-.nav a:hover{color:var(--red)}
+.menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:10px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
 
-/* HERO */
+.menu-btn span{
+  display:block;
+  width:21px;
+  height:2px;
+  background:#fff;
+  border-radius:4px;
+  transition:.2s;
+}
+
+.mobile-menu{
+  display:none;
+  background:#fff;
+  border-top:1px solid rgba(255,255,255,.15);
+  box-shadow:0 12px 25px rgba(0,0,0,.12);
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 20px;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  color:var(--heading);
+  font-size:15px;
+  font-weight:700;
+}
+
+.mobile-menu a:hover{
+  color:var(--red);
+  background:var(--red-soft);
+}
+
+.mobile-menu.active{
+  display:block;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:44px 0 30px;
+  padding:42px 0 25px;
   text-align:center;
 }
 
 .eyebrow{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
   padding:6px 12px;
-  border:1px solid #ffd1cc;
   border-radius:999px;
-  background:#fff0ee;
+  background:var(--red-soft);
+  border:1px solid #ffd2cc;
   color:var(--red);
   font-size:11px;
-  font-weight:900;
-  letter-spacing:.5px;
+  font-weight:800;
   text-transform:uppercase;
+  letter-spacing:.45px;
 }
 
-h1{
+.hero h1{
   max-width:700px;
   margin:14px auto 10px;
-  font-size:clamp(32px,6vw,48px);
+  color:var(--heading);
+  font-size:clamp(32px,5vw,48px);
   line-height:1.08;
   letter-spacing:-1.5px;
-  color:#111827;
 }
 
 .hero p{
-  max-width:730px;
+  max-width:720px;
   margin:auto;
   color:var(--muted);
   font-size:16px;
 }
 
-/* SECTION */
+/* =========================
+   FEED
+========================= */
 
 .section-title{
   margin:22px 0 15px;
-  font-size:26px;
-  line-height:1.2;
+  color:var(--heading);
+  font-size:25px;
+  line-height:1.25;
 }
-
-/* FILTER */
-
-.filters{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:18px;
-}
-
-.filter{
-  border:1px solid var(--border);
-  background:#fff;
-  color:#344054;
-  padding:8px 13px;
-  border-radius:999px;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:800;
-}
-
-.filter.active,
-.filter:hover{
-  background:var(--dark);
-  color:#fff;
-}
-
-/* FEED */
 
 .feed{
   display:grid;
-  gap:20px;
+  gap:18px;
 }
 
 .post-card{
@@ -181,7 +242,7 @@ h1{
 }
 
 .post-content{
-  padding:22px;
+  padding:20px;
 }
 
 .post-meta{
@@ -196,204 +257,232 @@ h1{
 
 .badge{
   display:inline-flex;
-  padding:5px 10px;
+  padding:4px 9px;
   border-radius:999px;
   font-size:10px;
   font-weight:900;
 }
 
 .badge.gdl{
-  background:var(--redSoft);
+  background:var(--red-soft);
   color:var(--red);
 }
 
 .badge.mtp{
-  background:#fff5c7;
-  color:var(--yellow);
+  background:var(--gold-soft);
+  color:var(--gold-dark);
 }
 
 .post-title{
   margin:0 0 9px;
-  color:#111827;
+  color:var(--heading);
   font-size:23px;
-  line-height:1.28;
+  line-height:1.3;
 }
-
-.post-title a{
-  text-decoration:none;
-}
-
-.post-title a:hover{color:var(--red)}
 
 .post-intro{
-  margin:0 0 18px;
+  margin:0 0 17px;
   color:#475467;
   font-size:14px;
 }
 
-/* CLICK HINT */
-
-.open-post{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-top:14px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:#f2f4f7;
-  color:#344054;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:800;
-}
-
-.open-post:hover{
-  background:#e4e7ec;
-}
-
-/* CHART */
-
-.chart-link{
-  display:block;
-  text-decoration:none;
-}
+/* =========================
+   CHART
+========================= */
 
 .chart-shell{
-  padding:15px;
-  border-radius:15px;
-  background:var(--dark);
+  padding:11px;
+  border-radius:14px;
+  overflow:hidden;
+  background:#171b26;
 }
 
 .chart{
-  width:min(470px,100%);
+  width:min(400px,100%);
   margin:auto;
-  padding:18px;
-  border-radius:12px;
+  padding:13px;
+  border-radius:11px;
   background:#fff;
 }
 
 .chart.gdl{
-  border-top:7px solid var(--red);
+  border-top:5px solid var(--red);
 }
 
 .chart.mtp{
-  background:#fffdf0;
-  border-top:7px solid #d19b00;
+  border-top:5px solid #d29d14;
+  background:#fffdf3;
 }
 
 .chart-brand{
-  padding:9px;
-  margin-bottom:11px;
-  text-align:center;
-  border-radius:8px;
-  background:#f8fafc;
-}
-
-.chart.gdl .chart-brand{
-  background:#fff0ee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:4px;
   color:var(--red);
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.2px;
 }
 
 .chart.mtp .chart-brand{
-  background:#fff2b8;
-  color:#8a6100;
+  color:var(--gold-dark);
 }
 
-.brand-main{
-  display:block;
-  font-size:16px;
+.brand-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+.chart-heading{
+  text-align:center;
+  color:#202939;
+  font-size:13px;
   font-weight:900;
-  letter-spacing:.4px;
-}
-
-.brand-sub{
-  display:block;
-  margin-top:2px;
-  font-size:10px;
-  font-weight:800;
-  opacity:.85;
 }
 
 .chart-date{
-  margin-bottom:13px;
+  margin:2px 0 9px;
   text-align:center;
-  color:#344054;
-  font-size:14px;
-  font-weight:800;
+  color:#667085;
+  font-size:11px;
+  font-weight:700;
 }
 
+/* compact but readable matrix */
+
 .matrix{
+  width:100%;
+  max-width:335px;
+  margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  border:3px solid #111827;
+  border:2px solid #202939;
+  border-radius:5px;
+  overflow:hidden;
 }
 
 .cell{
-  min-height:76px;
+  aspect-ratio:1/1;
+  min-height:55px;
   display:grid;
   place-items:center;
-  border:1px solid #8c96a5;
   background:#fff;
-  color:#101828;
-  font-size:31px;
-  font-weight:900;
+  border-right:1px solid #aab2bf;
+  border-bottom:1px solid #aab2bf;
+  color:#111827;
+  font-size:25px;
   line-height:1;
+  font-weight:900;
 }
 
-.gdl .cell.active{
-  background:var(--redSoft);
-  color:var(--red);
+.cell:nth-child(4n){
+  border-right:0;
 }
 
-.mtp .cell.active{
-  background:var(--yellowSoft);
-  color:#805c00;
+.cell:nth-last-child(-n+4){
+  border-bottom:0;
 }
 
-.chart-footer{
-  margin-top:11px;
+/* EXACTLY FOUR RED GDL CELLS */
+
+.chart.gdl .cell.active{
+  background:#f9c8c3;
+  color:#991b1b;
+}
+
+/* EXACTLY FOUR YELLOW MTP CELLS */
+
+.chart.mtp .cell.active{
+  background:#ffe58a;
+  color:#765300;
+}
+
+.chart-label{
+  margin-top:8px;
   text-align:center;
   color:#667085;
-  font-size:10px;
+  font-size:9px;
   font-weight:800;
-  letter-spacing:.8px;
+  letter-spacing:.4px;
+}
+
+.chart-logos{
+  margin-top:7px;
+  padding-top:6px;
+  border-top:1px solid #e5e7eb;
+  text-align:center;
+  color:#667085;
+  font-size:9px;
+  font-weight:800;
+}
+
+.watermark{
+  margin-top:7px;
+  text-align:center;
+  color:#98a2b3;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* =========================
+   READ POST BUTTON
+========================= */
+
+.read-post{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin:15px auto 0;
+  padding:9px 18px;
+  border-radius:999px;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.read-post:hover{
+  background:var(--red-dark);
+  transform:translateY(-1px);
+}
+
+.mtp-post .read-post{
+  background:#b17b00;
 }
 
 .post-footer{
   display:flex;
-  justify-content:space-between;
-  gap:10px;
+  justify-content:center;
   flex-wrap:wrap;
-  margin-top:15px;
-  padding-top:13px;
+  gap:8px;
+  margin-top:13px;
+  padding-top:11px;
   border-top:1px solid var(--border);
   color:var(--muted);
   font-size:11px;
 }
 
-/* FULL POST */
-
-#singlePost{
-  display:none;
-}
-
-.single-wrap{
-  padding:30px 0 45px;
-}
-
-.back-btn{
-  display:inline-flex;
-  margin-bottom:18px;
-  padding:8px 12px;
-  border:1px solid var(--border);
-  border-radius:9px;
-  background:#fff;
-  text-decoration:none;
-  font-size:13px;
-  font-weight:800;
-}
+/* =========================
+   FULL POST
+========================= */
 
 .full-post{
+  display:none;
+  margin-top:18px;
+}
+
+.full-post.active{
+  display:block;
+}
+
+.full-post-card{
   overflow:hidden;
   background:#fff;
   border:1px solid var(--border);
@@ -401,112 +490,131 @@ h1{
   box-shadow:var(--shadow);
 }
 
-.full-head{
-  padding:28px 25px 20px;
+.full-post-top{
+  padding:25px 22px 18px;
 }
 
-.full-head h1{
-  max-width:none;
-  margin:10px 0;
-  text-align:left;
-  font-size:clamp(28px,5vw,42px);
+.full-post-top.gdl{
+  border-top:6px solid var(--red);
 }
 
-.full-date{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
+.full-post-top.mtp{
+  border-top:6px solid #d29d14;
 }
 
-.full-intro{
+.full-post-top h2{
+  margin:0 0 9px;
+  color:var(--heading);
+  font-size:clamp(25px,4vw,34px);
+  line-height:1.2;
+}
+
+.full-post-top p{
+  margin:0;
   color:#475467;
-  font-size:16px;
 }
 
-.full-chart{
-  padding:22px;
-  background:#101828;
+.full-post-chart{
+  padding:16px;
+  background:#f8fafc;
 }
 
-.full-body{
-  padding:25px;
+.full-post-body{
+  padding:25px 22px;
 }
 
-.full-body h2{
-  margin:25px 0 9px;
-  font-size:24px;
-  line-height:1.3;
+.full-post-body h3{
+  margin:24px 0 8px;
+  color:var(--heading);
+  font-size:20px;
 }
 
-.full-body h2:first-child{
+.full-post-body h3:first-child{
   margin-top:0;
 }
 
-.full-body h3{
-  margin:22px 0 7px;
-  font-size:19px;
-}
-
-.full-body p{
+.full-post-body p{
+  margin:0 0 15px;
   color:#475467;
   font-size:15px;
 }
 
-.full-body ul{
+.full-post-body ul{
   color:#475467;
-  padding-left:22px;
+  padding-left:21px;
 }
 
-.warning{
+.full-post-body li{
+  margin-bottom:7px;
+}
+
+/* =========================
+   SHARE
+========================= */
+
+.share-box{
   margin-top:22px;
   padding:16px;
-  border-left:4px solid #d19b00;
-  border-radius:7px;
-  background:#fff9e5;
-  color:#5d4a16;
-  font-size:14px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:13px;
+  text-align:center;
 }
 
-/* SHARE */
+.share-title{
+  margin-bottom:10px;
+  color:var(--heading);
+  font-size:14px;
+  font-weight:800;
+}
 
-.share{
+.share-title span{
+  color:var(--red);
+}
+
+.share-buttons{
   display:flex;
-  align-items:center;
+  justify-content:center;
   flex-wrap:wrap;
   gap:8px;
-  margin-top:25px;
-  padding-top:18px;
-  border-top:1px solid var(--border);
 }
 
-.share strong{
-  margin-right:4px;
-  font-size:13px;
-}
-
-.share a,
-.share button{
-  border:0;
+.share-btn{
+  min-width:82px;
   padding:8px 12px;
+  border:0;
   border-radius:8px;
-  background:#f2f4f7;
-  color:#344054;
-  text-decoration:none;
   cursor:pointer;
+  color:#fff;
   font-size:12px;
   font-weight:800;
 }
 
-.share a:hover,
-.share button:hover{
-  background:#e4e7ec;
+.share-facebook{background:#1877f2;}
+.share-whatsapp{background:#20b15a;}
+.share-telegram{background:#229ed9;}
+.share-copy{background:#344054;}
+
+.close-post{
+  display:block;
+  margin:18px auto 0;
+  padding:8px 16px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  color:#475467;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
 }
 
-/* SEO */
+/* =========================
+   SEO GUIDE
+========================= */
 
 .content-section{
-  margin:35px 0;
-  padding:27px;
+  margin:30px 0;
+  padding:26px 24px;
   background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
@@ -514,22 +622,37 @@ h1{
 }
 
 .content-section h2{
-  margin:0 0 13px;
+  margin:0 0 14px;
+  color:var(--heading);
   font-size:27px;
+  line-height:1.25;
 }
 
 .content-section h3{
-  margin:23px 0 7px;
+  margin:24px 0 8px;
+  color:var(--heading);
   font-size:20px;
 }
 
 .content-section p{
-  margin:0 0 14px;
+  margin:0 0 15px;
   color:#475467;
   font-size:15px;
 }
 
-/* FAQ */
+.notice{
+  margin-top:20px;
+  padding:15px;
+  background:#fffaf0;
+  border-left:4px solid #d29d14;
+  border-radius:7px;
+  color:#5d4a16;
+  font-size:13px;
+}
+
+/* =========================
+   FAQ
+========================= */
 
 .faq{
   padding:15px 0;
@@ -542,7 +665,8 @@ h1{
 
 .faq h3{
   margin:0 0 5px;
-  font-size:18px;
+  color:var(--heading);
+  font-size:17px;
 }
 
 .faq p{
@@ -551,25 +675,37 @@ h1{
   font-size:14px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   margin-top:45px;
-  background:#101828;
-  color:#d0d5dd;
+  background:linear-gradient(135deg,#8f1d14,var(--red));
+  color:#fff;
 }
 
 .footer-inner{
-  padding:33px 0;
+  padding:31px 15px;
   text-align:center;
+}
+
+.footer-logo{
+  margin-bottom:10px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.footer-logo span{
+  color:#ffe082;
 }
 
 .footer-links{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:18px;
-  margin-bottom:13px;
+  gap:17px;
+  margin-bottom:14px;
 }
 
 .footer-links a{
@@ -579,29 +715,52 @@ footer{
   font-weight:700;
 }
 
+.footer-links a:hover{
+  color:#ffe082;
+}
+
 .footer-inner p{
   margin:5px 0;
+  color:#ffe9e5;
   font-size:12px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:700px){
+@media(max-width:720px){
 
   .container{
     width:min(100% - 22px,1100px);
   }
 
-  .nav{
+  .desktop-nav{
     display:none;
   }
 
+  .menu-btn{
+    display:flex;
+  }
+
   .hero{
-    padding:35px 0 24px;
+    padding:34px 0 22px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:14px;
   }
 
   .post-content{
-    padding:17px;
+    padding:16px;
+  }
+
+  .post-title{
+    font-size:21px;
   }
 
   .chart-shell{
@@ -609,37 +768,45 @@ footer{
   }
 
   .chart{
-    padding:14px;
+    padding:11px;
+  }
+
+  .matrix{
+    max-width:320px;
   }
 
   .cell{
-    min-height:65px;
-    font-size:28px;
+    min-height:53px;
+    font-size:24px;
   }
 
-  .full-head,
-  .full-body{
-    padding:20px;
+  .content-section{
+    padding:21px 18px;
   }
 
-  .full-chart{
-    padding:10px;
+  .share-btn{
+    min-width:75px;
   }
 }
 
 @media(max-width:400px){
 
+  .hero h1{
+    font-size:31px;
+  }
+
   .cell{
-    min-height:58px;
-    font-size:25px;
+    min-height:49px;
+    font-size:22px;
   }
 
   .chart{
-    padding:11px;
+    padding:9px;
   }
 
-  .brand-main{
-    font-size:14px;
+  .full-post-body,
+  .full-post-top{
+    padding:20px 16px;
   }
 }
 </style>
@@ -648,119 +815,187 @@ footer{
 <body>
 
 <header class="site-header">
-  <div class="header-inner container">
-    <a class="logo" href="/" onclick="showHome(event)">Carta<span>Lotto</span></a>
 
-    <nav class="nav">
+  <div class="header-inner container">
+
+    <a href="/" class="logo" aria-label="Carta Lotto Home">
+      Carta<span>Lotto</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#charts">Charts</a>
       <a href="#guide">Guide</a>
       <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
     </nav>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="#charts">Today's Charts</a>
+    <a href="#guide">Chart Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
 </header>
+
 
 <main>
 
-<!-- HOME -->
-
-<div id="homeView">
-
 <section class="hero">
+
   <div class="container">
-    <span class="eyebrow">Daily Forecast Information</span>
+
+    <span class="eyebrow">
+      Daily Forecast Information
+    </span>
 
     <h1>Carta Ramalan 4D</h1>
 
     <p>
-      Explore the latest Carta Lotto forecast information with daily
-      GDL Perdana charts and scheduled Ramalan 4D MTP &amp; SGP updates.
-      The newest dated chart is always displayed first.
+      Explore the latest Carta Lotto forecast information, with daily
+      GDL Perdana updates and scheduled Ramalan 4D MTP and SGP charts.
+      The newest dated update is automatically shown first.
     </p>
+
   </div>
+
 </section>
+
 
 <section id="charts" class="container">
 
-  <h2 class="section-title">Latest Carta Lotto Charts</h2>
-
-  <div class="filters">
-    <button class="filter active" data-filter="all">All Charts</button>
-    <button class="filter" data-filter="gdl">GDL Perdana</button>
-    <button class="filter" data-filter="mtp">MTP &amp; SGP</button>
-  </div>
+  <h2 class="section-title">
+    Latest Carta Lotto Charts
+  </h2>
 
   <div id="feed" class="feed"></div>
 
+  <div id="fullPost" class="full-post"></div>
+
 </section>
 
+
 <section id="guide" class="container">
+
 <article class="content-section">
 
-<h2>Carta Lotto &amp; Carta Ramalan 4D</h2>
+<h2>Carta Lotto &amp; Carta Ramalan 4D Information</h2>
 
 <p>
 Welcome to Carta Lotto, a free destination for visitors looking for
-dated Carta Ramalan 4D and Carta 4D forecast chart information.
-The homepage is organized around the latest available date so
-returning visitors can quickly identify a new GDL Perdana chart
-and the scheduled MTP and SGP updates.
+fresh Carta Ramalan 4D and Carta Lotto forecast information. The site
+is designed around a simple idea: make the latest dated chart easy to
+find, easy to read and easy to understand.
 </p>
 
 <p>
-Every chart uses a clear 4×4 matrix. Four positions are highlighted
-to make the displayed pattern easier to inspect. GDL Perdana charts
-use a light red treatment, while Ramalan 4D MTP and SGP charts use
-a yellow/gold treatment.
+New daily information is automatically organized by date, with the
+freshest update placed at the top. This means returning visitors do
+not need to search through older updates before finding the current
+chart.
 </p>
 
 <h3>GDL Perdana Daily Chart</h3>
 
 <p>
-The GDL Perdana section follows a seven-day cycle from Monday through
-Sunday. A dated chart is generated automatically from the current
-calendar date, allowing the newest daily information to appear before
-older updates.
+The GDL Perdana chart is part of the daily Carta Lotto update. A new
+dated chart is generated for each day from Monday through Sunday.
+Visitors can check the date shown with the chart and compare it with
+previous information when they want to review older updates.
 </p>
 
-<h3>Ramalan 4D MTP &amp; SGP</h3>
+<h3>Ramalan 4D MTP and SGP Updates</h3>
 
 <p>
-MTP and SGP information is scheduled for Wednesday, Saturday and
-Sunday. On those days the additional chart appears together with
-the regular GDL Perdana update.
+The scheduled Ramalan 4D MTP and SGP information appears on Wednesday,
+Saturday and Sunday. These updates are displayed alongside the regular
+GDL Perdana information so visitors can quickly recognize the chart
+available for that day.
 </p>
 
-<h3>Carta Lotto VIP, Carta Planbee and Carta Senja</h3>
+<h3>How to Read a Carta Lotto Chart</h3>
 
 <p>
-People searching for Carta Lotto VIP, Carta Planbee or Carta Senja
-may be looking for different chart formats and forecast information.
-Carta Lotto keeps its presentation focused on dated, clearly labeled
-chart information rather than claiming that a particular number is
-certain to win.
+Start by checking the date. After that, look over the complete chart
+and the highlighted positions. The highlighted areas are simply a
+visual way of drawing attention to selected positions within the
+forecast information. They should not be interpreted as a guarantee
+of any future result.
 </p>
-
-<h3>How to Read a Carta 4D Chart</h3>
 
 <p>
-Start by checking the date shown on the chart. Then review all sixteen
-positions in the 4×4 matrix. The highlighted positions are visual
-markers within the forecast chart; they should not be interpreted as
-a guarantee of a future lottery result.
+Carta Lotto keeps the presentation straightforward so visitors can
+focus on the dated information instead of dealing with unnecessary
+steps or confusing navigation.
 </p>
 
-<div class="warning">
+<h3>Carta 4D, Carta Planbee and Carta Senja Searches</h3>
+
+<p>
+People may use different search terms when looking for chart
+information, including Carta 4D, Carta Planbee, Carta Senja, Carta
+Lotto VIP and Ramalan 4D. These phrases can refer to different styles
+of forecast information found across the web.
+</p>
+
+<p>
+Carta Lotto focuses on providing its own dated chart updates and does
+not claim that a particular number is certain to win. Visitors should
+always distinguish forecast information from official results.
+</p>
+
+<h3>Carta Lotto VIP Information</h3>
+
+<p>
+The term Carta Lotto VIP is sometimes used online for premium-looking
+or specially selected forecast information. At Carta Lotto, the
+published chart information remains free to access. No person should
+need to send money to an unknown individual simply because that person
+claims to have guaranteed or secret numbers.
+</p>
+
+<h3>Why the Date Matters</h3>
+
+<p>
+Daily forecast information changes from one update to another. For
+that reason, checking the displayed date is one of the most important
+steps before reading an older chart. Carta Lotto automatically places
+the newest update first to make this process easier.
+</p>
+
+<div class="notice">
 <strong>Important:</strong>
 Carta Lotto charts are provided for informational and entertainment
-purposes only. No forecast can guarantee a winning result. Do not
-send money to unknown people claiming to sell guaranteed numbers,
-private results or secret VIP selections.
+purposes only. Forecast information cannot guarantee a winning result.
+Carta Lotto does not sell lottery tickets or promise guaranteed
+numbers. Be careful with unknown people asking for money or personal
+information in exchange for supposed VIP results.
 </div>
 
 </article>
+
 </section>
 
+
 <section id="faq" class="container">
+
 <article class="content-section">
 
 <h2>Frequently Asked Questions</h2>
@@ -768,32 +1003,33 @@ private results or secret VIP selections.
 <div class="faq">
 <h3>What is Carta Ramalan 4D?</h3>
 <p>
-Carta Ramalan 4D is a chart format used to present 4D forecast
-information. Carta Lotto displays dated charts so visitors can
-identify the latest update.
+Carta Ramalan 4D is a chart-based format used to present forecast
+information. Carta Lotto publishes dated chart updates so visitors
+can identify the latest information.
 </p>
 </div>
 
 <div class="faq">
 <h3>When is the GDL Perdana chart updated?</h3>
 <p>
-The GDL Perdana chart is generated for every day from Monday through
-Sunday.
+The GDL Perdana chart is generated for every day of the week, from
+Monday through Sunday.
 </p>
 </div>
 
 <div class="faq">
 <h3>When is the MTP and SGP chart available?</h3>
 <p>
-The additional Ramalan 4D MTP and SGP chart is displayed on
-Wednesday, Saturday and Sunday.
+The scheduled Ramalan 4D MTP and SGP chart is displayed on Wednesday,
+Saturday and Sunday.
 </p>
 </div>
 
 <div class="faq">
 <h3>Are Carta Lotto charts free?</h3>
 <p>
-Yes. Carta Lotto provides its chart information free to visitors.
+Yes. Carta Lotto provides its published forecast chart information
+free for visitors to access.
 </p>
 </div>
 
@@ -801,33 +1037,32 @@ Yes. Carta Lotto provides its chart information free to visitors.
 <h3>Does Carta Lotto guarantee winning numbers?</h3>
 <p>
 No. Carta Lotto does not guarantee lottery results. Forecast charts
-are informational and cannot predict a guaranteed winning outcome.
+are informational only and should never be treated as certain results.
+</p>
+</div>
+
+<div class="faq">
+<h3>How can I identify the latest chart?</h3>
+<p>
+Check the date shown in the chart card. The newest daily update is
+automatically placed at the top of the homepage.
 </p>
 </div>
 
 </article>
-</section>
-
-</div>
-
-<!-- SINGLE POST -->
-
-<div id="singlePost">
-<section class="single-wrap container">
-
-<a href="/" class="back-btn" onclick="showHome(event)">
-← Back to Latest Charts
-</a>
-
-<article id="fullPost" class="full-post"></article>
 
 </section>
-</div>
 
 </main>
 
+
 <footer>
-<div class="footer-inner container">
+
+<div class="footer-inner">
+
+<div class="footer-logo">
+Carta<span>Lotto</span>
+</div>
 
 <div class="footer-links">
 <a href="/about.html">About</a>
@@ -836,104 +1071,116 @@ are informational and cannot predict a guaranteed winning outcome.
 <a href="/contact.html">Contact</a>
 </div>
 
-<p>© <span id="year"></span> Carta Lotto. All rights reserved.</p>
+<p>
+© <span id="year"></span> Carta Lotto. All rights reserved.
+</p>
 
 <p>
-Forecast information is provided for informational and entertainment
-purposes only.
+Forecast information is provided for informational and entertainment purposes only.
 </p>
 
 </div>
+
 </footer>
 
-<script src="js/chart-generator.js"></script>
 
 <script>
 (function(){
 
 "use strict";
 
-/* ---------------------------------------
-   DATE HELPERS
---------------------------------------- */
+/* =========================
+   SEEDED GENERATOR
+========================= */
 
-function dateKey(date){
-  return [
-    date.getFullYear(),
-    String(date.getMonth()+1).padStart(2,"0"),
-    String(date.getDate()).padStart(2,"0")
-  ].join("-");
+function cartaLottoSeededRandom(seed){
+  const x=Math.sin(seed)*10000;
+  return x-Math.floor(x);
 }
 
-function longDate(date){
+function generateDailyMatrix(date,offset){
+
+  const seed=
+    date.getDate()*
+    (date.getMonth()+1)*
+    date.getFullYear()+
+    offset;
+
+  const nums=[];
+
+  for(let i=0;i<4;i++){
+    nums.push(
+      Math.floor(
+        cartaLottoSeededRandom(seed+i)*10
+      )
+    );
+  }
+
+  nums.push(
+    nums[3],
+    nums[2],
+    Math.floor(cartaLottoSeededRandom(seed+10)*10),
+    Math.floor(cartaLottoSeededRandom(seed+11)*10)
+  );
+
+  nums.push(
+    nums[7],
+    nums[6],
+    Math.floor(cartaLottoSeededRandom(seed+20)*10),
+    Math.floor(cartaLottoSeededRandom(seed+21)*10)
+  );
+
+  nums.push(
+    nums[11],
+    nums[10],
+    Math.floor(cartaLottoSeededRandom(seed+30)*10),
+    Math.floor(cartaLottoSeededRandom(seed+31)*10)
+  );
+
+  return nums;
+}
+
+
+/* =========================
+   CHART TYPE
+========================= */
+
+function isMTPDay(date){
+  return [0,3,6].includes(date.getDay());
+}
+
+
+/* =========================
+   DATE FORMAT
+========================= */
+
+function formatLong(date){
   return date.toLocaleDateString("en-US",{
-    weekday:"long",
     month:"long",
     day:"numeric",
     year:"numeric"
   });
 }
 
-function shortDate(date){
+function formatUK(date){
   return date.toLocaleDateString("en-GB");
 }
 
-/* ---------------------------------------
-   SAFE CHART DATA
---------------------------------------- */
-
-function getNumbers(date,offset){
-
-  if(typeof generateDailyMatrix === "function"){
-    return generateDailyMatrix(date,offset);
-  }
-
-  const seed =
-    date.getDate() *
-    (date.getMonth()+1) *
-    date.getFullYear() +
-    offset;
-
-  const nums=[];
-
-  function rnd(n){
-    const x=Math.sin(n)*10000;
-    return x-Math.floor(x);
-  }
-
-  for(let i=0;i<4;i++){
-    nums.push(Math.floor(rnd(seed+i)*10));
-  }
-
-  nums.push(
-    nums[3],
-    nums[2],
-    Math.floor(rnd(seed+10)*10),
-    Math.floor(rnd(seed+11)*10)
-  );
-
-  nums.push(
-    nums[7],
-    nums[6],
-    Math.floor(rnd(seed+20)*10),
-    Math.floor(rnd(seed+21)*10)
-  );
-
-  nums.push(
-    nums[11],
-    nums[10],
-    Math.floor(rnd(seed+30)*10),
-    Math.floor(rnd(seed+31)*10)
-  );
-
-  return nums;
+function formatShort(date){
+  return date.toLocaleDateString("en-US",{
+    weekday:"short",
+    month:"short",
+    day:"2-digit",
+    year:"numeric"
+  }).replace(/,/g,"");
 }
 
-/* ---------------------------------------
-   EXACTLY 4 ACTIVE BOXES
---------------------------------------- */
 
-function activePath(index){
+/* =========================
+   FOUR HIGHLIGHT POSITIONS
+========================= */
+
+function getPath(index){
 
   const paths=[
     [5,6,10,14],
@@ -942,529 +1189,613 @@ function activePath(index){
     [3,6,9,12]
   ];
 
-  return paths[index % paths.length];
+  return paths[index%paths.length];
 }
 
-/* ---------------------------------------
-   CHART HTML
---------------------------------------- */
 
-function chartHTML(date,type,index){
+/* =========================
+   CREATE CHART HTML
+========================= */
+
+function createChart(date,type,index){
 
   const isMTP=type==="mtp";
-  const nums=getNumbers(date,index);
 
-  const active=activePath(index);
+  const nums=
+    generateDailyMatrix(date,index);
 
-  const cells=nums.map(function(n,i){
+  const activePath=
+    getPath(index);
 
-    return `
-      <div class="cell ${active.includes(i) ? "active" : ""}">
-        ${n}
-      </div>
-    `;
+  let cells="";
 
-  }).join("");
+  nums.forEach(function(number,i){
+
+    cells+=
+      '<div class="cell '+
+      (activePath.includes(i)?"active":"")+
+      '">'+number+'</div>';
+
+  });
+
+
+  const title=isMTP
+    ? "Ramalan 4D MTP and SGP Chart For "+formatLong(date)
+    : "GDL Perdana Forecast Chart For "+formatLong(date);
+
+
+  const intro=isMTP
+    ? "Today's Ramalan 4D MTP and SGP chart provides the latest scheduled Carta Lotto forecast information. Check the date and review the complete chart before making your own decision."
+    : "Today's GDL Perdana forecast chart provides the latest Carta Lotto information for the current date. Check the date and review the highlighted positions as part of the daily forecast update.";
+
+
+  const logos=isMTP
+    ? "Magnum • Toto • Damacai • SGP"
+    : "Grand Dragon • GDL • Perdana • Nine Lotto";
+
 
   return `
-    <div class="chart ${isMTP ? "mtp" : "gdl"}">
+  <article class="post-card ${isMTP?"mtp-post":"gdl-post"}">
 
-      <div class="chart-brand">
+    <div class="post-content">
 
-        <span class="brand-main">
-          ${
-            isMTP
-            ? "RAMALAN 4D MTP & SGP"
-            : "GDL PERDANA"
-          }
+      <div class="post-meta">
+
+        <span class="badge ${isMTP?"mtp":"gdl"}">
+          ${isMTP?"MTP + SGP":"GDL PERDANA"}
         </span>
 
-        <span class="brand-sub">
-          ${
-            isMTP
-            ? "MTP • SGP • CARTA RAMALAN 4D"
-            : "GRAND DRAGON • NINE LOTTO • PERDANA"
-          }
+        <span>
+          Chart Update: ${formatShort(date)}
         </span>
 
       </div>
 
-      <div class="chart-date">
-        ${shortDate(date)}
+      <h2 class="post-title">
+        ${title}
+      </h2>
+
+      <p class="post-intro">
+        ${intro}
+      </p>
+
+      <div class="chart-shell">
+
+        <div class="chart ${isMTP?"mtp":"gdl"}">
+
+          <div class="chart-brand">
+            <span class="brand-dot"></span>
+            CARTA LOTTO
+            <span class="brand-dot"></span>
+          </div>
+
+          <div class="chart-heading">
+            ${isMTP
+              ?"RAMALAN 4D MTP & SGP"
+              :"CARTA RAMALAN GDL PERDANA"}
+          </div>
+
+          <div class="chart-date">
+            ${formatUK(date)}
+          </div>
+
+          <div class="matrix">
+            ${cells}
+          </div>
+
+          <div class="chart-label">
+            DAILY FORECAST INFORMATION
+          </div>
+
+          <div class="chart-logos">
+            ${logos}
+          </div>
+
+          <div class="watermark">
+            CARTALOTTO.COM
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="matrix">
-        ${cells}
-      </div>
+      <button
+        class="read-post"
+        type="button"
+        onclick='openFullPost(${JSON.stringify(date.toISOString())},"${type}",${index})'
+      >
+        Read Full Chart Post →
+      </button>
 
-      <div class="chart-footer">
-        CARTALOTTO.COM • FORECAST INFORMATION
+      <div class="post-footer">
+        <span>Free forecast information</span>
+        <span>${formatLong(date)}</span>
       </div>
 
     </div>
+
+  </article>
   `;
 }
 
-/* ---------------------------------------
-   POST DATA
---------------------------------------- */
 
-function postData(date,type,index){
+/* =========================
+   FULL POST
+========================= */
+
+function openFullPost(dateISO,type,index){
+
+  const date=new Date(dateISO);
+
+  date.setHours(12,0,0,0);
 
   const isMTP=type==="mtp";
 
-  const key=dateKey(date);
+  const nums=
+    generateDailyMatrix(date,index);
+
+  const activePath=
+    getPath(index);
+
+  let cells="";
+
+  nums.forEach(function(number,i){
+
+    cells+=
+      '<div class="cell '+
+      (activePath.includes(i)?"active":"")+
+      '">'+number+'</div>';
+
+  });
+
 
   const title=isMTP
-    ? `Ramalan 4D MTP & SGP Chart For ${longDate(date)}`
-    : `GDL Perdana Forecast Chart For ${longDate(date)}`;
+    ? "Ramalan 4D MTP and SGP Chart For "+formatLong(date)
+    : "GDL Perdana Forecast Chart For "+formatLong(date);
+
+
+  const logos=isMTP
+    ? "Magnum • Toto • Damacai • SGP"
+    : "Grand Dragon • GDL • Perdana • Nine Lotto";
+
 
   const intro=isMTP
-    ? `Today's Ramalan 4D MTP and SGP chart provides the latest scheduled Carta Lotto forecast information for ${longDate(date)}. Check the date carefully and review the complete chart before using the information.`
-    : `Today's GDL Perdana forecast chart provides the latest Carta Lotto chart information for ${longDate(date)}. Review the complete 4×4 matrix and compare the dated update with earlier charts if useful.`;
+    ? "Looking for today's Ramalan 4D MTP and SGP information? This Carta Lotto update brings the latest scheduled chart together with its date so visitors can quickly identify the current information."
+    : "Looking for today's GDL Perdana forecast chart? This Carta Lotto update provides the latest dated information in a simple format, allowing visitors to review the current chart without searching through older updates.";
 
-  return {
-    key,
-    date,
-    type,
-    index,
-    title,
-    intro
-  };
-}
 
-/* ---------------------------------------
-   CARD
---------------------------------------- */
+  const fullPost=document.getElementById("fullPost");
 
-function cardHTML(post){
 
-  const isMTP=post.type==="mtp";
+  fullPost.innerHTML=`
 
-  return `
-    <article class="post-card chart-card"
-      data-type="${post.type}"
-      data-key="${post.key}">
+  <article class="full-post-card">
 
-      <div class="post-content">
+    <div class="full-post-top ${isMTP?"mtp":"gdl"}">
 
-        <div class="post-meta">
+      <div class="post-meta">
+        <span class="badge ${isMTP?"mtp":"gdl"}">
+          ${isMTP?"MTP + SGP":"GDL PERDANA"}
+        </span>
 
-          <span class="badge ${isMTP ? "mtp" : "gdl"}">
-            ${isMTP ? "MTP + SGP" : "GDL PERDANA"}
-          </span>
+        <span>
+          ${formatShort(date)}
+        </span>
+      </div>
 
-          <span>
-            Chart Update: ${shortDate(post.date)}
-          </span>
+      <h2>${title}</h2>
 
-        </div>
+      <p>${intro}</p>
 
-        <h2 class="post-title">
-          <a href="?chart=${post.key}-${post.type}"
-             onclick="openPost(event,'${post.key}','${post.type}',${post.index})">
-            ${post.title}
-          </a>
-        </h2>
+    </div>
 
-        <p class="post-intro">
-          ${post.intro}
-        </p>
 
-        <a href="?chart=${post.key}-${post.type}"
-           class="chart-link"
-           onclick="openPost(event,'${post.key}','${post.type}',${post.index})"
-           aria-label="Open ${post.title}">
+    <div class="full-post-chart">
 
-          <div class="chart-shell">
-            ${chartHTML(post.date,post.type,post.index)}
+      <div class="chart-shell">
+
+        <div class="chart ${isMTP?"mtp":"gdl"}">
+
+          <div class="chart-brand">
+            <span class="brand-dot"></span>
+            CARTA LOTTO
+            <span class="brand-dot"></span>
           </div>
 
-        </a>
+          <div class="chart-heading">
+            ${isMTP
+              ?"RAMALAN 4D MTP & SGP"
+              :"CARTA RAMALAN GDL PERDANA"}
+          </div>
 
-        <a href="?chart=${post.key}-${post.type}"
-           class="open-post"
-           onclick="openPost(event,'${post.key}','${post.type}',${post.index})">
-          Read full chart post →
-        </a>
+          <div class="chart-date">
+            ${formatUK(date)}
+          </div>
 
-        <div class="post-footer">
-          <span>Free forecast information</span>
-          <span>${longDate(post.date)}</span>
+          <div class="matrix">
+            ${cells}
+          </div>
+
+          <div class="chart-label">
+            DAILY FORECAST INFORMATION
+          </div>
+
+          <div class="chart-logos">
+            ${logos}
+          </div>
+
+          <div class="watermark">
+            CARTALOTTO.COM
+          </div>
+
         </div>
 
       </div>
 
-    </article>
+    </div>
+
+
+    <div class="full-post-body">
+
+      <h3>About Today's ${isMTP?"Ramalan 4D MTP and SGP":"GDL Perdana"} Chart</h3>
+
+      <p>
+        Carta Lotto updates its forecast information regularly so
+        visitors can return and find the latest dated chart in one
+        place. The information above is connected to the date shown
+        on the chart, making it easier to distinguish a current update
+        from an earlier one.
+      </p>
+
+      <p>
+        Visitors searching for Carta Ramalan 4D, Carta Lotto,
+        Ramalan 4D or Carta 4D can use this page to review the latest
+        available chart information. The highlighted positions are
+        included as part of the chart presentation and should be
+        treated only as forecast information.
+      </p>
+
+      <h3>How to Use This Chart</h3>
+
+      <p>
+        First, check the date displayed above the chart and inside the
+        chart. Then review the complete information and the highlighted
+        positions. If you follow daily updates, you can compare the
+        current chart with previous dated updates below the latest
+        information.
+      </p>
+
+      <p>
+        There is no guaranteed number or guaranteed outcome. Any
+        decision involving a lottery or similar game is entirely the
+        responsibility of the individual visitor.
+      </p>
+
+      <h3>Carta Lotto Forecast Information</h3>
+
+      <p>
+        Carta Lotto aims to keep its chart pages simple and useful.
+        Instead of asking visitors to search through multiple pages,
+        the latest dated information is placed first. Older updates
+        can remain available for reference so returning visitors can
+        follow the sequence of daily charts.
+      </p>
+
+      <h3>Carta Lotto VIP, Carta Planbee and Carta Senja</h3>
+
+      <p>
+        Different visitors may search for terms such as Carta Lotto
+        VIP, Carta Planbee or Carta Senja when looking for forecast
+        information. These terms can be used differently across
+        websites, so visitors should always check the source, date
+        and context of any chart they view.
+      </p>
+
+      <p>
+        Carta Lotto does not claim that its chart can predict an
+        official result with certainty. Forecast information should
+        never be confused with an official result published by an
+        authorized lottery operator.
+      </p>
+
+      <h3>Stay Safe Online</h3>
+
+      <p>
+        Be careful if someone contacts you privately and claims to
+        have secret, guaranteed or VIP numbers in exchange for money.
+        Do not send payment or personal information to unknown people
+        simply because they promise a winning result.
+      </p>
+
+      <div class="notice">
+        <strong>Disclaimer:</strong>
+        This chart is provided free for informational and entertainment
+        purposes only. Carta Lotto does not guarantee winning numbers,
+        does not sell lottery tickets and is not responsible for losses
+        resulting from decisions made by visitors.
+      </div>
+
+
+      <div class="share-box">
+
+        <div class="share-title">
+          Sharing is <span>caring</span> — found this chart useful?
+        </div>
+
+        <div class="share-buttons">
+
+          <button
+            class="share-btn share-facebook"
+            onclick="shareFacebook()"
+          >
+            Facebook
+          </button>
+
+          <button
+            class="share-btn share-whatsapp"
+            onclick="shareWhatsApp()"
+          >
+            WhatsApp
+          </button>
+
+          <button
+            class="share-btn share-telegram"
+            onclick="shareTelegram()"
+          >
+            Telegram
+          </button>
+
+          <button
+            class="share-btn share-copy"
+            onclick="copyPostLink()"
+          >
+            Copy Link
+          </button>
+
+        </div>
+
+      </div>
+
+      <button
+        class="close-post"
+        type="button"
+        onclick="closeFullPost()"
+      >
+        ← Back to Latest Charts
+      </button>
+
+    </div>
+
+  </article>
   `;
+
+
+  fullPost.classList.add("active");
+
+  fullPost.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
 
-/* ---------------------------------------
-   7 DAYS
---------------------------------------- */
 
-let allPosts=[];
+/* =========================
+   CLOSE FULL POST
+========================= */
 
-function buildPosts(){
+function closeFullPost(){
 
-  allPosts=[];
+  const box=document.getElementById("fullPost");
+
+  box.classList.remove("active");
+
+  box.innerHTML="";
+
+  document.getElementById("charts").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+
+/* =========================
+   SOCIAL SHARING
+========================= */
+
+function getShareURL(){
+
+  return encodeURIComponent(
+    window.location.href
+  );
+
+}
+
+function shareFacebook(){
+
+  const url=
+    "https://www.facebook.com/sharer/sharer.php?u="+
+    getShareURL();
+
+  window.open(
+    url,
+    "_blank",
+    "width=650,height=500"
+  );
+}
+
+function shareWhatsApp(){
+
+  const text=
+    encodeURIComponent(
+      document.title+
+      " - "+window.location.href
+    );
+
+  window.open(
+    "https://wa.me/?text="+text,
+    "_blank"
+  );
+}
+
+function shareTelegram(){
+
+  const url=
+    "https://t.me/share/url?url="+
+    getShareURL()+
+    "&text="+
+    encodeURIComponent(document.title);
+
+  window.open(
+    url,
+    "_blank"
+  );
+}
+
+async function copyPostLink(){
+
+  try{
+
+    await navigator.clipboard.writeText(
+      window.location.href
+    );
+
+    alert("Chart link copied.");
+
+  }catch(e){
+
+    prompt(
+      "Copy this chart link:",
+      window.location.href
+    );
+
+  }
+}
+
+
+/* =========================
+   RENDER 7 DAYS
+========================= */
+
+function renderFeed(){
+
+  const feed=
+    document.getElementById("feed");
+
+  let html="";
+
 
   for(let i=0;i<7;i++){
 
     const date=new Date();
 
-    date.setHours(12,0,0,0);
-    date.setDate(date.getDate()-i);
-
-    /* GDL EVERY DAY */
-
-    allPosts.push(
-      postData(date,"gdl",i)
+    date.setHours(
+      12,0,0,0
     );
 
-    /* MTP + SGP ONLY WED/SAT/SUN */
+    date.setDate(
+      date.getDate()-i
+    );
 
-    const day=date.getDay();
 
-    if([0,3,6].includes(day)){
+    /*
+      GDL every day
+    */
 
-      allPosts.push(
-        postData(date,"mtp",i+20)
+    html+=createChart(
+      date,
+      "gdl",
+      i
+    );
+
+
+    /*
+      MTP + SGP:
+      Wednesday, Saturday, Sunday
+    */
+
+    if(isMTPDay(date)){
+
+      html+=createChart(
+        date,
+        "mtp",
+        i+20
       );
 
     }
+
   }
+
+
+  feed.innerHTML=html;
+
 }
 
-/* ---------------------------------------
-   FEED
---------------------------------------- */
 
-function renderFeed(filter="all"){
+/* =========================
+   MOBILE MENU
+========================= */
 
-  const feed=document.getElementById("feed");
+const menuBtn=
+  document.getElementById("menuBtn");
 
-  const posts=allPosts.filter(function(post){
+const mobileMenu=
+  document.getElementById("mobileMenu");
 
-    return filter==="all" ||
-      post.type===filter;
 
-  });
+menuBtn.addEventListener(
+  "click",
+  function(){
 
-  feed.innerHTML=posts.map(cardHTML).join("");
-}
+    const active=
+      mobileMenu.classList.toggle("active");
 
-/* ---------------------------------------
-   FULL POST CONTENT
---------------------------------------- */
+    document.body.classList.toggle(
+      "menu-open",
+      active
+    );
 
-function openPost(event,key,type,index){
+    menuBtn.setAttribute(
+      "aria-expanded",
+      active?"true":"false"
+    );
 
-  if(event) event.preventDefault();
+  }
+);
 
-  const post=allPosts.find(function(p){
-    return p.key===key && p.type===type;
-  });
 
-  if(!post) return;
+mobileMenu
+  .querySelectorAll("a")
+  .forEach(function(link){
 
-  const isMTP=type==="mtp";
+    link.addEventListener(
+      "click",
+      function(){
 
-  const chart=chartHTML(
-    post.date,
-    type,
-    index
-  );
+        mobileMenu.classList.remove("active");
 
-  const title=post.title;
+        document.body.classList.remove(
+          "menu-open"
+        );
 
-  const body=isMTP ? `
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
-    <h2>About Today's Ramalan 4D MTP &amp; SGP Chart</h2>
-
-    <p>
-      This dated Carta Lotto update presents the latest Ramalan 4D
-      MTP and SGP forecast information for ${longDate(post.date)}.
-      The chart is arranged as a simple 4×4 matrix so visitors can
-      inspect the complete set of displayed digits in one place.
-    </p>
-
-    <h2>How to Read This Carta Ramalan 4D Chart</h2>
-
-    <p>
-      First check the date shown above the matrix. Next review all
-      sixteen positions. Four cells are highlighted in yellow to
-      make the selected visual pattern easier to identify. The
-      highlighted cells are part of the chart presentation and are
-      not a guarantee of a future result.
-    </p>
-
-    <h3>MTP and SGP Schedule</h3>
-
-    <p>
-      Carta Lotto presents the additional MTP and SGP chart on
-      Wednesday, Saturday and Sunday. The regular GDL Perdana
-      update continues separately on every day of the week.
-    </p>
-
-    <h2>Carta Lotto Forecast Information</h2>
-
-    <p>
-      Visitors searching for Carta Lotto, Carta Ramalan 4D,
-      Carta 4D, Carta Planbee or Carta Senja may use the dated
-      charts to compare different daily updates. The purpose of
-      this page is to provide clearly organized forecast information
-      rather than promise a particular winning result.
-    </p>
-
-  ` : `
-
-    <h2>About Today's GDL Perdana Chart</h2>
-
-    <p>
-      This Carta Lotto update provides the GDL Perdana forecast
-      chart for ${longDate(post.date)}. The chart uses a clear 4×4
-      matrix containing sixteen displayed digits, with four positions
-      highlighted in red for easier visual inspection.
-    </p>
-
-    <h2>How to Read the GDL Perdana Chart</h2>
-
-    <p>
-      Begin by checking the date. Then look across the complete
-      4×4 matrix instead of focusing on only one position. The four
-      highlighted cells are visual markers within this forecast
-      format. They should not be treated as guaranteed winning numbers.
-    </p>
-
-    <h3>Daily GDL Perdana Updates</h3>
-
-    <p>
-      GDL Perdana information is generated for every day from Monday
-      through Sunday. The newest dated update is placed first on the
-      Carta Lotto homepage, while recent previous updates remain
-      available below it.
-    </p>
-
-    <h2>Carta Lotto and Related 4D Searches</h2>
-
-    <p>
-      Carta Lotto is designed for visitors searching for Carta
-      Ramalan 4D, Carta 4D, Carta Lotto VIP, Carta Planbee and
-      Carta Senja information. Each dated chart is presented in a
-      consistent format so visitors can quickly identify the update
-      they are viewing.
-    </p>
-
-  `;
-
-  const full=`
-
-    <header class="full-head">
-
-      <span class="badge ${isMTP ? "mtp" : "gdl"}">
-        ${isMTP ? "MTP + SGP" : "GDL PERDANA"}
-      </span>
-
-      <h1>${title}</h1>
-
-      <div class="full-date">
-        Published for ${longDate(post.date)}
-      </div>
-
-      <p class="full-intro">
-        ${post.intro}
-      </p>
-
-    </header>
-
-    <div class="full-chart">
-      ${chart}
-    </div>
-
-    <div class="full-body">
-
-      ${body}
-
-      <h2>Use the Information Responsibly</h2>
-
-      <p>
-        Forecast charts are best viewed as informational material.
-        Lottery outcomes are uncertain, and past or generated chart
-        patterns cannot establish a guaranteed future result.
-      </p>
-
-      <div class="warning">
-        <strong>Disclaimer:</strong>
-        Carta Lotto does not sell lottery tickets, does not guarantee
-        winning numbers and does not ask visitors to send money for
-        secret or guaranteed selections. Do not trust unknown people
-        who request payment or personal information in exchange for
-        supposed VIP results. Any decision to participate in a
-        lottery or game is the visitor's own responsibility.
-      </div>
-
-      <div class="share">
-
-        <strong>Share this chart:</strong>
-
-        <a target="_blank" rel="noopener"
-           href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}">
-          Facebook
-        </a>
-
-        <a target="_blank" rel="noopener"
-           href="https://api.whatsapp.com/send?text=${encodeURIComponent(title+" "+location.href)}">
-          WhatsApp
-        </a>
-
-        <button type="button" onclick="copyPostLink()">
-          Copy Link
-        </button>
-
-      </div>
-
-    </div>
-  `;
-
-  document.getElementById("fullPost").innerHTML=full;
-
-  document.getElementById("homeView").style.display="none";
-  document.getElementById("singlePost").style.display="block";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-  document.title=title+" | Carta Lotto";
-}
-
-window.openPost=openPost;
-
-function showHome(event){
-
-  if(event) event.preventDefault();
-
-  document.getElementById("singlePost").style.display="none";
-  document.getElementById("homeView").style.display="block";
-
-  history.pushState(
-    {},
-    "",
-    "/"
-  );
-
-  document.title="Carta Ramalan 4D | Carta Lotto GDL Perdana & MTP";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-}
-
-window.showHome=showHome;
-
-function copyPostLink(){
-
-  navigator.clipboard.writeText(location.href)
-    .then(function(){
-      alert("Post link copied.");
-    })
-    .catch(function(){
-      alert("Copy the page URL from your browser.");
-    });
-}
-
-window.copyPostLink=copyPostLink;
-
-/* ---------------------------------------
-   FILTERS
---------------------------------------- */
-
-document.querySelectorAll(".filter")
-.forEach(function(button){
-
-  button.addEventListener("click",function(){
-
-    document.querySelectorAll(".filter")
-    .forEach(function(b){
-      b.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    renderFeed(
-      button.getAttribute("data-filter")
+      }
     );
 
   });
 
-});
 
-/* ---------------------------------------
-   INITIALIZE
---------------------------------------- */
+/* =========================
+   YEAR + START
+========================= */
 
 document.getElementById("year").textContent=
   new Date().getFullYear();
 
-buildPosts();
 renderFeed();
-
-/* ---------------------------------------
-   OPEN DIRECT CHART URL
---------------------------------------- */
-
-function loadRequestedPost(){
-
-  const params=
-    new URLSearchParams(location.search);
-
-  const value=params.get("chart");
-
-  if(!value) return;
-
-  const match=value.match(
-    /^(\d{4}-\d{2}-\d{2})-(gdl|mtp)$/
-  );
-
-  if(!match) return;
-
-  const key=match[1];
-  const type=match[2];
-
-  const post=allPosts.find(function(p){
-    return p.key===key && p.type===type;
-  });
-
-  if(post){
-
-    openPost(
-      null,
-      post.key,
-      post.type,
-      post.index
-    );
-
-  }
-}
-
-loadRequestedPost();
-
-window.addEventListener("popstate",function(){
-
-  if(location.search){
-
-    loadRequestedPost();
-
-  }else{
-
-    showHome();
-
-  }
-
-});
 
 })();
 </script>
