@@ -46,13 +46,9 @@
   --radius:16px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -62,17 +58,11 @@ body{
   line-height:1.65;
 }
 
-body.menu-open{
-  overflow:hidden;
-}
+body.menu-open{overflow:hidden}
 
-a{
-  color:inherit;
-}
+a{color:inherit}
 
-button{
-  font:inherit;
-}
+button{font:inherit}
 
 .container{
   width:min(1080px,calc(100% - 28px));
@@ -105,9 +95,7 @@ button{
   letter-spacing:-.7px;
 }
 
-.logo span{
-  color:#ffe08a;
-}
+.logo span{color:#ffe08a}
 
 .desktop-nav{
   display:flex;
@@ -122,9 +110,7 @@ button{
   font-weight:800;
 }
 
-.desktop-nav a:hover{
-  color:#ffe08a;
-}
+.desktop-nav a:hover{color:#ffe08a}
 
 .menu-btn{
   display:none;
@@ -155,9 +141,7 @@ button{
   transform:translateY(7px) rotate(45deg);
 }
 
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
+.menu-btn.active span:nth-child(2){opacity:0}
 
 .menu-btn.active span:nth-child(3){
   transform:translateY(-7px) rotate(-45deg);
@@ -170,9 +154,7 @@ button{
   box-shadow:0 12px 25px rgba(0,0,0,.12);
 }
 
-.mobile-menu.active{
-  display:block;
-}
+.mobile-menu.active{display:block}
 
 .mobile-menu a{
   display:block;
@@ -247,9 +229,7 @@ button{
   box-shadow:var(--shadow);
 }
 
-.post-content{
-  padding:19px;
-}
+.post-content{padding:19px}
 
 .post-meta{
   display:flex;
@@ -309,9 +289,7 @@ button{
   background:#fff;
 }
 
-.chart.gdl{
-  border-top:4px solid var(--red);
-}
+.chart.gdl{border-top:4px solid var(--red)}
 
 .chart.mtp{
   border-top:4px solid #1a1d24;
@@ -358,13 +336,9 @@ button{
   font-weight:900;
 }
 
-.cell:nth-child(4n){
-  border-right:0;
-}
+.cell:nth-child(4n){border-right:0}
 
-.cell:nth-last-child(-n+4){
-  border-bottom:0;
-}
+.cell:nth-last-child(-n+4){border-bottom:0}
 
 .chart.gdl .cell.active{
   background:#c6281c;
@@ -419,13 +393,9 @@ button{
   transform:translateY(-1px);
 }
 
-.mtp-post .read-post{
-  background:#9a6a00;
-}
+.mtp-post .read-post{background:#9a6a00}
 
-.mtp-post .read-post:hover{
-  background:#765300;
-}
+.mtp-post .read-post:hover{background:#765300}
 
 .post-footer{
   display:flex;
@@ -441,13 +411,9 @@ button{
 
 /* ARTICLE */
 
-.article-page{
-  display:none;
-}
+.article-page{display:none}
 
-.article-page.active{
-  display:block;
-}
+.article-page.active{display:block}
 
 .article-card{
   margin:30px auto 0;
@@ -458,17 +424,11 @@ button{
   box-shadow:var(--shadow);
 }
 
-.article-top{
-  padding:27px 24px 20px;
-}
+.article-top{padding:27px 24px 20px}
 
-.article-top.gdl{
-  border-top:5px solid var(--red);
-}
+.article-top.gdl{border-top:5px solid var(--red)}
 
-.article-top.mtp{
-  border-top:5px solid #1a1d24;
-}
+.article-top.mtp{border-top:5px solid #1a1d24}
 
 .breadcrumb{
   margin-bottom:12px;
@@ -512,9 +472,7 @@ button{
   line-height:1.3;
 }
 
-.article-body h2:first-child{
-  margin-top:0;
-}
+.article-body h2:first-child{margin-top:0}
 
 .article-body h3{
   margin:22px 0 7px;
@@ -526,6 +484,34 @@ button{
   margin:0 0 15px;
   color:var(--text);
   font-size:15px;
+}
+
+.article-body ul{
+  margin:0 0 16px;
+  padding-left:22px;
+  color:var(--text);
+}
+
+.article-body li{margin-bottom:6px}
+
+.data-note{
+  margin:17px 0;
+  padding:14px 15px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+.data-note strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--heading);
+  font-size:13px;
+}
+
+.data-note span{
+  color:var(--text);
+  font-size:13px;
 }
 
 .notice{
@@ -550,8 +536,7 @@ button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:105px;
-  padding:10px 16px;
+  padding:9px 15px;
   border:1px solid var(--border);
   border-radius:999px;
   background:#fff;
@@ -565,16 +550,6 @@ button{
   border-color:var(--red);
   background:var(--red);
   color:#fff;
-}
-
-.action-btn.next{
-  border-color:#9a6a00;
-  background:#9a6a00;
-  color:#fff;
-}
-
-.action-btn:hover{
-  transform:translateY(-1px);
 }
 
 /* GUIDE */
@@ -614,9 +589,7 @@ button{
   border-top:1px solid var(--border);
 }
 
-.faq:first-of-type{
-  border-top:0;
-}
+.faq:first-of-type{border-top:0}
 
 .faq h3{
   margin:0 0 5px;
@@ -649,9 +622,7 @@ footer{
   font-weight:900;
 }
 
-.footer-logo span{
-  color:#ffe08a;
-}
+.footer-logo span{color:#ffe08a}
 
 .footer-links{
   display:flex;
@@ -668,9 +639,7 @@ footer{
   font-weight:800;
 }
 
-.footer-links a:hover{
-  color:#ffe08a;
-}
+.footer-links a:hover{color:#ffe08a}
 
 .footer-inner p{
   margin:5px 0;
@@ -686,84 +655,42 @@ footer{
     width:min(100% - 22px,1080px);
   }
 
-  .desktop-nav{
-    display:none;
-  }
+  .desktop-nav{display:none}
 
-  .menu-btn{
-    display:flex;
-  }
+  .menu-btn{display:flex}
 
-  .hero{
-    padding:33px 0 21px;
-  }
+  .hero{padding:33px 0 21px}
 
-  .hero h1{
-    font-size:33px;
-  }
+  .hero h1{font-size:33px}
 
-  .hero p{
-    font-size:14px;
-  }
+  .hero p{font-size:14px}
 
-  .post-content{
-    padding:16px;
-  }
+  .post-content{padding:16px}
 
-  .post-title{
-    font-size:20px;
-  }
+  .post-title{font-size:20px}
 
-  .chart-shell{
-    padding:7px;
-  }
+  .chart-shell{padding:7px}
 
-  .chart{
-    padding:9px;
-  }
+  .chart{padding:9px}
 
-  .matrix{
-    max-width:310px;
-  }
+  .matrix{max-width:310px}
 
-  .cell{
-    font-size:22px;
-  }
+  .cell{font-size:22px}
 
-  .content-section{
-    padding:21px 18px;
-  }
+  .content-section{padding:21px 18px}
 
-  .article-top{
-    padding:23px 18px 18px;
-  }
+  .article-top{padding:23px 18px 18px}
 
-  .article-body{
-    padding:22px 18px 25px;
-  }
-
-  .article-actions{
-    gap:8px;
-  }
-
-  .action-btn{
-    min-width:100px;
-  }
+  .article-body{padding:22px 18px 25px}
 }
 
 @media(max-width:400px){
 
-  .hero h1{
-    font-size:30px;
-  }
+  .hero h1{font-size:30px}
 
-  .cell{
-    font-size:20px;
-  }
+  .cell{font-size:20px}
 
-  .article-top h1{
-    font-size:27px;
-  }
+  .article-top h1{font-size:27px}
 }
 </style>
 </head>
@@ -800,7 +727,6 @@ footer{
   </div>
 
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-
     <a href="/#charts">Today's Charts</a>
     <a href="/#guide">Chart Guide</a>
     <a href="/#faq">FAQ</a>
@@ -808,7 +734,6 @@ footer{
     <a href="/privacy-policy.html">Privacy Policy</a>
     <a href="/disclaimer.html">Disclaimer</a>
     <a href="/contact.html">Contact</a>
-
   </nav>
 
 </header>
@@ -818,7 +743,6 @@ footer{
 <div id="homePage">
 
 <section class="hero">
-
   <div class="container">
 
     <span class="eyebrow">Daily Chart Information</span>
@@ -833,7 +757,6 @@ footer{
     </p>
 
   </div>
-
 </section>
 
 <section id="charts" class="container">
@@ -854,12 +777,12 @@ footer{
 
   <p>
     Carta Lotto presents dated chart layouts in a simple format so visitors
-    can identify the latest GDL Perdana update and scheduled MTP and SGP
+    can identify the latest GDL Perdana update and the scheduled MTP and SGP
     entries without searching through older posts.
   </p>
 
   <p>
-    Each chart has its own date, chart type and sixteen-position grid.
+    Every chart has its own date, chart type and sixteen-position grid.
     Highlighted cells are presentation markers within the published layout.
     They should not be treated as guaranteed future results.
   </p>
@@ -877,7 +800,7 @@ footer{
   <p>
     MTP and SGP entries are displayed on Wednesday, Saturday and Sunday in
     the current Carta Lotto schedule. These entries use a separate chart
-    presentation to make scheduled updates easy to identify.
+    presentation to make the scheduled updates easy to identify.
   </p>
 
   <h3>How to Read a Carta Chart</h3>
@@ -887,6 +810,14 @@ footer{
     columns. Check the date and chart type first, then review the complete
     grid. Highlighted positions can be compared with the surrounding cells
     as part of the displayed chart structure.
+  </p>
+
+  <h3>Understanding Chart Observations</h3>
+
+  <p>
+    Some dated pages include simple observations about the displayed grid.
+    These observations describe the layout itself and are not predictions
+    of an official result.
   </p>
 
   <h3>Comparing Different Dates</h3>
@@ -950,18 +881,18 @@ footer{
   </div>
 
   <div class="faq">
-    <h3>Are the highlighted positions official results?</h3>
+    <h3>Are the chart observations official results?</h3>
     <p>
-      No. Highlighted positions are presentation markers within the displayed
-      chart and should not be confused with official lottery results.
+      No. The observations describe the displayed chart layout and should
+      not be confused with official lottery results.
     </p>
   </div>
 
   <div class="faq">
-    <h3>Are the charts guaranteed predictions?</h3>
+    <h3>Are the highlighted positions guaranteed?</h3>
     <p>
-      No. Carta Lotto does not guarantee future results. The charts are
-      provided for informational purposes only.
+      No. Highlighted positions are visual markers within the published
+      chart and do not guarantee a future result.
     </p>
   </div>
 
@@ -979,13 +910,10 @@ footer{
 
 </div>
 
-
 <div id="articlePage" class="article-page">
 
   <section class="container">
-
     <article id="articleContainer" class="article-card"></article>
-
   </section>
 
 </div>
@@ -1024,20 +952,16 @@ footer{
 
 "use strict";
 
-/* DATE HELPERS */
+/* ==========================================================
+   DATE HELPERS
+========================================================== */
 
 function pad(n){
   return String(n).padStart(2,"0");
 }
 
 function dateKey(date){
-  return (
-    date.getFullYear()+
-    "-"+
-    pad(date.getMonth()+1)+
-    "-"+
-    pad(date.getDate())
-  );
+  return date.getFullYear()+"-"+pad(date.getMonth()+1)+"-"+pad(date.getDate());
 }
 
 function formatLong(date){
@@ -1065,9 +989,7 @@ function dateFromKey(key){
 
   const parts=key.split("-");
 
-  if(parts.length!==3){
-    return null;
-  }
+  if(parts.length!==3) return null;
 
   const y=Number(parts[0]);
   const m=Number(parts[1])-1;
@@ -1086,8 +1008,9 @@ function dateFromKey(key){
   return date;
 }
 
-
-/* SEEDED CHART */
+/* ==========================================================
+   DETERMINISTIC CHART
+========================================================== */
 
 function seededRandom(seed){
 
@@ -1127,19 +1050,17 @@ function generateDailyMatrix(date,type){
   return nums;
 }
 
-
-/* SCHEDULE */
+/* ==========================================================
+   SCHEDULE
+========================================================== */
 
 function isMTPDay(date){
-
-  return [0,3,6].includes(
-    date.getDay()
-  );
-
+  return [0,3,6].includes(date.getDay());
 }
 
-
-/* HIGHLIGHTS */
+/* ==========================================================
+   HIGHLIGHTS
+========================================================== */
 
 const highlightPatterns=[
   [5,6,10,14],
@@ -1158,94 +1079,257 @@ function getPath(date,type){
   return highlightPatterns[
     Math.abs(seed)%highlightPatterns.length
   ];
-
 }
 
+/* ==========================================================
+   CHART STATISTICS
+   Kept concise — no artificial "AI-looking" block.
+========================================================== */
 
-/* EDITORIAL */
+function chartStats(nums,path){
+
+  const counts={};
+
+  nums.forEach(function(n){
+    counts[n]=(counts[n]||0)+1;
+  });
+
+  const repeated=[];
+
+  Object.keys(counts)
+    .sort(function(a,b){
+      return Number(a)-Number(b);
+    })
+    .forEach(function(n){
+
+      if(counts[n]>1){
+        repeated.push(
+          n+" appears "+counts[n]+" times"
+        );
+      }
+
+    });
+
+  const even=nums.filter(function(n){
+    return n%2===0;
+  }).length;
+
+  const odd=nums.length-even;
+
+  const uniqueDigits=Object.keys(counts).length;
+
+  const rowSums=[
+    nums[0]+nums[1]+nums[2]+nums[3],
+    nums[4]+nums[5]+nums[6]+nums[7],
+    nums[8]+nums[9]+nums[10]+nums[11],
+    nums[12]+nums[13]+nums[14]+nums[15]
+  ];
+
+  const colSums=[
+    nums[0]+nums[4]+nums[8]+nums[12],
+    nums[1]+nums[5]+nums[9]+nums[13],
+    nums[2]+nums[6]+nums[10]+nums[14],
+    nums[3]+nums[7]+nums[11]+nums[15]
+  ];
+
+  let maxRow=0;
+  let minRow=0;
+  let maxCol=0;
+  let minCol=0;
+
+  for(let i=1;i<4;i++){
+
+    if(rowSums[i]>rowSums[maxRow]) maxRow=i;
+    if(rowSums[i]<rowSums[minRow]) minRow=i;
+    if(colSums[i]>colSums[maxCol]) maxCol=i;
+    if(colSums[i]<colSums[minCol]) minCol=i;
+
+  }
+
+  const activeNumbers=path.map(function(i){
+    return nums[i];
+  });
+
+  const distinctList=Object.keys(counts)
+    .map(Number)
+    .sort(function(a,b){return a-b;});
+
+  return {
+    counts,
+    repeated,
+    even,
+    odd,
+    uniqueDigits,
+    rowSums,
+    colSums,
+    maxRow:maxRow+1,
+    minRow:minRow+1,
+    maxCol:maxCol+1,
+    minCol:minCol+1,
+    activeNumbers,
+    distinctList
+  };
+}
+
+/* ==========================================================
+   EDITORIAL ANGLES
+========================================================== */
 
 const gdlAngles=[
+
   {
-    title:"About This GDL Perdana Chart",
-    intro:"This dated GDL Perdana page presents the complete sixteen-position chart in one place so the selected update can be reviewed clearly."
+    title:"Reading the dated GDL layout",
+    intro:"This GDL Perdana entry presents the dated sixteen-position layout so the current chart can be reviewed separately from earlier updates."
   },
+
   {
-    title:"GDL Perdana Chart For This Date",
-    intro:"This page provides the GDL Perdana chart associated with the displayed date, with the complete layout kept together for easy reference."
+    title:"What stands out in this daily chart",
+    intro:"This daily GDL entry focuses on the complete grid, allowing the highlighted cells to be viewed together with the surrounding positions."
   },
+
   {
-    title:"Reviewing the Dated GDL Layout",
-    intro:"The chart below provides a dated view of the GDL Perdana layout. Visitors can review the full grid without mixing it with another day's entry."
+    title:"A practical way to review this GDL chart",
+    intro:"The date and four-by-four grid provide the main reference points for reviewing this particular GDL Perdana entry."
   },
+
   {
-    title:"Understanding This GDL Chart",
-    intro:"This entry is organized around its date and chart type. The complete grid provides the main visual reference for this particular GDL Perdana update."
+    title:"Understanding the highlighted positions",
+    intro:"The highlighted cells identify selected positions within this GDL layout and are best considered together with the complete grid."
   },
+
   {
-    title:"Current Dated GDL Entry",
-    intro:"This GDL Perdana page keeps the selected date and its chart layout together, making the entry easier to reference from the Carta Lotto archive."
+    title:"Comparing this entry with older GDL charts",
+    intro:"The dated format keeps this GDL layout separate from previous entries, making individual updates easier to review."
+  },
+
+  {
+    title:"Why the complete GDL grid matters",
+    intro:"The complete sixteen-position grid provides more context than viewing individual highlighted digits by themselves."
+  },
+
+  {
+    title:"Today's GDL update in context",
+    intro:"This entry belongs to the daily GDL Perdana sequence and uses its date to identify the exact published layout."
   }
+
 ];
 
 const mtpAngles=[
+
   {
-    title:"About This Ramalan 4D MTP & SGP Chart",
-    intro:"This dated MTP and SGP page presents the complete sixteen-position chart in one place for straightforward reference."
+    title:"Reading the scheduled MTP and SGP layout",
+    intro:"This scheduled MTP and SGP entry presents a dated sixteen-position layout for direct review."
   },
+
   {
-    title:"MTP & SGP Chart For This Date",
-    intro:"This page provides the scheduled MTP and SGP chart associated with the displayed date and keeps the complete layout together."
+    title:"Understanding this scheduled chart",
+    intro:"The date identifies this MTP and SGP update within the scheduled publishing cycle."
   },
+
   {
-    title:"Reviewing the Dated MTP & SGP Layout",
-    intro:"The chart below provides a dated view of the scheduled MTP and SGP layout so the selected entry can be reviewed separately."
+    title:"How to review this MTP and SGP entry",
+    intro:"Review the date and complete four-by-four grid first, then consider the highlighted cells within the wider layout."
   },
+
   {
-    title:"Understanding This MTP & SGP Chart",
-    intro:"This entry is organized around its date and chart type. The complete grid provides the main visual reference for this scheduled update."
+    title:"A clear view of the MTP and SGP layout",
+    intro:"The compact grid keeps all sixteen positions visible so the scheduled chart can be reviewed on mobile and desktop."
   }
+
 ];
 
-function makeEditorial(date,type){
+/* ==========================================================
+   EDITORIAL ENGINE
+========================================================== */
 
-  const angles=
-    type==="mtp"
-      ?mtpAngles
-      :gdlAngles;
+function makeEditorial(date,type,nums,path){
+
+  const stats=chartStats(nums,path);
+
+  const angles=type==="mtp"?mtpAngles:gdlAngles;
 
   const seed=chartIndex(date,type);
 
-  const angle=
-    angles[
-      Math.abs(seed)%angles.length
-    ];
+  const angle=angles[
+    Math.abs(seed)%angles.length
+  ];
+
+  const active=stats.activeNumbers.join(", ");
+
+  const activeUnique=[
+    ...new Set(stats.activeNumbers)
+  ].join(", ");
 
   return {
+
     angleTitle:angle.title,
+
     intro:
       angle.intro+
       " This page is specifically for "+
       formatLong(date)+
-      " and is separate from other dated entries."
+      " and is separate from other dated entries.",
+
+    observation:
+      "The highlighted positions contain "+
+      active+
+      " in their displayed order. The distinct highlighted digits are "+
+      activeUnique+
+      ".", 
+
+    structure:
+      "The sixteen-position grid contains "+
+      stats.uniqueDigits+
+      " distinct digits, with "+
+      stats.even+
+      " even-digit positions and "+
+      stats.odd+
+      " odd-digit positions.",
+
+    repetition:
+      stats.repeated.length
+        ?stats.repeated.join("; ")+"."
+        :"No digit is repeated in the displayed sixteen positions.",
+
+    distribution:
+      "The displayed digit set is "+
+      stats.distinctList.join(", ")+
+      ". The four row totals are "+
+      stats.rowSums.join(", ")+
+      ", while the four column totals are "+
+      stats.colSums.join(", ")+
+      ".", 
+
+    rows:
+      "Row "+
+      stats.maxRow+
+      " has the highest simple digit total, while row "+
+      stats.minRow+
+      " has the lowest. Column "+
+      stats.maxCol+
+      " has the highest simple digit total and column "+
+      stats.minCol+
+      " has the lowest.",
+
+    highlighted:
+      "Highlighted positions: "+
+      active+
+      ". These are visual markers in this chart and are not guaranteed official results."
+
   };
 }
 
-
-/* CHART HTML */
+/* ==========================================================
+   CHART HTML
+========================================================== */
 
 function chartHTML(date,type){
 
   const isMTP=type==="mtp";
 
-  const nums=generateDailyMatrix(
-    date,
-    type
-  );
+  const nums=generateDailyMatrix(date,type);
 
-  const path=getPath(
-    date,
-    type
-  );
+  const path=getPath(date,type);
 
   let cells="";
 
@@ -1253,11 +1337,7 @@ function chartHTML(date,type){
 
     cells+=
       '<div class="cell '+
-      (
-        path.includes(i)
-          ?"active"
-          :""
-      )+
+      (path.includes(i)?"active":"")+
       '">'+
       number+
       '</div>';
@@ -1265,7 +1345,6 @@ function chartHTML(date,type){
   });
 
   return `
-
     <div class="chart ${isMTP?"mtp":"gdl"}">
 
       <div class="chart-heading">
@@ -1297,12 +1376,12 @@ function chartHTML(date,type){
       </div>
 
     </div>
-
   `;
 }
 
-
-/* URL */
+/* ==========================================================
+   SEO SLUG
+========================================================== */
 
 function chartSlug(date,type){
 
@@ -1315,97 +1394,40 @@ function chartSlug(date,type){
   return "/charts/gdl-perdana-"+key;
 }
 
-
-/* NEXT CHART */
-
-function getNextChart(date,type){
-
-  const next=new Date(date);
-
-  if(type==="gdl"){
-
-    next.setDate(
-      next.getDate()+1
-    );
-
-    return {
-      date:next,
-      type:"gdl"
-    };
-
-  }
-
-  const nextDate=new Date(date);
-
-  nextDate.setDate(
-    nextDate.getDate()+1
-  );
-
-  while(!isMTPDay(nextDate)){
-
-    nextDate.setDate(
-      nextDate.getDate()+1
-    );
-
-  }
-
-  return {
-    date:nextDate,
-    type:"mtp"
-  };
-
-}
-
-
-/* CARD */
+/* ==========================================================
+   CARD
+========================================================== */
 
 function createChartCard(date,type){
 
   const isMTP=type==="mtp";
 
-  const editorial=
-    makeEditorial(
-      date,
-      type
-    );
+  const nums=generateDailyMatrix(date,type);
 
-  const title=
-    isMTP
-      ?
-      "Ramalan 4D MTP and SGP Chart For "+
-      formatLong(date)
-      :
-      "GDL Perdana Forecast Chart For "+
-      formatLong(date);
+  const path=getPath(date,type);
 
-  const url=
-    chartSlug(
-      date,
-      type
-    );
+  const editorial=makeEditorial(
+    date,
+    type,
+    nums,
+    path
+  );
+
+  const title=isMTP
+    ?"Ramalan 4D MTP and SGP Chart For "+formatLong(date)
+    :"GDL Perdana Forecast Chart For "+formatLong(date);
+
+  const url=chartSlug(date,type);
 
   return `
-
-    <article class="post-card ${
-      isMTP
-        ?"mtp-post"
-        :"gdl-post"
-    }">
+    <article class="post-card ${isMTP?"mtp-post":"gdl-post"}">
 
       <div class="post-content">
 
         <div class="post-meta">
 
-          <span class="badge ${
-            isMTP
-              ?"mtp"
-              :"gdl"
-          }">
-            ${
-              isMTP
-                ?"MTP + SGP"
-                :"GDL PERDANA"
-            }
+          <span class="badge ${isMTP?"mtp":"gdl"}">
+            ${isMTP?"MTP + SGP":"GDL PERDANA"}
           </span>
 
           <span>
@@ -1429,6 +1451,7 @@ function createChartCard(date,type){
         <a
           class="read-post"
           href="${url}"
+          data-chart-url="${url}"
           aria-label="Read full ${
             isMTP
               ?"MTP and SGP"
@@ -1440,44 +1463,35 @@ function createChartCard(date,type){
 
         <div class="post-footer">
 
-          <span>
-            Free chart information
-          </span>
+          <span>Free chart information</span>
 
-          <span>
-            ${formatLong(date)}
-          </span>
+          <span>${formatLong(date)}</span>
 
         </div>
 
       </div>
 
     </article>
-
   `;
-
 }
 
-
-/* HOME */
+/* ==========================================================
+   HOME FEED
+========================================================== */
 
 function renderFeed(){
 
-  const feed=
-    document.getElementById("feed");
+  const feed=document.getElementById("feed");
 
   let html="";
 
   const today=new Date();
 
-  today.setHours(
-    12,0,0,0
-  );
+  today.setHours(12,0,0,0);
 
   for(let i=0;i<7;i++){
 
-    const date=
-      new Date(today);
+    const date=new Date(today);
 
     date.setDate(
       today.getDate()-i
@@ -1500,25 +1514,19 @@ function renderFeed(){
   }
 
   feed.innerHTML=html;
-
 }
 
+/* ==========================================================
+   SEO
+========================================================== */
 
-/* SEO */
-
-function updateSEO(
-  title,
-  description,
-  url,
-  date
-){
+function updateSEO(title,description,url,date){
 
   document.title=title;
 
-  const descriptionTag=
-    document.querySelector(
-      'meta[name="description"]'
-    );
+  const descriptionTag=document.querySelector(
+    'meta[name="description"]'
+  );
 
   if(descriptionTag){
     descriptionTag.setAttribute(
@@ -1527,10 +1535,9 @@ function updateSEO(
     );
   }
 
-  const canonical=
-    document.querySelector(
-      'link[rel="canonical"]'
-    );
+  const canonical=document.querySelector(
+    'link[rel="canonical"]'
+  );
 
   if(canonical){
     canonical.setAttribute(
@@ -1539,10 +1546,9 @@ function updateSEO(
     );
   }
 
-  const ogTitle=
-    document.querySelector(
-      'meta[property="og:title"]'
-    );
+  const ogTitle=document.querySelector(
+    'meta[property="og:title"]'
+  );
 
   if(ogTitle){
     ogTitle.setAttribute(
@@ -1551,10 +1557,9 @@ function updateSEO(
     );
   }
 
-  const ogDescription=
-    document.querySelector(
-      'meta[property="og:description"]'
-    );
+  const ogDescription=document.querySelector(
+    'meta[property="og:description"]'
+  );
 
   if(ogDescription){
     ogDescription.setAttribute(
@@ -1563,10 +1568,9 @@ function updateSEO(
     );
   }
 
-  const ogURL=
-    document.querySelector(
-      'meta[property="og:url"]'
-    );
+  const ogURL=document.querySelector(
+    'meta[property="og:url"]'
+  );
 
   if(ogURL){
     ogURL.setAttribute(
@@ -1575,146 +1579,97 @@ function updateSEO(
     );
   }
 
-  const oldSchema=
-    document.getElementById(
-      "articleSchema"
-    );
+  const oldSchema=document.getElementById(
+    "articleSchema"
+  );
 
   if(oldSchema){
     oldSchema.remove();
   }
 
-  const schema=
-    document.createElement(
-      "script"
-    );
+  const schema=document.createElement("script");
 
-  schema.type=
-    "application/ld+json";
+  schema.type="application/ld+json";
+  schema.id="articleSchema";
 
-  schema.id=
-    "articleSchema";
+  schema.textContent=JSON.stringify({
 
-  schema.textContent=
-    JSON.stringify({
+    "@context":"https://schema.org",
 
-      "@context":
-        "https://schema.org",
+    "@type":"Article",
 
-      "@type":
-        "Article",
+    "headline":title,
 
-      "headline":
-        title,
+    "description":description,
 
-      "description":
-        description,
+    "datePublished":date.toISOString(),
 
-      "datePublished":
-        date.toISOString(),
+    "dateModified":date.toISOString(),
 
-      "dateModified":
-        date.toISOString(),
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":url
+    },
 
-      "mainEntityOfPage":{
-        "@type":
-          "WebPage",
-        "@id":
-          url
-      },
+    "publisher":{
+      "@type":"Organization",
+      "name":"Carta Lotto",
+      "url":"https://www.cartalotto.com/"
+    },
 
-      "publisher":{
-        "@type":
-          "Organization",
-        "name":
-          "Carta Lotto",
-        "url":
-          "https://www.cartalotto.com/"
-      },
+    "isAccessibleForFree":true
 
-      "isAccessibleForFree":
-        true
-
-    });
+  });
 
   document.head.appendChild(schema);
-
 }
 
+/* ==========================================================
+   ARTICLE PAGE
+========================================================== */
 
-/* ARTICLE */
-
-function renderArticle(
-  date,
-  type
-){
+function renderArticle(date,type){
 
   const isMTP=type==="mtp";
 
-  const editorial=
-    makeEditorial(
-      date,
-      type
-    );
+  const nums=generateDailyMatrix(date,type);
 
-  const title=
-    isMTP
-      ?
-      "Ramalan 4D MTP & SGP Chart - "+
-      formatLong(date)
-      :
-      "GDL Perdana Chart - "+
-      formatLong(date);
+  const path=getPath(date,type);
 
-  const description=
-    isMTP
-      ?
-      "Review the dated Ramalan 4D MTP and SGP chart layout for "+
-      formatLong(date)+
-      ", including the complete displayed chart."
-      :
-      "Review the dated GDL Perdana chart layout for "+
-      formatLong(date)+
-      ", including the complete displayed chart.";
+  const stats=chartStats(nums,path);
+
+  const editorial=makeEditorial(
+    date,
+    type,
+    nums,
+    path
+  );
+
+  const title=isMTP
+    ?"Ramalan 4D MTP & SGP Chart - "+formatLong(date)
+    :"Carta Ramalan GDL Perdana - "+formatLong(date);
+
+  const description=isMTP
+    ?"Review the dated Ramalan 4D MTP and SGP chart layout for "+formatLong(date)+", including the complete displayed grid and chart information."
+    :"Review the dated Carta Ramalan GDL Perdana chart layout for "+formatLong(date)+", including the complete displayed grid and chart information.";
 
   const url=
     "https://www.cartalotto.com"+
-    chartSlug(
-      date,
-      type
-    );
+    chartSlug(date,type);
 
-  const next=
-    getNextChart(
-      date,
-      type
-    );
+  const article=document.getElementById(
+    "articleContainer"
+  );
 
-  const nextURL=
-    chartSlug(
-      next.date,
-      next.type
-    );
-
-  const article=
-    document.getElementById(
-      "articleContainer"
-    );
-
-  article.className=
-    "article-card";
+  article.className="article-card";
 
   article.innerHTML=`
 
-    <div class="article-top ${
-      isMTP
-        ?"mtp"
-        :"gdl"
-    }">
+    <div class="article-top ${isMTP?"mtp":"gdl"}">
 
       <div class="breadcrumb">
 
-        <a href="/">
+        <a href="/" data-home-link="true">
           Carta Lotto
         </a>
 
@@ -1731,25 +1686,15 @@ function renderArticle(
         <span> / </span>
 
         <span>
-          ${formatLong(date)}
+          ${formatUK(date)}
         </span>
 
       </div>
 
       <div class="post-meta">
 
-        <span class="badge ${
-          isMTP
-            ?"mtp"
-            :"gdl"
-        }">
-
-          ${
-            isMTP
-              ?"MTP + SGP"
-              :"GDL PERDANA"
-          }
-
+        <span class="badge ${isMTP?"mtp":"gdl"}">
+          ${isMTP?"MTP + SGP":"GDL PERDANA"}
         </span>
 
         <span>
@@ -1769,20 +1714,13 @@ function renderArticle(
 
     </div>
 
-
     <div class="article-chart">
 
       <div class="chart-shell">
-
-        ${chartHTML(
-          date,
-          type
-        )}
-
+        ${chartHTML(date,type)}
       </div>
 
     </div>
-
 
     <div class="article-body">
 
@@ -1791,9 +1729,73 @@ function renderArticle(
       </h2>
 
       <p>
-        The chart above contains the complete sixteen-position layout for
-        ${formatLong(date)}. The highlighted cells are visual markers within
-        the published chart and are not guaranteed future results.
+        ${editorial.observation}
+      </p>
+
+      <p>
+        ${editorial.structure}
+      </p>
+
+      <div class="data-note">
+
+        <strong>Highlighted positions</strong>
+
+        <span>
+          ${editorial.highlighted}
+        </span>
+
+      </div>
+
+      <h2>
+        Chart Information for ${formatLong(date)}
+      </h2>
+
+      <p>
+        This ${
+          isMTP
+            ?"MTP and SGP"
+            :"GDL Perdana"
+        } layout contains sixteen displayed positions.
+        ${
+          editorial.repetition
+        }
+      </p>
+
+      <p>
+        ${editorial.distribution}
+      </p>
+
+      <div class="data-note">
+
+        <strong>Grid details</strong>
+
+        <span>
+          Distinct digits:
+          ${stats.uniqueDigits}.
+          Even-digit positions:
+          ${stats.even}.
+          Odd-digit positions:
+          ${stats.odd}.
+          Row totals:
+          ${stats.rowSums.join(" • ")}.
+          Column totals:
+          ${stats.colSums.join(" • ")}.
+        </span>
+
+      </div>
+
+      <h2>
+        What Stands Out in This Layout
+      </h2>
+
+      <p>
+        ${editorial.rows}
+      </p>
+
+      <p>
+        The highlighted positions sit within the same sixteen-cell grid.
+        Reviewing their surrounding cells provides additional context for
+        understanding this dated chart rather than isolating one position.
       </p>
 
       <h2>
@@ -1801,10 +1803,10 @@ function renderArticle(
       </h2>
 
       <p>
-        Start by confirming the chart type and date shown at the top of the
-        page. Then review the complete four-by-four layout from left to right.
-        Keeping the full chart visible provides the clearest reference for
-        this particular dated entry.
+        First confirm the date and chart type. Then review the four rows from
+        left to right before checking the highlighted cells. The complete
+        layout should be considered together rather than using one digit as
+        the sole basis for interpreting the chart.
       </p>
 
       <p>
@@ -1838,15 +1840,14 @@ function renderArticle(
 
       <p>
         The information on this page describes the displayed chart only.
-        Highlighted positions and chart layouts do not guarantee a future
-        result and should not be presented as official draw information.
+        Highlighted positions, repeated digits and numerical layout
+        observations do not guarantee a future result and should not be
+        presented as official lottery results.
       </p>
 
       <div class="notice">
 
-        <strong>
-          Important:
-        </strong>
+        <strong>Important:</strong>
 
         Carta Lotto does not sell lottery tickets or promise guaranteed
         winning numbers. Do not send money, passwords, banking information
@@ -1855,29 +1856,28 @@ function renderArticle(
 
       </div>
 
-
       <div class="article-actions">
 
         <a
           class="action-btn primary"
           href="/"
+          data-home-link="true"
         >
-          ← Home
+          ← Latest Charts
         </a>
 
         <a
-          class="action-btn next"
-          href="${nextURL}"
+          class="action-btn"
+          href="/#charts"
+          data-home-link="true"
         >
-          Next Chart →
+          Home
         </a>
 
       </div>
 
     </div>
-
   `;
-
 
   updateSEO(
     title,
@@ -1886,10 +1886,12 @@ function renderArticle(
     date
   );
 
+  bindArticleHomeLinks();
 }
 
-
-/* HOME SEO */
+/* ==========================================================
+   HOME SEO
+========================================================== */
 
 function resetHomeSEO(){
 
@@ -1901,10 +1903,9 @@ function resetHomeSEO(){
 
   document.title=title;
 
-  const descriptionTag=
-    document.querySelector(
-      'meta[name="description"]'
-    );
+  const descriptionTag=document.querySelector(
+    'meta[name="description"]'
+  );
 
   if(descriptionTag){
     descriptionTag.setAttribute(
@@ -1913,10 +1914,9 @@ function resetHomeSEO(){
     );
   }
 
-  const canonical=
-    document.querySelector(
-      'link[rel="canonical"]'
-    );
+  const canonical=document.querySelector(
+    'link[rel="canonical"]'
+  );
 
   if(canonical){
     canonical.setAttribute(
@@ -1925,10 +1925,9 @@ function resetHomeSEO(){
     );
   }
 
-  const ogTitle=
-    document.querySelector(
-      'meta[property="og:title"]'
-    );
+  const ogTitle=document.querySelector(
+    'meta[property="og:title"]'
+  );
 
   if(ogTitle){
     ogTitle.setAttribute(
@@ -1937,10 +1936,9 @@ function resetHomeSEO(){
     );
   }
 
-  const ogDescription=
-    document.querySelector(
-      'meta[property="og:description"]'
-    );
+  const ogDescription=document.querySelector(
+    'meta[property="og:description"]'
+  );
 
   if(ogDescription){
     ogDescription.setAttribute(
@@ -1949,10 +1947,9 @@ function resetHomeSEO(){
     );
   }
 
-  const ogURL=
-    document.querySelector(
-      'meta[property="og:url"]'
-    );
+  const ogURL=document.querySelector(
+    'meta[property="og:url"]'
+  );
 
   if(ogURL){
     ogURL.setAttribute(
@@ -1961,10 +1958,95 @@ function resetHomeSEO(){
     );
   }
 
+  const articleSchema=document.getElementById(
+    "articleSchema"
+  );
+
+  if(articleSchema){
+    articleSchema.remove();
+  }
 }
 
+/* ==========================================================
+   SHOW HOME
+========================================================== */
 
-/* ROUTER */
+function showHome(pushHistory){
+
+  const home=document.getElementById("homePage");
+  const articlePage=document.getElementById("articlePage");
+
+  home.style.display="block";
+
+  articlePage.classList.remove("active");
+
+  renderFeed();
+
+  resetHomeSEO();
+
+  if(pushHistory){
+
+    history.pushState(
+      {},
+      "",
+      "/"
+    );
+
+  }
+
+  window.scrollTo(0,0);
+}
+
+/* ==========================================================
+   PARSE CHART URL
+========================================================== */
+
+function parseChartPath(path){
+
+  let match=path.match(
+    /^\/charts\/gdl-perdana-(\d{4}-\d{2}-\d{2})$/
+  );
+
+  if(match){
+
+    const date=dateFromKey(match[1]);
+
+    if(date){
+
+      return {
+        date:date,
+        type:"gdl"
+      };
+
+    }
+
+  }
+
+  match=path.match(
+    /^\/charts\/ramalan-4d-mtp-sgp-(\d{4}-\d{2}-\d{2})$/
+  );
+
+  if(match){
+
+    const date=dateFromKey(match[1]);
+
+    if(date && isMTPDay(date)){
+
+      return {
+        date:date,
+        type:"mtp"
+      };
+
+    }
+
+  }
+
+  return null;
+}
+
+/* ==========================================================
+   ROUTER
+========================================================== */
 
 function routePage(){
 
@@ -1972,29 +2054,15 @@ function routePage(){
     window.location.pathname
       .replace(/\/+$/,"");
 
-  const home=
-    document.getElementById(
-      "homePage"
-    );
+  const home=document.getElementById("homePage");
 
-  const articlePage=
-    document.getElementById(
-      "articlePage"
-    );
+  const articlePage=document.getElementById("articlePage");
 
-
-  /* HOME */
-
-  if(
-    path==="" ||
-    path==="/"
-  ){
+  if(path==="" || path==="/"){
 
     home.style.display="block";
 
-    articlePage.classList.remove(
-      "active"
-    );
+    articlePage.classList.remove("active");
 
     renderFeed();
 
@@ -2003,138 +2071,174 @@ function routePage(){
     return;
   }
 
+  const parsed=parseChartPath(path);
 
-  /* GDL */
+  if(parsed){
 
-  const gdlMatch=
-    path.match(
-      /^\/charts\/gdl-perdana-(\d{4}-\d{2}-\d{2})$/
-    );
+    const today=new Date();
 
-  if(gdlMatch){
+    today.setHours(12,0,0,0);
 
-    const date=
-      dateFromKey(
-        gdlMatch[1]
-      );
-
-    const today=
-      new Date();
-
-    today.setHours(
-      12,0,0,0
-    );
-
-    if(
-      date &&
-      date<=today
-    ){
+    if(parsed.date<=today){
 
       home.style.display="none";
 
-      articlePage.classList.add(
-        "active"
-      );
+      articlePage.classList.add("active");
 
       renderArticle(
-        date,
-        "gdl"
+        parsed.date,
+        parsed.type
       );
 
-      window.scrollTo(
-        0,
-        0
-      );
+      window.scrollTo(0,0);
 
       return;
     }
   }
 
-
-  /* MTP */
-
-  const mtpMatch=
-    path.match(
-      /^\/charts\/ramalan-4d-mtp-sgp-(\d{4}-\d{2}-\d{2})$/
-    );
-
-  if(mtpMatch){
-
-    const date=
-      dateFromKey(
-        mtpMatch[1]
-      );
-
-    const today=
-      new Date();
-
-    today.setHours(
-      12,0,0,0
-    );
-
-    if(
-      date &&
-      date<=today &&
-      isMTPDay(date)
-    ){
-
-      home.style.display="none";
-
-      articlePage.classList.add(
-        "active"
-      );
-
-      renderArticle(
-        date,
-        "mtp"
-      );
-
-      window.scrollTo(
-        0,
-        0
-      );
-
-      return;
-    }
-  }
-
-
-  /* UNKNOWN */
-
-  home.style.display="block";
-
-  articlePage.classList.remove(
-    "active"
-  );
-
-  renderFeed();
-
-  resetHomeSEO();
-
+  showHome(false);
 }
 
+/* ==========================================================
+   IMPORTANT:
+   THIS FIX MAKES "READ FULL CHART POST" WORK ON GITHUB.
+========================================================== */
 
-/* MOBILE MENU */
+document.addEventListener(
+  "click",
+  function(event){
 
-const menuBtn=
-  document.getElementById(
-    "menuBtn"
-  );
+    const link=event.target.closest(
+      "a[data-chart-url]"
+    );
 
-const mobileMenu=
-  document.getElementById(
-    "mobileMenu"
-  );
+    if(!link) return;
+
+    event.preventDefault();
+
+    const url=link.getAttribute(
+      "data-chart-url"
+    );
+
+    const parsed=parseChartPath(url);
+
+    if(!parsed) return;
+
+    history.pushState(
+      {},
+      "",
+      url
+    );
+
+    const home=document.getElementById(
+      "homePage"
+    );
+
+    const articlePage=document.getElementById(
+      "articlePage"
+    );
+
+    home.style.display="none";
+
+    articlePage.classList.add(
+      "active"
+    );
+
+    renderArticle(
+      parsed.date,
+      parsed.type
+    );
+
+    window.scrollTo(
+      0,
+      0
+    );
+
+  }
+);
+
+/* ==========================================================
+   ARTICLE HOME LINKS
+========================================================== */
+
+function bindArticleHomeLinks(){
+
+  document
+    .querySelectorAll(
+      '[data-home-link="true"]'
+    )
+    .forEach(function(link){
+
+      link.onclick=function(event){
+
+        event.preventDefault();
+
+        const href=link.getAttribute("href");
+
+        if(href==="/" || href==="/#charts"){
+
+          history.pushState(
+            {},
+            "",
+            href
+          );
+
+          showHome(false);
+
+          if(href==="/#charts"){
+
+            setTimeout(function(){
+
+              const charts=
+                document.getElementById("charts");
+
+              if(charts){
+                charts.scrollIntoView({
+                  behavior:"smooth"
+                });
+              }
+
+            },50);
+
+          }
+
+        }
+
+      };
+
+    });
+}
+
+/* ==========================================================
+   BROWSER BACK / FORWARD
+========================================================== */
+
+window.addEventListener(
+  "popstate",
+  function(){
+
+    routePage();
+
+  }
+);
+
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+const menuBtn=document.getElementById(
+  "menuBtn"
+);
+
+const mobileMenu=document.getElementById(
+  "mobileMenu"
+);
 
 function closeMenu(){
 
-  mobileMenu.classList.remove(
-    "active"
-  );
+  mobileMenu.classList.remove("active");
 
-  menuBtn.classList.remove(
-    "active"
-  );
+  menuBtn.classList.remove("active");
 
   document.body.classList.remove(
     "menu-open"
@@ -2177,16 +2281,12 @@ menuBtn.addEventListener(
 
     menuBtn.setAttribute(
       "aria-expanded",
-      active
-        ?"true"
-        :"false"
+      active?"true":"false"
     );
 
     menuBtn.setAttribute(
       "aria-label",
-      active
-        ?"Close menu"
-        :"Open menu"
+      active?"Close menu":"Open menu"
     );
 
   }
@@ -2214,16 +2314,18 @@ document.addEventListener(
   }
 );
 
-
-/* YEAR */
+/* ==========================================================
+   YEAR
+========================================================== */
 
 document.getElementById(
   "year"
 ).textContent=
   new Date().getFullYear();
 
-
-/* START */
+/* ==========================================================
+   START
+========================================================== */
 
 routePage();
 
