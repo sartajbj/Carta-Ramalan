@@ -83,10 +83,6 @@ button{
   margin-inline:auto;
 }
 
-/* =========================
-HEADER
-========================= */
-
 .site-header{
   position:sticky;
   top:0;
@@ -190,10 +186,6 @@ HEADER
   font-weight:800;
 }
 
-/* =========================
-HERO
-========================= */
-
 .hero{
   padding:42px 0 25px;
   text-align:center;
@@ -228,20 +220,12 @@ HERO
   font-size:15px;
 }
 
-/* =========================
-SECTION
-========================= */
-
 .section-title{
   margin:20px 0 15px;
   color:var(--heading);
   font-size:25px;
   line-height:1.25;
 }
-
-/* =========================
-FEED
-========================= */
 
 .feed{
   display:grid;
@@ -300,10 +284,6 @@ FEED
   color:var(--text);
   font-size:14px;
 }
-
-/* =========================
-CHART
-========================= */
 
 .chart-shell{
   padding:8px;
@@ -377,14 +357,10 @@ CHART
   border-bottom:0;
 }
 
-/* ORIGINAL GDL RED SYSTEM */
-
 .chart.gdl .cell.active{
   background:#c6281c;
   color:#fff;
 }
-
-/* ORIGINAL MTP YELLOW SYSTEM */
 
 .chart.mtp .cell.active{
   background:#f5c542;
@@ -409,10 +385,6 @@ CHART
   font-weight:900;
   letter-spacing:1px;
 }
-
-/* =========================
-READ BUTTON
-========================= */
 
 .read-post{
   display:block;
@@ -453,10 +425,6 @@ READ BUTTON
   color:var(--muted);
   font-size:11px;
 }
-
-/* =========================
-ARTICLE PAGE
-========================= */
 
 .article-page{
   display:none;
@@ -575,10 +543,6 @@ ARTICLE PAGE
   font-size:13px;
 }
 
-/* =========================
-ARTICLE NAVIGATION
-========================= */
-
 .article-actions{
   display:flex;
   justify-content:center;
@@ -612,10 +576,6 @@ ARTICLE NAVIGATION
   background:#fff7d6;
   color:#765300;
 }
-
-/* =========================
-GUIDE / FAQ
-========================= */
 
 .content-section{
   margin:28px 0;
@@ -666,10 +626,6 @@ GUIDE / FAQ
   font-size:14px;
 }
 
-/* =========================
-FOOTER
-========================= */
-
 footer{
   margin-top:42px;
   background:linear-gradient(135deg,#8f1d14,var(--red));
@@ -711,10 +667,6 @@ footer{
   color:#ffe9e5;
   font-size:12px;
 }
-
-/* =========================
-MOBILE
-========================= */
 
 @media(max-width:720px){
 
@@ -1213,6 +1165,29 @@ return [0,3,6].includes(date.getDay());
 
 
 /* ==========================================================
+ARCHIVE LIMIT
+
+FIX: without a floor, "Previous Chart" links go back forever,
+creating an infinite crawl trap of thin pages. We cap the
+archive to a fixed number of days behind today.
+========================================================== */
+
+const MAX_ARCHIVE_DAYS=60;
+
+function getFloorDate(){
+
+const floor=new Date();
+
+floor.setHours(12,0,0,0);
+
+floor.setDate(floor.getDate()-MAX_ARCHIVE_DAYS);
+
+return floor;
+
+}
+
+
+/* ==========================================================
 EXACTLY FOUR HIGHLIGHTED CELLS
 ========================================================== */
 
@@ -1315,8 +1290,6 @@ return "/charts/gdl-perdana-"+key;
 
 /* ==========================================================
 UNIQUE EDITORIAL TEXT
-
-No repetitive numeric "AI grid summary".
 ========================================================== */
 
 const gdlEditorial=[
@@ -1521,11 +1494,7 @@ const date=new Date(today);
 
 date.setDate(today.getDate()-i);
 
-/* GDL EVERY DAY */
-
 html+=createChartCard(date,"gdl");
-
-/* MTP + SGP WED / SAT / SUN */
 
 if(isMTPDay(date)){
 
@@ -1583,18 +1552,12 @@ if(ogURL){
 ogURL.setAttribute("content",url);
 }
 
-
-/* REMOVE OLD ARTICLE SCHEMA */
-
 const oldSchema=
 document.getElementById("articleSchema");
 
 if(oldSchema){
 oldSchema.remove();
 }
-
-
-/* ADD ARTICLE SCHEMA */
 
 const schema=document.createElement("script");
 
@@ -1661,22 +1624,85 @@ document.getElementById("articleContainer");
 article.className="article-card";
 
 
-/* FIND PREVIOUS/NEXT DATES */
+/* ==========================================================
+FIX: find the actual previous/next VALID date for this
+chart type, instead of blindly using date -/+ 1 day.
+For MTP/SGP this walks back/forward to the nearest
+scheduled Wed/Sat/Sun. Also respects the archive floor
+and "today" ceiling so links never point at a dead page.
+========================================================== */
 
-const previousDate=new Date(date);
-previousDate.setDate(date.getDate()-1);
-
-const nextDate=new Date(date);
-nextDate.setDate(date.getDate()+1);
-
-const previousURL=chartSlug(previousDate,type);
-
-let nextHTML="";
+const floorDate=getFloorDate();
 
 const today=new Date();
 today.setHours(12,0,0,0);
 
-if(nextDate<=today){
+function isValidForType(d,t){
+
+if(d<floorDate || d>today){
+return false;
+}
+
+if(t==="mtp"){
+return isMTPDay(d);
+}
+
+return true;
+
+}
+
+function findPrevious(d,t){
+
+const candidate=new Date(d);
+
+for(let i=0;i<14;i++){
+
+candidate.setDate(candidate.getDate()-1);
+
+if(isValidForType(candidate,t)){
+return new Date(candidate);
+}
+
+}
+
+return null;
+
+}
+
+function findNext(d,t){
+
+const candidate=new Date(d);
+
+for(let i=0;i<14;i++){
+
+candidate.setDate(candidate.getDate()+1);
+
+if(isValidForType(candidate,t)){
+return new Date(candidate);
+}
+
+}
+
+return null;
+
+}
+
+const previousDate=findPrevious(date,type);
+const nextDate=findNext(date,type);
+
+let previousHTML="";
+let nextHTML="";
+
+if(previousDate){
+
+previousHTML=
+`<a class="action-btn" href="${chartSlug(previousDate,type)}">
+← Previous Chart
+</a>`;
+
+}
+
+if(nextDate){
 
 nextHTML=
 `<a class="action-btn" href="${chartSlug(nextDate,type)}">
@@ -1854,9 +1880,7 @@ someone claiming to represent this website.
 ← Home
 </a>
 
-<a class="action-btn" href="${previousURL}">
-← Previous Chart
-</a>
+${previousHTML}
 
 ${nextHTML}
 
@@ -1936,9 +1960,6 @@ ogURL.setAttribute(
 );
 }
 
-
-/* REMOVE ARTICLE SCHEMA WHEN RETURNING HOME */
-
 const oldSchema=
 document.getElementById("articleSchema");
 
@@ -1951,9 +1972,6 @@ oldSchema.remove();
 
 /* ==========================================================
 ROUTER
-
-This is what allows 404.html to render the article when
-GitHub Pages receives a pretty URL.
 ========================================================== */
 
 function routePage(){
@@ -1968,8 +1986,6 @@ document.getElementById("homePage");
 const articlePage=
 document.getElementById("articlePage");
 
-
-/* HOME */
 
 if(path==="" || path==="/"){
 
@@ -1986,8 +2002,6 @@ return;
 }
 
 
-/* GDL */
-
 const gdlMatch=
 path.match(
 /^\/charts\/gdl-perdana-(\d{4}-\d{2}-\d{2})$/
@@ -2001,7 +2015,9 @@ const today=new Date();
 
 today.setHours(12,0,0,0);
 
-if(date && date<=today){
+const floorDate=getFloorDate();
+
+if(date && date<=today && date>=floorDate){
 
 home.style.display="none";
 
@@ -2018,8 +2034,6 @@ return;
 }
 
 
-/* MTP / SGP */
-
 const mtpMatch=
 path.match(
 /^\/charts\/ramalan-4d-mtp-sgp-(\d{4}-\d{2}-\d{2})$/
@@ -2033,9 +2047,12 @@ const today=new Date();
 
 today.setHours(12,0,0,0);
 
+const floorDate=getFloorDate();
+
 if(
 date &&
 date<=today &&
+date>=floorDate &&
 isMTPDay(date)
 ){
 
@@ -2053,8 +2070,6 @@ return;
 
 }
 
-
-/* UNKNOWN */
 
 home.style.display="block";
 
