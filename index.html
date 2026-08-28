@@ -1280,11 +1280,7 @@ function chartSlug(date,type){
 
 const key=dateKey(date);
 
-if(type==="mtp"){
-return "/charts/ramalan-4d-mtp-sgp-"+key;
-}
-
-return "/charts/gdl-perdana-"+key;
+return "/?chart="+type+"&date="+key;
 }
 
 
@@ -1976,9 +1972,22 @@ ROUTER
 
 function routePage(){
 
-const path=
-window.location.pathname
-.replace(/\/+$/,"");
+/*
+  Query-string based routing: /?chart=gdl&date=2026-08-28
+
+  The path itself is always "/", which GitHub Pages serves
+  as index.html directly, so this never triggers a 404 and
+  no 404.html fallback file is needed.
+*/
+
+const params=
+new URLSearchParams(window.location.search);
+
+const chartType=
+params.get("chart");
+
+const dateParam=
+params.get("date");
 
 const home=
 document.getElementById("homePage");
@@ -1987,80 +1996,32 @@ const articlePage=
 document.getElementById("articlePage");
 
 
-if(path==="" || path==="/"){
-
-home.style.display="block";
-
-articlePage.classList.remove("active");
-
-renderFeed();
-
-resetHomeSEO();
-
-return;
-
-}
-
-
-const gdlMatch=
-path.match(
-/^\/charts\/gdl-perdana-(\d{4}-\d{2}-\d{2})$/
-);
-
-if(gdlMatch){
-
-const date=dateFromKey(gdlMatch[1]);
-
-const today=new Date();
-
-today.setHours(12,0,0,0);
-
-const floorDate=getFloorDate();
-
-if(date && date<=today && date>=floorDate){
-
-home.style.display="none";
-
-articlePage.classList.add("active");
-
-renderArticle(date,"gdl");
-
-window.scrollTo(0,0);
-
-return;
-
-}
-
-}
-
-
-const mtpMatch=
-path.match(
-/^\/charts\/ramalan-4d-mtp-sgp-(\d{4}-\d{2}-\d{2})$/
-);
-
-if(mtpMatch){
-
-const date=dateFromKey(mtpMatch[1]);
-
-const today=new Date();
-
-today.setHours(12,0,0,0);
-
-const floorDate=getFloorDate();
-
 if(
-date &&
-date<=today &&
-date>=floorDate &&
-isMTPDay(date)
+(chartType==="gdl" || chartType==="mtp") &&
+dateParam
 ){
 
+const date=dateFromKey(dateParam);
+
+const today=new Date();
+
+today.setHours(12,0,0,0);
+
+const floorDate=getFloorDate();
+
+const validRange=
+date && date<=today && date>=floorDate;
+
+const validType=
+chartType==="gdl" || (chartType==="mtp" && isMTPDay(date));
+
+if(validRange && validType){
+
 home.style.display="none";
 
 articlePage.classList.add("active");
 
-renderArticle(date,"mtp");
+renderArticle(date,chartType);
 
 window.scrollTo(0,0);
 
