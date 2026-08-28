@@ -1,11 +1,24 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Carta Ramalan 4D | GDL Perdana & MTP SGP | Carta Lotto</title><meta name="description" content="Explore Carta Ramalan 4D, GDL Perdana and Ramalan 4D MTP SGP chart information with clear dated charts, useful guides and responsible informational content."><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://www.cartalotto.com/"><meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carta Ramalan 4D | GDL Perdana & MTP SGP Charts</title>
+
+<meta name="description" content="Explore Carta Ramalan 4D, GDL Perdana and MTP SGP chart information with dated chart pages, clear layouts and free informational updates from Carta Lotto.">
+
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+<link rel="canonical" href="https://www.cartalotto.com/">
+
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Carta Lotto">
-<meta property="og:title" content="Carta Ramalan 4D | GDL Perdana & MTP SGP | Carta Lotto">
-<meta property="og:description" content="Dated Carta Ramalan 4D, GDL Perdana and MTP SGP chart information presented in a clear and easy-to-read format.">
-<meta property="og:url" content="https://www.cartalotto.com/"><script type="application/ld+json">
+<meta property="og:title" content="Carta Ramalan 4D | GDL Perdana & MTP SGP Charts">
+<meta property="og:description" content="Dated Carta Ramalan 4D, GDL Perdana and MTP SGP chart information from Carta Lotto.">
+<meta property="og:url" content="https://www.cartalotto.com/">
+
+<script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebSite",
@@ -13,33 +26,9 @@
   "url":"https://www.cartalotto.com/",
   "description":"Carta Ramalan 4D, GDL Perdana and MTP SGP chart information."
 }
-</script><style>
-:root{
-  --red:#b42318;
-  --red-dark:#8f1d14;
-  --red-soft:#fff1ef;
+</script>
 
-  --gold:#a66b00;
-  --gold-dark:#765000;
-  --gold-soft:#fff8df;
-
-  --ink:#172033;
-  --heading:#101828;
-  --text:#475467;
-  --muted:#667085;
-
-  --bg:#f4f6f8;
-  --white:#fff;
-  --border:#e4e7ec;
-
-  --dark:#171b26;
-
-  --shadow:0 8px 26px rgba(16,24,40,.07);
-  --shadow-hover:0 12px 32px rgba(16,24,40,.11);
-
-  --radius:16px;
-}
-
+<style>
 *{
   box-sizing:border-box;
 }
@@ -50,10 +39,14 @@ html{
 
 body{
   margin:0;
-  background:var(--bg);
-  color:var(--ink);
+  background:#f4f6f8;
+  color:#172033;
   font-family:Arial,Helvetica,sans-serif;
-  line-height:1.65;
+  line-height:1.6;
+}
+
+body.menu-open{
+  overflow:hidden;
 }
 
 a{
@@ -62,20 +55,17 @@ a{
 
 .container{
   width:min(1080px,calc(100% - 28px));
-  margin-inline:auto;
+  margin:auto;
 }
 
-
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 .site-header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:linear-gradient(135deg,#a51f16,var(--red));
-  box-shadow:0 3px 18px rgba(0,0,0,.13);
+  background:linear-gradient(135deg,#a51f16,#b42318);
+  box-shadow:0 3px 18px rgba(0,0,0,.14);
 }
 
 .header-inner{
@@ -98,30 +88,85 @@ HEADER
   color:#ffe08a;
 }
 
-.nav{
+.desktop-nav{
   display:flex;
   align-items:center;
-  gap:22px;
+  gap:23px;
 }
 
-.nav a{
+.desktop-nav a{
   color:#fff;
   text-decoration:none;
-  font-size:13px;
+  font-size:14px;
   font-weight:800;
 }
 
-.nav a:hover{
+.desktop-nav a:hover{
   color:#ffe08a;
 }
 
+/* MOBILE MENU BUTTON */
 
-/* =========================
-HERO
-========================= */
+.menu-btn{
+  display:none;
+  width:44px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:10px;
+  background:rgba(255,255,255,.12);
+  cursor:pointer;
+  padding:0;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+
+.menu-btn span{
+  width:21px;
+  height:2px;
+  background:#fff;
+  border-radius:3px;
+  transition:.2s;
+}
+
+.menu-btn.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu{
+  display:none;
+  background:#fff;
+  border-top:1px solid #eee;
+  box-shadow:0 12px 25px rgba(0,0,0,.12);
+}
+
+.mobile-menu.active{
+  display:block;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 20px;
+  border-bottom:1px solid #e4e7ec;
+  color:#101828;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:800;
+}
+
+/* HERO */
 
 .hero{
-  padding:42px 0 26px;
+  padding:43px 0 27px;
   text-align:center;
 }
 
@@ -129,136 +174,124 @@ HERO
   display:inline-flex;
   padding:6px 12px;
   border-radius:999px;
-  background:var(--red-soft);
-  border:1px solid #ffd3ce;
-  color:var(--red);
-  font-size:10px;
+  background:#fff0ee;
+  border:1px solid #ffd2cc;
+  color:#b42318;
+  font-size:11px;
   font-weight:900;
-  letter-spacing:.5px;
   text-transform:uppercase;
+  letter-spacing:.45px;
 }
 
 .hero h1{
   max-width:800px;
   margin:13px auto 10px;
-  color:var(--heading);
-  font-size:clamp(31px,5vw,47px);
+  color:#101828;
+  font-size:clamp(32px,5vw,48px);
   line-height:1.08;
   letter-spacing:-1.5px;
 }
 
 .hero p{
-  max-width:740px;
+  max-width:760px;
   margin:auto;
-  color:var(--muted);
+  color:#667085;
   font-size:15px;
 }
 
+/* SECTION */
 
-/* =========================
-SECTION
-========================= */
-
-.section{
-  margin-top:25px;
+.section-title{
+  margin:18px 0 15px;
+  color:#101828;
+  font-size:26px;
+  line-height:1.25;
 }
 
-.section-heading{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:15px;
-  margin-bottom:14px;
-}
-
-.section-heading h2{
-  margin:0;
-  color:var(--heading);
-  font-size:25px;
-  line-height:1.2;
-}
-
-.section-heading p{
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-}
-
-
-/* =========================
-FEATURED LATEST
-========================= */
-
-.featured{
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.featured-top{
-  padding:22px 22px 17px;
-  border-top:5px solid var(--red);
-}
-
-.featured-label{
-  display:inline-flex;
-  padding:5px 10px;
-  border-radius:999px;
-  background:var(--red-soft);
-  color:var(--red);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.3px;
-}
-
-.featured h2{
-  margin:10px 0 5px;
-  color:var(--heading);
-  font-size:27px;
-  line-height:1.2;
-}
-
-.featured-date{
-  color:var(--muted);
-  font-size:12px;
-  font-weight:800;
-}
-
-.featured-description{
-  max-width:760px;
-  margin:9px 0 0;
-  color:var(--text);
+.section-subtitle{
+  margin:-5px 0 18px;
+  color:#667085;
   font-size:14px;
 }
 
-.featured-chart-area{
-  padding:17px;
-  background:#f8fafc;
+/* POSTS */
+
+.feed{
+  display:grid;
+  gap:18px;
 }
 
+.post-card{
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #e4e7ec;
+  border-radius:16px;
+  box-shadow:0 8px 26px rgba(16,24,40,.07);
+}
 
-/* =========================
-CHART
-========================= */
+.post-content{
+  padding:20px;
+}
+
+.post-meta{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:9px;
+  color:#667085;
+  font-size:12px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.badge.gdl{
+  background:#fff0ee;
+  color:#b42318;
+}
+
+.badge.mtp{
+  background:#fff7d6;
+  color:#765300;
+}
+
+.post-title{
+  margin:0 0 8px;
+  color:#101828;
+  font-size:22px;
+  line-height:1.3;
+}
+
+.post-intro{
+  margin:0 0 15px;
+  color:#475467;
+  font-size:14px;
+}
+
+/* CHART */
 
 .chart-shell{
   padding:8px;
-  background:var(--dark);
+  background:#171b26;
   border-radius:13px;
 }
 
 .chart{
-  width:min(360px,100%);
+  width:min(370px,100%);
   margin:auto;
-  padding:10px;
+  padding:11px;
   background:#fff;
   border-radius:10px;
 }
 
 .chart.gdl{
-  border-top:4px solid var(--red);
+  border-top:4px solid #b42318;
 }
 
 .chart.mtp{
@@ -270,12 +303,12 @@ CHART
   text-align:center;
   color:#202939;
   font-size:13px;
-  line-height:1.25;
   font-weight:900;
+  line-height:1.25;
 }
 
 .chart-date{
-  margin:3px 0 8px;
+  margin:4px 0 9px;
   text-align:center;
   color:#667085;
   font-size:11px;
@@ -314,12 +347,12 @@ CHART
   border-bottom:0;
 }
 
-.chart.gdl .cell.active{
+.gdl .cell.active{
   background:#c6281c;
   color:#fff;
 }
 
-.chart.mtp .cell.active{
+.mtp .cell.active{
   background:#f5c542;
   color:#171b26;
 }
@@ -343,233 +376,116 @@ CHART
   letter-spacing:1px;
 }
 
+/* BUTTON */
 
-/* =========================
-BUTTONS
-========================= */
-
-.actions{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:16px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:40px;
-  padding:9px 17px;
-  border:1px solid var(--border);
+.read-post{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin:14px auto 0;
+  padding:10px 19px;
   border-radius:999px;
-  background:#fff;
-  color:var(--text);
-  text-decoration:none;
-  font-size:12px;
-  font-weight:900;
-}
-
-.btn.primary{
-  border-color:var(--red);
-  background:var(--red);
+  background:#b42318;
   color:#fff;
-}
-
-.btn.primary:hover{
-  background:var(--red-dark);
-}
-
-
-/* =========================
-RECENT GRID
-========================= */
-
-.recent-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-
-.post-card{
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-
-.post-card:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow-hover);
-}
-
-.post-top{
-  padding:18px 18px 12px;
-}
-
-.post-meta{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:7px;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:700;
-}
-
-.badge{
-  display:inline-flex;
-  padding:4px 9px;
-  border-radius:999px;
-  font-size:9px;
-  font-weight:900;
-}
-
-.badge.gdl{
-  background:var(--red-soft);
-  color:var(--red);
-}
-
-.badge.mtp{
-  background:var(--gold-soft);
-  color:var(--gold-dark);
-}
-
-.post-card h3{
-  margin:0;
-  color:var(--heading);
-  font-size:19px;
-  line-height:1.3;
-}
-
-.post-card .small-description{
-  margin:7px 0 0;
-  color:var(--text);
+  text-decoration:none;
   font-size:13px;
-}
-
-.post-chart{
-  padding:13px;
-  background:#f8fafc;
-}
-
-.post-actions{
-  display:flex;
-  justify-content:center;
-  padding:13px 15px 17px;
-}
-
-.read-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:39px;
-  padding:8px 16px;
-  border-radius:999px;
-  background:var(--red);
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
   font-weight:900;
 }
 
-.read-btn:hover{
-  background:var(--red-dark);
+.read-post:hover{
+  background:#8f1d14;
 }
 
-.mtp-card .read-btn{
+.read-post.mtp{
   background:#9a6a00;
 }
 
-.mtp-card .read-btn:hover{
-  background:var(--gold-dark);
+.read-post.mtp:hover{
+  background:#765300;
 }
 
+.post-footer{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:11px;
+  padding-top:10px;
+  border-top:1px solid #e4e7ec;
+  color:#667085;
+  font-size:11px;
+}
 
-/* =========================
-INFO SECTION
-========================= */
+/* GUIDE / FAQ */
 
-.info-section{
-  margin-top:28px;
+.content-section{
+  margin-top:29px;
   padding:25px 23px;
   background:#fff;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  border:1px solid #e4e7ec;
+  border-radius:16px;
+  box-shadow:0 8px 26px rgba(16,24,40,.07);
 }
 
-.info-section h2{
+.content-section h2{
   margin:0 0 13px;
-  color:var(--heading);
-  font-size:25px;
+  color:#101828;
+  font-size:26px;
   line-height:1.25;
 }
 
-.info-section h3{
-  margin:22px 0 7px;
-  color:var(--heading);
-  font-size:18px;
+.content-section h3{
+  margin:23px 0 8px;
+  color:#101828;
+  font-size:19px;
 }
 
-.info-section p{
+.content-section p{
   margin:0 0 14px;
-  color:var(--text);
-  font-size:14px;
-}
-
-.note{
-  margin-top:18px;
-  padding:14px 15px;
-  background:#fffaf0;
-  border-left:4px solid #d29d14;
-  border-radius:7px;
-  color:#5d4a16;
-  font-size:13px;
-}
-
-
-/* =========================
-FAQ
-========================= */
-
-.faq-list{
-  margin-top:4px;
+  color:#475467;
+  font-size:15px;
 }
 
 .faq{
-  padding:15px 0;
-  border-top:1px solid var(--border);
+  padding:14px 0;
+  border-top:1px solid #e4e7ec;
 }
 
-.faq:first-child{
+.faq:first-of-type{
   border-top:0;
 }
 
 .faq h3{
   margin:0 0 5px;
-  color:var(--heading);
-  font-size:16px;
+  font-size:17px;
 }
 
 .faq p{
   margin:0;
-  color:var(--text);
   font-size:14px;
 }
 
+/* DISCLAIMER */
 
-/* =========================
-FOOTER
-========================= */
+.notice{
+  margin-top:20px;
+  padding:15px;
+  background:#fffaf0;
+  border-left:4px solid #c99513;
+  border-radius:7px;
+  color:#5d4a16;
+  font-size:13px;
+}
+
+.notice strong{
+  color:#3f3210;
+}
+
+/* FOOTER */
 
 footer{
   margin-top:42px;
-  background:linear-gradient(135deg,#8f1d14,var(--red));
+  background:linear-gradient(135deg,#8f1d14,#b42318);
   color:#fff;
 }
 
@@ -599,585 +515,1118 @@ footer{
 .footer-links a{
   color:#fff;
   text-decoration:none;
-  font-size:12px;
+  font-size:13px;
   font-weight:800;
 }
 
 .footer-inner p{
   margin:5px 0;
   color:#ffe9e5;
-  font-size:11px;
+  font-size:12px;
 }
 
+/* MOBILE */
 
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:760px){
+@media(max-width:720px){
 
   .container{
-    width:calc(100% - 20px);
+    width:calc(100% - 22px);
   }
 
-  .nav{
-    gap:12px;
+  .desktop-nav{
+    display:none;
   }
 
-  .nav a{
-    font-size:11px;
+  .menu-btn{
+    display:flex;
   }
 
   .hero{
-    padding:31px 0 22px;
+    padding:33px 0 22px;
   }
 
   .hero h1{
-    font-size:32px;
+    font-size:33px;
   }
 
   .hero p{
     font-size:14px;
   }
 
-  .section-heading{
-    display:block;
+  .post-content{
+    padding:16px;
   }
 
-  .section-heading p{
-    margin-top:4px;
+  .post-title{
+    font-size:20px;
   }
 
-  .featured-top{
-    padding:19px 16px 15px;
+  .chart-shell{
+    padding:7px;
   }
 
-  .featured h2{
-    font-size:23px;
-  }
-
-  .featured-chart-area{
-    padding:12px;
-  }
-
-  .recent-grid{
-    grid-template-columns:1fr;
-  }
-
-  .post-top{
-    padding:16px 15px 11px;
-  }
-
-  .post-card h3{
-    font-size:18px;
-  }
-
-  .post-chart{
-    padding:11px;
-  }
-
-  .info-section{
-    padding:21px 17px;
-  }
-
-}
-
-@media(max-width:430px){
-
-  .nav a:nth-child(2),
-  .nav a:nth-child(3){
-    display:none;
-  }
-
-  .hero h1{
-    font-size:29px;
+  .chart{
+    padding:9px;
   }
 
   .cell{
-    font-size:21px;
+    font-size:22px;
   }
 
-  .featured h2{
-    font-size:21px;
+  .content-section{
+    padding:21px 18px;
   }
 
+  .content-section h2{
+    font-size:23px;
+  }
 }
-</style></head><body><header class="site-header"><div class="header-inner container"><a class="logo" href="./" aria-label="Carta Lotto Home">
+
+@media(max-width:400px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .cell{
+    font-size:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+<div class="header-inner container">
+
+<a href="./" class="logo" aria-label="Carta Lotto Home">
 Carta<span>Lotto</span>
-</a><nav class="nav" aria-label="Main navigation">
-<a href="#latest">Latest</a>
-<a href="#recent">Recent</a>
+</a>
+
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="#charts">Charts</a>
 <a href="#guide">Guide</a>
 <a href="#faq">FAQ</a>
-</nav></div></header><main><!-- HERO --><section class="hero"><div class="container"><span class="eyebrow">
-Daily Chart Information
-</span><h1>
-Carta Ramalan 4D
-</h1><p>
-Carta Lotto organizes dated GDL Perdana and Ramalan 4D MTP SGP
-chart information in a simple, clear and easy-to-browse format.
-Check the latest chart first or explore previous dated entries.
-</p></div></section><!-- LATEST --><section id="latest" class="container section"><div class="section-heading"><h2>
-Latest Chart
-</h2><p>
-Updated chart information
-</p></div><article class="featured"><div class="featured-top"><span class="featured-label">
-GDL PERDANA
-</span><h2>
-Carta Ramalan GDL Perdana — August 28, 2026
-</h2><div class="featured-date">
-Friday, August 28, 2026
-</div><p class="featured-description">
-View the latest dated GDL Perdana chart in a clear four-by-four
-layout. The complete chart is displayed here for quick reference,
-with a separate full post available for visitors who want more
-information about this dated entry.
-</p></div><div class="featured-chart-area"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-28/08/2026
-</div><div class="matrix"><div class="cell">7</div>
-<div class="cell active">3</div>
-<div class="cell">9</div>
-<div class="cell">1</div><div class="cell">5</div>
-<div class="cell">8</div>
-<div class="cell active">4</div>
-<div class="cell">0</div><div class="cell">2</div>
-<div class="cell">6</div>
-<div class="cell">3</div>
-<div class="cell active">8</div><div class="cell">9</div>
-<div class="cell active">5</div>
-<div class="cell">1</div>
-<div class="cell">7</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div><div class="actions"><a
-class="btn primary"
-href="charts/carta-ramalan-gdl-perdana-2026-08-28.html"
+<a href="about.html">About</a>
+</nav>
 
-«»
+<button
+class="menu-btn"
+id="menuBtn"
+type="button"
+aria-label="Open menu"
+aria-expanded="false"
+>
+<span></span>
+<span></span>
+<span></span>
+</button>
 
-Read Full Chart →
-</a>
+</div>
 
-</div></div></article></section><!-- RECENT GDL --><section id="recent" class="container section"><div class="section-heading"><h2>
-Recent GDL Perdana Charts
-</h2><p>
-Previous dated entries
-</p></div><div class="recent-grid"><!-- 27 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 27, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 27, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 27, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-27/08/2026
-</div><div class="matrix"><div class="cell">4</div>
-<div class="cell active">8</div>
-<div class="cell">1</div>
-<div class="cell">6</div><div class="cell">9</div>
-<div class="cell">2</div>
-<div class="cell active">7</div>
-<div class="cell">0</div><div class="cell">3</div>
-<div class="cell">5</div>
-<div class="cell">4</div>
-<div class="cell active">9</div><div class="cell active">2</div>
-<div class="cell">6</div>
-<div class="cell">8</div>
-<div class="cell">1</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-27.html"
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
 
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- 26 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 26, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 26, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 26, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-26/08/2026
-</div><div class="matrix"><div class="cell active">6</div>
-<div class="cell">2</div>
-<div class="cell">9</div>
-<div class="cell">4</div><div class="cell">1</div>
-<div class="cell active">7</div>
-<div class="cell">5</div>
-<div class="cell">0</div><div class="cell">8</div>
-<div class="cell">3</div>
-<div class="cell active">1</div>
-<div class="cell">6</div><div class="cell">4</div>
-<div class="cell">9</div>
-<div class="cell">2</div>
-<div class="cell active">8</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-26.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- 25 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 25, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 25, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 25, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-25/08/2026
-</div><div class="matrix"><div class="cell">8</div>
-<div class="cell">4</div>
-<div class="cell active">2</div>
-<div class="cell">7</div><div class="cell">1</div>
-<div class="cell active">9</div>
-<div class="cell">5</div>
-<div class="cell">3</div><div class="cell">6</div>
-<div class="cell">0</div>
-<div class="cell active">4</div>
-<div class="cell">8</div><div class="cell active">7</div>
-<div class="cell">2</div>
-<div class="cell">5</div>
-<div class="cell">1</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-25.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- 24 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 24, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 24, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 24, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-24/08/2026
-</div><div class="matrix"><div class="cell">3</div>
-<div class="cell active">5</div>
-<div class="cell">8</div>
-<div class="cell">1</div><div class="cell">7</div>
-<div class="cell">2</div>
-<div class="cell active">9</div>
-<div class="cell">4</div><div class="cell active">6</div>
-<div class="cell">0</div>
-<div class="cell">3</div>
-<div class="cell">8</div><div class="cell">1</div>
-<div class="cell">7</div>
-<div class="cell">4</div>
-<div class="cell active">2</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-24.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- 23 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 23, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 23, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 23, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-23/08/2026
-</div><div class="matrix"><div class="cell active">5</div>
-<div class="cell">1</div>
-<div class="cell">7</div>
-<div class="cell">9</div><div class="cell">3</div>
-<div class="cell">8</div>
-<div class="cell active">4</div>
-<div class="cell">0</div><div class="cell">6</div>
-<div class="cell active">2</div>
-<div class="cell">5</div>
-<div class="cell">1</div><div class="cell">8</div>
-<div class="cell">9</div>
-<div class="cell">3</div>
-<div class="cell active">6</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-23.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- 22 --><article class="post-card"><div class="post-top"><div class="post-meta"><span class="badge gdl">
-GDL PERDANA
-</span><span>
-August 22, 2026
-</span></div><h3>
-Carta Ramalan GDL Perdana — August 22, 2026
-</h3><p class="small-description">
-Dated GDL Perdana chart information for August 22, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart gdl"><div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div><div class="chart-date">
-22/08/2026
-</div><div class="matrix"><div class="cell">2</div>
-<div class="cell active">7</div>
-<div class="cell">4</div>
-<div class="cell">9</div><div class="cell">6</div>
-<div class="cell">1</div>
-<div class="cell active">8</div>
-<div class="cell">3</div><div class="cell">5</div>
-<div class="cell">0</div>
-<div class="cell">2</div>
-<div class="cell active">6</div><div class="cell active">4</div>
-<div class="cell">9</div>
-<div class="cell">7</div>
-<div class="cell">1</div></div><div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/carta-ramalan-gdl-perdana-2026-08-22.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article></div></section><!-- MTP SGP --><section class="container section"><div class="section-heading"><h2>
-Ramalan 4D MTP &amp; SGP
-</h2><p>
-Scheduled chart entries
-</p></div><div class="recent-grid"><!-- MTP 26 --><article class="post-card mtp-card"><div class="post-top"><div class="post-meta"><span class="badge mtp">
-MTP + SGP
-</span><span>
-August 26, 2026
-</span></div><h3>
-Ramalan 4D MTP &amp; SGP — August 26, 2026
-</h3><p class="small-description">
-Scheduled MTP and SGP chart information for August 26, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart mtp"><div class="chart-heading">
-RAMALAN 4D MTP &amp; SGP
-</div><div class="chart-date">
-26/08/2026
-</div><div class="matrix"><div class="cell">6</div>
-<div class="cell active">3</div>
-<div class="cell">8</div>
-<div class="cell">1</div><div class="cell">4</div>
-<div class="cell">9</div>
-<div class="cell active">5</div>
-<div class="cell">0</div><div class="cell">7</div>
-<div class="cell">2</div>
-<div class="cell">6</div>
-<div class="cell active">4</div><div class="cell active">8</div>
-<div class="cell">1</div>
-<div class="cell">9</div>
-<div class="cell">3</div></div><div class="chart-info">
-Magnum • Toto • Damacai • SGP
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/ramalan-4d-mtp-sgp-2026-08-26.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- MTP 23 --><article class="post-card mtp-card"><div class="post-top"><div class="post-meta"><span class="badge mtp">
-MTP + SGP
-</span><span>
-August 23, 2026
-</span></div><h3>
-Ramalan 4D MTP &amp; SGP — August 23, 2026
-</h3><p class="small-description">
-Scheduled MTP and SGP chart information for August 23, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart mtp"><div class="chart-heading">
-RAMALAN 4D MTP &amp; SGP
-</div><div class="chart-date">
-23/08/2026
-</div><div class="matrix"><div class="cell active">9</div>
-<div class="cell">4</div>
-<div class="cell">1</div>
-<div class="cell">7</div><div class="cell">2</div>
-<div class="cell active">6</div>
-<div class="cell">8</div>
-<div class="cell">3</div><div class="cell">5</div>
-<div class="cell">0</div>
-<div class="cell active">2</div>
-<div class="cell">9</div><div class="cell">4</div>
-<div class="cell">7</div>
-<div class="cell">1</div>
-<div class="cell active">8</div></div><div class="chart-info">
-Magnum • Toto • Damacai • SGP
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/ramalan-4d-mtp-sgp-2026-08-23.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article><!-- MTP 22 --><article class="post-card mtp-card"><div class="post-top"><div class="post-meta"><span class="badge mtp">
-MTP + SGP
-</span><span>
-August 22, 2026
-</span></div><h3>
-Ramalan 4D MTP &amp; SGP — August 22, 2026
-</h3><p class="small-description">
-Scheduled MTP and SGP chart information for August 22, 2026.
-</p></div><div class="post-chart"><div class="chart-shell"><div class="chart mtp"><div class="chart-heading">
-RAMALAN 4D MTP &amp; SGP
-</div><div class="chart-date">
-22/08/2026
-</div><div class="matrix"><div class="cell">8</div>
-<div class="cell">2</div>
-<div class="cell active">5</div>
-<div class="cell">1</div><div class="cell active">7</div>
-<div class="cell">4</div>
-<div class="cell">9</div>
-<div class="cell">3</div><div class="cell">6</div>
-<div class="cell active">0</div>
-<div class="cell">2</div>
-<div class="cell">8</div><div class="cell">1</div>
-<div class="cell">5</div>
-<div class="cell">7</div>
-<div class="cell active">4</div></div><div class="chart-info">
-Magnum • Toto • Damacai • SGP
-</div><div class="watermark">
-CARTALOTTO.COM
-</div></div></div></div><div class="post-actions"><a
-class="read-btn"
-href="charts/ramalan-4d-mtp-sgp-2026-08-22.html"
-
-«»
-
-Read Full Chart →
-</a>
-
-</div></article></div></section><!-- GUIDE --><section id="guide" class="container section"><article class="info-section"><h2>
-Carta Lotto Chart Guide
-</h2><p>
-Carta Lotto organizes its chart pages by chart category and date.
-This makes it easier for visitors to identify the specific entry
-they are viewing and move between current and previous updates.
-</p><h3>
-GDL Perdana
-</h3><p>
-GDL Perdana entries are organized as daily dated chart pages. The
-latest available entry is displayed first on the homepage, followed
-by recent dated entries.
-</p><h3>
-Ramalan 4D MTP &amp; SGP
-</h3><p>
-MTP and SGP entries are published according to the scheduled days used
-by this website. Each entry clearly shows its date and chart category.
-</p><h3>
-How to Read the Layout
-</h3><p>
-The chart is presented as a visual grid so visitors can see the
-complete published layout at a glance. The highlighted positions are
-visual markers within the chart and should not be interpreted as
-guaranteed future results.
-</p><h3>
-Responsible Information
-</h3><p>
-Carta Lotto provides chart and forecast information free of charge
-for informational and educational purposes. We do not sell lottery
-tickets, sell guaranteed numbers or claim certainty about future
-outcomes. We also do not promote illegal lottery websites or unlawful
-activities.
-</p><div class="note"><strong>Disclaimer:</strong>
-Carta Lotto is an independent informational website. Chart and
-forecast information is not an official lottery result and does not
-guarantee any future outcome.
-
-</div></article></section><!-- FAQ --><section id="faq" class="container section"><article class="info-section"><h2>
-Frequently Asked Questions
-</h2><div class="faq-list"><div class="faq"><h3>
-What is Carta Ramalan 4D?
-</h3><p>
-Carta Ramalan 4D is a chart-style format used to organize dated
-number information. Carta Lotto presents these layouts as
-informational references.
-</p></div><div class="faq"><h3>
-What is Carta Lotto?
-</h3><p>
-Carta Lotto is an independent website that organizes dated Carta
-Ramalan 4D, GDL Perdana and MTP SGP chart information.
-</p></div><div class="faq"><h3>
-Are the charts guaranteed?
-</h3><p>
-No. Carta Lotto does not guarantee future outcomes. The highlighted
-positions are visual elements of the published chart.
-</p></div><div class="faq"><h3>
-Does Carta Lotto sell lottery tickets?
-</h3><p>
-No. Carta Lotto does not sell lottery tickets or sell guaranteed
-numbers through this website.
-</p></div><div class="faq"><h3>
-Is Carta Lotto an official lottery website?
-</h3><p>
-No. Carta Lotto is an independent informational website and should
-not be confused with an official lottery operator or official results
-publisher.
-</p></div></div></article></section></main><!-- FOOTER --><footer><div class="footer-inner"><div class="footer-logo">
-Carta<span>Lotto</span>
-</div><div class="footer-links"><a href="about.html">About</a>
+<a href="#charts">Latest Charts</a>
+<a href="#guide">Chart Guide</a>
+<a href="#faq">FAQ</a>
+<a href="about.html">About</a>
 <a href="privacy-policy.html">Privacy Policy</a>
 <a href="disclaimer.html">Disclaimer</a>
 <a href="contact.html">Contact</a>
 
-</div><p>
+</nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<span class="eyebrow">
+Daily Chart Information
+</span>
+
+<h1>
+Carta Ramalan 4D
+</h1>
+
+<p>
+Carta Lotto provides dated Carta Ramalan 4D chart information,
+including GDL Perdana daily updates and scheduled MTP and SGP
+chart entries. Each update is organized by date for easy reference.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- LATEST CHARTS -->
+
+<section id="charts" class="container">
+
+<h2 class="section-title">
+Latest Carta Lotto Charts
+</h2>
+
+<p class="section-subtitle">
+Browse the latest GDL Perdana and Ramalan 4D MTP &amp; SGP chart updates.
+</p>
+
+
+<div class="feed">
+
+
+<!-- 28 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+
+<span class="badge gdl">
+GDL PERDANA
+</span>
+
+<span>
+August 28, 2026
+</span>
+
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 28, 2026
+</h2>
+
+<p class="post-intro">
+Latest GDL Perdana chart information for August 28, 2026.
+The dated layout is presented clearly for visitors reviewing
+the current Carta Lotto update.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+28/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">7</div>
+<div class="cell active">3</div>
+<div class="cell">9</div>
+<div class="cell">1</div>
+
+<div class="cell">5</div>
+<div class="cell">8</div>
+<div class="cell active">4</div>
+<div class="cell">0</div>
+
+<div class="cell">2</div>
+<div class="cell">6</div>
+<div class="cell">3</div>
+<div class="cell active">8</div>
+
+<div class="cell">9</div>
+<div class="cell active">5</div>
+<div class="cell">1</div>
+<div class="cell">7</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">
+CARTALOTTO.COM
+</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-28.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 28, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 27 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 27, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 27, 2026
+</h2>
+
+<p class="post-intro">
+Dated GDL Perdana chart information for August 27, 2026,
+presented as a separate archive entry for easy reference.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+27/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">4</div>
+<div class="cell active">8</div>
+<div class="cell">1</div>
+<div class="cell">6</div>
+
+<div class="cell">9</div>
+<div class="cell">2</div>
+<div class="cell active">5</div>
+<div class="cell">7</div>
+
+<div class="cell">3</div>
+<div class="cell">0</div>
+<div class="cell">8</div>
+<div class="cell active">4</div>
+
+<div class="cell">6</div>
+<div class="cell active">1</div>
+<div class="cell">9</div>
+<div class="cell">2</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-27.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 27, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 26 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 26, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 26, 2026
+</h2>
+
+<p class="post-intro">
+GDL Perdana chart information for August 26, 2026 with a clear
+dated layout and separate archive page.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+26/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">8</div>
+<div class="cell">1</div>
+<div class="cell active">6</div>
+<div class="cell">3</div>
+
+<div class="cell">5</div>
+<div class="cell active">9</div>
+<div class="cell">2</div>
+<div class="cell">7</div>
+
+<div class="cell">0</div>
+<div class="cell">4</div>
+<div class="cell active">8</div>
+<div class="cell">1</div>
+
+<div class="cell active">5</div>
+<div class="cell">3</div>
+<div class="cell">7</div>
+<div class="cell">9</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-26.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 26, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 26 AUGUST MTP SGP -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge mtp">MTP + SGP</span>
+<span>August 26, 2026</span>
+</div>
+
+<h2 class="post-title">
+Ramalan 4D MTP &amp; SGP — August 26, 2026
+</h2>
+
+<p class="post-intro">
+Scheduled MTP and SGP chart information for August 26, 2026,
+presented separately from the daily GDL Perdana update.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart mtp">
+
+<div class="chart-heading">
+RAMALAN 4D MTP &amp; SGP
+</div>
+
+<div class="chart-date">
+26/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">2</div>
+<div class="cell active">7</div>
+<div class="cell">4</div>
+<div class="cell">9</div>
+
+<div class="cell">1</div>
+<div class="cell">5</div>
+<div class="cell active">8</div>
+<div class="cell">3</div>
+
+<div class="cell">6</div>
+<div class="cell">0</div>
+<div class="cell active">2</div>
+<div class="cell">5</div>
+
+<div class="cell">9</div>
+<div class="cell">4</div>
+<div class="cell">7</div>
+<div class="cell active">1</div>
+
+</div>
+
+<div class="chart-info">
+MTP • SGP • 4D Chart Information
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post mtp"
+href="charts/ramalan-4d-mtp-sgp-2026-08-26.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Scheduled chart</span>
+<span>•</span>
+<span>August 26, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 25 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 25, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 25, 2026
+</h2>
+
+<p class="post-intro">
+Dated GDL Perdana chart information for August 25, 2026,
+kept as an individual archive entry.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+25/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell active">5</div>
+<div class="cell">8</div>
+<div class="cell">2</div>
+<div class="cell">1</div>
+
+<div class="cell">7</div>
+<div class="cell active">3</div>
+<div class="cell">9</div>
+<div class="cell">4</div>
+
+<div class="cell">6</div>
+<div class="cell">0</div>
+<div class="cell active">5</div>
+<div class="cell">8</div>
+
+<div class="cell">2</div>
+<div class="cell">4</div>
+<div class="cell">1</div>
+<div class="cell active">7</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-25.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 25, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 24 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 24, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 24, 2026
+</h2>
+
+<p class="post-intro">
+GDL Perdana chart information for August 24, 2026 with a dated
+layout for visitors reviewing previous updates.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+24/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">9</div>
+<div class="cell active">2</div>
+<div class="cell">6</div>
+<div class="cell">4</div>
+
+<div class="cell">1</div>
+<div class="cell">7</div>
+<div class="cell active">5</div>
+<div class="cell">8</div>
+
+<div class="cell">3</div>
+<div class="cell">9</div>
+<div class="cell">0</div>
+<div class="cell active">6</div>
+
+<div class="cell">4</div>
+<div class="cell active">1</div>
+<div class="cell">8</div>
+<div class="cell">7</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-24.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 24, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 23 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 23, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 23, 2026
+</h2>
+
+<p class="post-intro">
+GDL Perdana chart information for August 23, 2026, organized
+as a separate dated chart entry.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+23/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell">3</div>
+<div class="cell">7</div>
+<div class="cell active">1</div>
+<div class="cell">9</div>
+
+<div class="cell">5</div>
+<div class="cell active">4</div>
+<div class="cell">8</div>
+<div class="cell">2</div>
+
+<div class="cell">6</div>
+<div class="cell">0</div>
+<div class="cell active">3</div>
+<div class="cell">7</div>
+
+<div class="cell active">9</div>
+<div class="cell">1</div>
+<div class="cell">5</div>
+<div class="cell">6</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-23.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 23, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+<!-- 22 AUGUST GDL -->
+
+<article class="post-card">
+
+<div class="post-content">
+
+<div class="post-meta">
+<span class="badge gdl">GDL PERDANA</span>
+<span>August 22, 2026</span>
+</div>
+
+<h2 class="post-title">
+Carta Ramalan GDL Perdana — August 22, 2026
+</h2>
+
+<p class="post-intro">
+Dated GDL Perdana chart information for August 22, 2026,
+available as an individual Carta Lotto archive entry.
+</p>
+
+<div class="chart-shell">
+
+<div class="chart gdl">
+
+<div class="chart-heading">
+CARTA RAMALAN GDL PERDANA
+</div>
+
+<div class="chart-date">
+22/08/2026
+</div>
+
+<div class="matrix">
+
+<div class="cell active">6</div>
+<div class="cell">2</div>
+<div class="cell">8</div>
+<div class="cell">4</div>
+
+<div class="cell">1</div>
+<div class="cell active">7</div>
+<div class="cell">3</div>
+<div class="cell">9</div>
+
+<div class="cell">5</div>
+<div class="cell">0</div>
+<div class="cell active">6</div>
+<div class="cell">2</div>
+
+<div class="cell">8</div>
+<div class="cell">4</div>
+<div class="cell">1</div>
+<div class="cell active">5</div>
+
+</div>
+
+<div class="chart-info">
+Grand Dragon • GDL • Perdana • Nine Lotto
+</div>
+
+<div class="watermark">CARTALOTTO.COM</div>
+
+</div>
+
+</div>
+
+<a
+class="read-post"
+href="charts/carta-ramalan-gdl-perdana-2026-08-22.html"
+>
+Read Full Chart Post →
+</a>
+
+<div class="post-footer">
+<span>Free informational update</span>
+<span>•</span>
+<span>August 22, 2026</span>
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- GUIDE -->
+
+<section id="guide" class="container">
+
+<article class="content-section">
+
+<h2>
+Carta Lotto Chart Guide
+</h2>
+
+<p>
+Carta Lotto organizes chart information by category and date so
+visitors can quickly identify the update they are looking for.
+Individual dated pages provide additional information about each
+published chart.
+</p>
+
+<h3>
+GDL Perdana
+</h3>
+
+<p>
+GDL Perdana entries are published as daily dated chart pages.
+The homepage places the newest available update first and keeps
+older entries available through their individual archive pages.
+</p>
+
+<h3>
+Ramalan 4D MTP &amp; SGP
+</h3>
+
+<p>
+MTP and SGP entries are scheduled separately from the daily GDL
+Perdana updates. Their date and category are shown clearly so
+visitors can distinguish the different chart types.
+</p>
+
+<h3>
+Using the Chart Pages
+</h3>
+
+<p>
+Start by checking the chart category and date. The homepage provides
+a quick visual reference, while the Read Full Chart Post button opens
+the complete dated page for that particular update.
+</p>
+
+<h3>
+Responsible Information
+</h3>
+
+<p>
+Carta Lotto shares chart and forecast information free of charge for
+informational and educational purposes. We do not sell lottery
+tickets, sell guaranteed numbers or claim certainty about future
+results. We also do not promote illegal lottery websites or unlawful
+activities.
+</p>
+
+<div class="notice">
+
+<strong>Disclaimer:</strong><br>
+
+Carta Lotto is an independent informational website. Chart and
+forecast information is provided for informational and educational
+purposes only. It is not official lottery results and no future
+outcome is guaranteed.
+
+</div>
+
+</article>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq" class="container">
+
+<article class="content-section">
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+<div class="faq">
+
+<h3>
+What is Carta Ramalan 4D?
+</h3>
+
+<p>
+Carta Ramalan 4D refers to chart-style information presented online
+for visitors interested in dated 4D chart updates.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>
+What is Carta Lotto?
+</h3>
+
+<p>
+Carta Lotto is an independent website that organizes dated chart
+information into separate, easy-to-browse entries.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>
+What is GDL Perdana?
+</h3>
+
+<p>
+GDL Perdana is a chart category displayed on Carta Lotto with
+individual dated updates.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>
+What is Ramalan 4D MTP and SGP?
+</h3>
+
+<p>
+It is a scheduled chart category presented separately from the
+daily GDL Perdana entries.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>
+Are Carta Lotto charts guaranteed?
+</h3>
+
+<p>
+No. Carta Lotto does not guarantee winning numbers or future
+outcomes. The charts are provided for informational and educational
+purposes.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>
+Is Carta Lotto an official lottery operator?
+</h3>
+
+<p>
+No. Carta Lotto is an independent informational website and should
+not be confused with an official lottery operator or official
+results publisher.
+</p>
+
+</div>
+
+</article>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-logo">
+Carta<span>Lotto</span>
+</div>
+
+<div class="footer-links">
+
+<a href="about.html">About</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="disclaimer.html">Disclaimer</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
 © 2026 Carta Lotto. All rights reserved.
-</p><p>
-Chart information is provided for informational purposes only.
-</p></div></footer></body>
+</p>
+
+<p>
+Chart information is provided free for informational purposes.
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+(function(){
+
+"use strict";
+
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+
+function closeMenu(){
+
+mobileMenu.classList.remove("active");
+menuBtn.classList.remove("active");
+
+document.body.classList.remove("menu-open");
+
+menuBtn.setAttribute("aria-expanded","false");
+menuBtn.setAttribute("aria-label","Open menu");
+
+}
+
+menuBtn.addEventListener("click",function(){
+
+const open=!mobileMenu.classList.contains("active");
+
+mobileMenu.classList.toggle("active",open);
+menuBtn.classList.toggle("active",open);
+
+document.body.classList.toggle("menu-open",open);
+
+menuBtn.setAttribute("aria-expanded",open?"true":"false");
+menuBtn.setAttribute("aria-label",open?"Close menu":"Open menu");
+
+});
+
+mobileMenu.querySelectorAll("a").forEach(function(link){
+
+link.addEventListener("click",closeMenu);
+
+});
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+closeMenu();
+}
+
+});
+
+})();
+</script>
+
+</body>
 </html>
