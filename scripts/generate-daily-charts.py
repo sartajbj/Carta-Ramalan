@@ -7,27 +7,20 @@ CHARTS = ROOT / "charts"
 GDL_TEMPLATE = ROOT / "gdl-template.html"
 MTP_TEMPLATE = ROOT / "mtp-template.html"
 
-# -----------------------------
-# SETTINGS
-# -----------------------------
-
 SITE = "https://www.cartalotto.com"
 
-# GDL Perdana chart days
-GDL_WEEKDAYS = {0, 2, 5}  # Monday, Wednesday, Saturday
+# GDL Perdana = EVERY DAY
+GDL_WEEKDAYS = {0, 1, 2, 3, 4, 5, 6}
 
-# MTP / SGP chart days
-MTP_WEEKDAYS = {0, 1, 2, 3, 4, 5, 6}  # Daily
+# Ramalan 4D MTP & SGP = Wednesday, Saturday, Sunday
+MTP_WEEKDAYS = {2, 5, 6}
 
-# How many future dated pages to generate
+# Generate today's page + future pages
 FUTURE_DAYS = 14
 
-# -----------------------------
-# HELPERS
-# -----------------------------
 
 def long_date(d):
-    return d.strftime("%B %-d, %Y") if Path("/").exists() else d.strftime("%B %d, %Y")
+    return d.strftime("%B %-d, %Y")
 
 
 def display_date(d):
@@ -56,8 +49,6 @@ def make_matrix(active_positions):
 
 
 def render(template, title, d, matrix, next_url, previous_url):
-    content = template
-
     replacements = {
         "{{TITLE}}": title,
         "{{DATE}}": iso_date(d),
@@ -67,6 +58,8 @@ def render(template, title, d, matrix, next_url, previous_url):
         "{{NEXT_URL}}": next_url,
         "{{PREVIOUS_URL}}": previous_url,
     }
+
+    content = template
 
     for key, value in replacements.items():
         content = content.replace(key, value)
@@ -78,13 +71,7 @@ def write_page(filename, html):
     path = CHARTS / filename
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(html, encoding="utf-8")
-    return path
 
-
-# -----------------------------
-# REMOVE OLD GENERATED DAILY
-# PAGES ONLY
-# -----------------------------
 
 def clean_generated_pages(prefix):
     pattern = re.compile(
@@ -96,20 +83,14 @@ def clean_generated_pages(prefix):
             file.unlink()
 
 
-# -----------------------------
-# GENERATE GDL
-# -----------------------------
-
 def generate_gdl(start):
     template = GDL_TEMPLATE.read_text(encoding="utf-8")
 
-    dates = []
-
-    for offset in range(FUTURE_DAYS + 1):
-        d = start + timedelta(days=offset)
-
-        if d.weekday() in GDL_WEEKDAYS:
-            dates.append(d)
+    dates = [
+        start + timedelta(days=offset)
+        for offset in range(FUTURE_DAYS + 1)
+        if (start + timedelta(days=offset)).weekday() in GDL_WEEKDAYS
+    ]
 
     for index, d in enumerate(dates):
 
@@ -117,7 +98,6 @@ def generate_gdl(start):
         next_date = dates[index + 1] if index + 1 < len(dates) else None
 
         filename = f"carta-ramalan-gdl-perdana-{iso_date(d)}.html"
-        url = f"{SITE}/charts/{filename[:-5]}"
 
         previous_url = (
             f"{SITE}/charts/carta-ramalan-gdl-perdana-{iso_date(previous_date)}"
@@ -131,8 +111,6 @@ def generate_gdl(start):
 
         title = f"Carta Ramalan GDL Perdana — {long_date(d)}"
 
-        # Fixed example layout.
-        # Replace chart numbers later with the actual daily chart data.
         matrix = make_matrix({0, 5, 10, 13})
 
         html = render(
@@ -147,20 +125,14 @@ def generate_gdl(start):
         write_page(filename, html)
 
 
-# -----------------------------
-# GENERATE MTP / SGP
-# -----------------------------
-
 def generate_mtp(start):
     template = MTP_TEMPLATE.read_text(encoding="utf-8")
 
-    dates = []
-
-    for offset in range(FUTURE_DAYS + 1):
-        d = start + timedelta(days=offset)
-
-        if d.weekday() in MTP_WEEKDAYS:
-            dates.append(d)
+    dates = [
+        start + timedelta(days=offset)
+        for offset in range(FUTURE_DAYS + 1)
+        if (start + timedelta(days=offset)).weekday() in MTP_WEEKDAYS
+    ]
 
     for index, d in enumerate(dates):
 
@@ -168,7 +140,6 @@ def generate_mtp(start):
         next_date = dates[index + 1] if index + 1 < len(dates) else None
 
         filename = f"ramalan-4d-mtp-sgp-{iso_date(d)}.html"
-        url = f"{SITE}/charts/{filename[:-5]}"
 
         previous_url = (
             f"{SITE}/charts/ramalan-4d-mtp-sgp-{iso_date(previous_date)}"
@@ -195,10 +166,6 @@ def generate_mtp(start):
 
         write_page(filename, html)
 
-
-# -----------------------------
-# MAIN
-# -----------------------------
 
 def main():
     CHARTS.mkdir(parents=True, exist_ok=True)
