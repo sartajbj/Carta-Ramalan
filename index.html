@@ -6,7 +6,7 @@
 
 <title>Carta Ramalan 4D | GDL Perdana & MTP Charts</title>
 
-<meta name="description" content="Explore the latest dated Carta Ramalan 4D charts, GDL Perdana daily entries and scheduled Ramalan 4D MTP charts in a clear, easy-to-read archive.">
+<meta name="description" content="Explore the latest dated Carta Ramalan 4D charts, including GDL Perdana daily entries and scheduled Ramalan 4D MTP charts.">
 
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
@@ -33,32 +33,23 @@
   --red:#b42318;
   --red-dark:#8f1d14;
   --red-light:#fff0ee;
-
   --gold:#a66f00;
   --gold-light:#fff7d6;
-
   --ink:#172033;
   --heading:#101828;
   --text:#475467;
   --muted:#667085;
-
   --bg:#f4f6f8;
   --white:#fff;
   --border:#e4e7ec;
-
   --dark:#171b26;
-
   --shadow:0 8px 26px rgba(16,24,40,.07);
   --radius:16px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -68,27 +59,16 @@ body{
   line-height:1.65;
 }
 
-body.menu-open{
-  overflow:hidden;
-}
+body.menu-open{overflow:hidden}
 
-a{
-  color:inherit;
-}
+a{color:inherit}
 
-button{
-  font:inherit;
-}
+button{font:inherit}
 
 .container{
   width:min(1080px,calc(100% - 28px));
   margin-inline:auto;
 }
-
-
-/* =========================
-HEADER
-========================= */
 
 .site-header{
   position:sticky;
@@ -114,9 +94,7 @@ HEADER
   letter-spacing:-.7px;
 }
 
-.logo span{
-  color:#ffe08a;
-}
+.logo span{color:#ffe08a}
 
 .desktop-nav{
   display:flex;
@@ -131,9 +109,7 @@ HEADER
   font-weight:800;
 }
 
-.desktop-nav a:hover{
-  color:#ffe08a;
-}
+.desktop-nav a:hover{color:#ffe08a}
 
 .menu-btn{
   display:none;
@@ -164,9 +140,7 @@ HEADER
   transform:translateY(7px) rotate(45deg);
 }
 
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
+.menu-btn.active span:nth-child(2){opacity:0}
 
 .menu-btn.active span:nth-child(3){
   transform:translateY(-7px) rotate(-45deg);
@@ -179,9 +153,7 @@ HEADER
   box-shadow:0 12px 25px rgba(0,0,0,.12);
 }
 
-.mobile-menu.active{
-  display:block;
-}
+.mobile-menu.active{display:block}
 
 .mobile-menu a{
   display:block;
@@ -192,11 +164,6 @@ HEADER
   font-size:15px;
   font-weight:800;
 }
-
-
-/* =========================
-HERO
-========================= */
 
 .hero{
   padding:42px 0 24px;
@@ -232,11 +199,6 @@ HERO
   font-size:15px;
 }
 
-
-/* =========================
-SECTION HEAD
-========================= */
-
 .section-title{
   margin:20px 0 15px;
   color:var(--heading);
@@ -249,11 +211,6 @@ SECTION HEAD
   color:var(--muted);
   font-size:13px;
 }
-
-
-/* =========================
-POST FEED
-========================= */
 
 .feed{
   display:grid;
@@ -268,9 +225,7 @@ POST FEED
   box-shadow:var(--shadow);
 }
 
-.post-content{
-  padding:19px;
-}
+.post-content{padding:19px}
 
 .post-meta{
   display:flex;
@@ -317,11 +272,6 @@ POST FEED
   color:var(--text);
   font-size:14px;
 }
-
-
-/* =========================
-CHART
-========================= */
 
 .chart-shell{
   padding:8px;
@@ -387,13 +337,8 @@ CHART
   font-weight:900;
 }
 
-.cell:nth-child(4n){
-  border-right:0;
-}
-
-.cell:nth-last-child(-n+4){
-  border-bottom:0;
-}
+.cell:nth-child(4n){border-right:0}
+.cell:nth-last-child(-n+4){border-bottom:0}
 
 .chart.gdl .cell.active{
   background:#c6281c;
@@ -424,11 +369,6 @@ CHART
   letter-spacing:1px;
 }
 
-
-/* =========================
-READ BUTTON
-========================= */
-
 .read-post{
   display:block;
   width:max-content;
@@ -445,17 +385,10 @@ READ BUTTON
   font-weight:900;
 }
 
-.read-post:hover{
-  background:var(--red-dark);
-}
+.read-post:hover{background:var(--red-dark)}
 
-.mtp-post .read-post{
-  background:#9a6a00;
-}
-
-.mtp-post .read-post:hover{
-  background:#765300;
-}
+.mtp-post .read-post{background:#9a6a00}
+.mtp-post .read-post:hover{background:#765300}
 
 .post-footer{
   display:flex;
@@ -468,11 +401,6 @@ READ BUTTON
   color:var(--muted);
   font-size:11px;
 }
-
-
-/* =========================
-ABOUT
-========================= */
 
 .content-section{
   margin:30px 0;
@@ -502,19 +430,12 @@ ABOUT
   font-size:15px;
 }
 
-
-/* =========================
-FAQ
-========================= */
-
 .faq{
   padding:14px 0;
   border-top:1px solid var(--border);
 }
 
-.faq:first-of-type{
-  border-top:0;
-}
+.faq:first-of-type{border-top:0}
 
 .faq h3{
   margin:0 0 5px;
@@ -528,11 +449,6 @@ FAQ
   font-size:14px;
 }
 
-
-/* =========================
-NOTICE
-========================= */
-
 .notice{
   margin:18px 0;
   padding:14px 15px;
@@ -542,11 +458,6 @@ NOTICE
   color:#5d4a16;
   font-size:13px;
 }
-
-
-/* =========================
-FOOTER
-========================= */
 
 footer{
   margin-top:42px;
@@ -565,9 +476,7 @@ footer{
   font-weight:900;
 }
 
-.footer-logo span{
-  color:#ffe08a;
-}
+.footer-logo span{color:#ffe08a}
 
 .footer-links{
   display:flex;
@@ -590,983 +499,827 @@ footer{
   font-size:12px;
 }
 
-
-/* =========================
-MOBILE
-========================= */
-
 @media(max-width:720px){
 
   .container{
     width:min(100% - 22px,1080px);
   }
 
-  .desktop-nav{
-    display:none;
-  }
+  .desktop-nav{display:none}
 
-  .menu-btn{
-    display:flex;
-  }
+  .menu-btn{display:flex}
 
-  .hero{
-    padding:33px 0 21px;
-  }
+  .hero{padding:33px 0 21px}
 
-  .hero h1{
-    font-size:33px;
-  }
+  .hero h1{font-size:33px}
 
-  .hero p{
-    font-size:14px;
-  }
+  .hero p{font-size:14px}
 
-  .post-content{
-    padding:16px;
-  }
+  .post-content{padding:16px}
 
-  .post-title{
-    font-size:20px;
-  }
+  .post-title{font-size:20px}
 
-  .chart-shell{
-    padding:7px;
-  }
+  .chart-shell{padding:7px}
 
-  .chart{
-    padding:9px;
-  }
+  .chart{padding:9px}
 
-  .matrix{
-    max-width:310px;
-  }
+  .matrix{max-width:310px}
 
-  .cell{
-    font-size:22px;
-  }
+  .cell{font-size:22px}
 
-  .content-section{
-    padding:21px 18px;
-  }
+  .content-section{padding:21px 18px}
 }
 
 @media(max-width:400px){
 
-  .hero h1{
-    font-size:30px;
-  }
+  .hero h1{font-size:30px}
 
-  .cell{
-    font-size:20px;
-  }
+  .cell{font-size:20px}
 }
 </style>
 </head>
 
-
 <body>
-
 
 <header class="site-header">
 
-  <div class="header-inner container">
+<div class="header-inner container">
 
-    <a href="./" class="logo" aria-label="Carta Lotto Home">
-      Carta<span>Lotto</span>
-    </a>
+<a href="./" class="logo" aria-label="Carta Lotto Home">
+Carta<span>Lotto</span>
+</a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#charts">Charts</a>
-      <a href="#about">About</a>
-      <a href="#guide">Guide</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="#charts">Charts</a>
+<a href="#about">About</a>
+<a href="#guide">Guide</a>
+<a href="#faq">FAQ</a>
+</nav>
 
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      aria-label="Open menu"
-      aria-expanded="false"
-      type="button"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="Open menu"
+aria-expanded="false"
+type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
 
-  </div>
+</div>
 
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
 
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+<a href="#charts">Latest Charts</a>
+<a href="#about">About Carta Lotto</a>
+<a href="#guide">Chart Guide</a>
+<a href="#faq">FAQ</a>
 
-    <a href="#charts">Latest Charts</a>
-    <a href="#about">About Carta Lotto</a>
-    <a href="#guide">Chart Guide</a>
-    <a href="#faq">FAQ</a>
+<a href="about.html">About</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="disclaimer.html">Disclaimer</a>
+<a href="contact.html">Contact</a>
 
-    <a href="about.html">About</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="disclaimer.html">Disclaimer</a>
-    <a href="contact.html">Contact</a>
-
-  </nav>
+</nav>
 
 </header>
 
-
 <main>
-
-
-<!-- =========================
-HERO
-========================= -->
 
 <section class="hero">
 
-  <div class="container">
+<div class="container">
 
-    <span class="eyebrow">
-      Daily Chart Information
-    </span>
+<span class="eyebrow">Daily Chart Information</span>
 
-    <h1>
-      Carta Ramalan 4D
-    </h1>
+<h1>Carta Ramalan 4D</h1>
 
-    <p>
-      Explore the latest dated Carta Ramalan 4D chart information,
-      including GDL Perdana daily entries and scheduled Ramalan 4D
-      MTP and SGP charts. Each update is organized by date for easy
-      reference.
-    </p>
+<p>
+Explore the latest dated Carta Ramalan 4D chart information,
+including GDL Perdana daily entries and scheduled Ramalan 4D
+MTP and SGP charts. Each update is organized by date for easy
+reference.
+</p>
 
-  </div>
+</div>
 
 </section>
-
-
-<!-- =========================
-LATEST CHARTS
-========================= -->
 
 <section id="charts" class="container">
 
-  <h2 class="section-title">
-    Latest Carta Lotto Charts
-  </h2>
+<h2 class="section-title">Latest Carta Lotto Charts</h2>
 
-  <p class="section-subtitle">
-    The newest available chart appears first. Each chart links directly
-    to its matching dated post.
-  </p>
+<p class="section-subtitle">
+The newest available chart appears first. Every link points to
+an actual dated chart page.
+</p>
 
-  <div id="feed" class="feed"></div>
+<div id="feed" class="feed"></div>
 
 </section>
-
-
-<!-- =========================
-ABOUT
-========================= -->
 
 <section id="about" class="container">
 
-  <article class="content-section">
+<article class="content-section">
 
-    <h2>
-      About Carta Lotto
-    </h2>
+<h2>About Carta Lotto</h2>
 
-    <p>
-      Carta Lotto is an independent informational website that
-      organizes dated Carta Ramalan 4D chart information in a simple
-      and easy-to-follow format. The homepage brings the latest
-      available entries together so visitors can quickly identify
-      the chart date and category they are looking for.
-    </p>
+<p>
+Carta Lotto is an independent informational website that organizes
+dated Carta Ramalan 4D chart information in a simple and easy-to-follow
+format. The homepage brings available entries together so visitors
+can quickly identify the chart date and category they are looking for.
+</p>
 
-    <p>
-      GDL Perdana entries are organized as daily chart updates, while
-      Ramalan 4D MTP and SGP entries are presented according to their
-      scheduled publishing days. Individual dated pages provide the
-      complete context for each published chart.
-    </p>
+<p>
+GDL Perdana entries are organized as daily chart updates, while
+Ramalan 4D MTP and SGP entries are presented according to their
+scheduled publishing days. Every dated page remains a separate
+reference.
+</p>
 
-    <p>
-      The website is designed around clear dates, readable chart
-      layouts and straightforward navigation. Older entries remain
-      separated by their original dates so visitors can avoid confusing
-      one chart update with another.
-    </p>
+<p>
+The archive is designed around clear dates, readable chart layouts
+and straightforward navigation. Older entries retain their original
+dates and are never rewritten as newer updates.
+</p>
 
-    <div class="notice">
-      <strong>Important:</strong>
-      Carta Lotto is an independent informational website. It does not
-      guarantee future outcomes, publish official lottery results or
-      sell guaranteed predictions. Always verify official information
-      with the appropriate official source.
-    </div>
+<div class="notice">
+<strong>Important:</strong>
+Carta Lotto is an independent informational website. It does not
+guarantee future outcomes or publish official lottery results.
+Always verify official information with the appropriate official source.
+</div>
 
-  </article>
+</article>
 
 </section>
-
-
-<!-- =========================
-GUIDE
-========================= -->
 
 <section id="guide" class="container">
 
-  <article class="content-section">
+<article class="content-section">
 
-    <h2>
-      Carta Ramalan 4D Chart Guide
-    </h2>
+<h2>Carta Ramalan 4D Chart Guide</h2>
 
-    <p>
-      Carta Lotto uses dated chart pages so every published layout can
-      be identified by its exact date and category. This makes the
-      archive easier to browse when several daily updates are available.
-    </p>
+<p>
+Carta Lotto uses separate dated chart pages so each published layout
+can be identified by its exact date and category.
+</p>
 
-    <h3>
-      GDL Perdana Daily Charts
-    </h3>
+<h3>GDL Perdana Daily Charts</h3>
 
-    <p>
-      GDL Perdana entries follow a daily publishing format. The latest
-      available GDL entry is placed ahead of older entries on the
-      homepage, while each dated page remains available as a separate
-      reference.
-    </p>
+<p>
+GDL Perdana entries follow a daily publishing format. Each date has
+its own permanent chart page. A newer update never changes the date
+or content of an older page.
+</p>
 
-    <h3>
-      Ramalan 4D MTP and SGP
-    </h3>
+<h3>Ramalan 4D MTP and SGP</h3>
 
-    <p>
-      MTP and SGP entries are presented on their scheduled publishing
-      dates. The date and chart category are shown together to make
-      each entry easy to identify.
-    </p>
+<p>
+MTP and SGP entries are presented on their scheduled publishing dates.
+The chart category and date are shown together on each individual page.
+</p>
 
-    <h3>
-      Reading a Chart
-    </h3>
+<h3>Reading a Chart</h3>
 
-    <p>
-      Check the chart category and date first, then review the complete
-      displayed layout. Highlighted positions are visual markers within
-      the published chart and should not be treated as guaranteed
-      results.
-    </p>
+<p>
+Check the chart category and date first, then review the complete
+displayed layout. Highlighted positions are visual markers within
+the published chart and should not be treated as guaranteed results.
+</p>
 
-    <h3>
-      Using the Dated Archive
-    </h3>
+<h3>Using the Dated Archive</h3>
 
-    <p>
-      When comparing entries, use the date shown on each page as the
-      primary reference. Separate dates represent separate updates and
-      should not be combined into one prediction or result.
-    </p>
+<p>
+When comparing entries, use the date shown on each page as the primary
+reference. Separate dates represent separate updates and should not
+be combined into one prediction or result.
+</p>
 
-  </article>
+</article>
 
 </section>
-
-
-<!-- =========================
-FAQ
-========================= -->
 
 <section id="faq" class="container">
 
-  <article class="content-section">
+<article class="content-section">
 
-    <h2>
-      Frequently Asked Questions
-    </h2>
+<h2>Frequently Asked Questions</h2>
 
+<div class="faq">
+<h3>What is Carta Ramalan 4D?</h3>
+<p>
+Carta Ramalan 4D is a chart-style format used online to organize
+dated number information. Carta Lotto presents these layouts with
+their corresponding dates and categories.
+</p>
+</div>
 
-    <div class="faq">
+<div class="faq">
+<h3>What is Carta Lotto?</h3>
+<p>
+Carta Lotto is an independent informational website that organizes
+dated Carta Ramalan 4D, GDL Perdana and MTP/SGP chart entries.
+</p>
+</div>
 
-      <h3>
-        What is Carta Ramalan 4D?
-      </h3>
+<div class="faq">
+<h3>What is GDL Perdana?</h3>
+<p>
+GDL Perdana is one of the chart categories published in the Carta
+Lotto archive. Its entries are organized by individual dates.
+</p>
+</div>
 
-      <p>
-        Carta Ramalan 4D is a chart-style format used online to
-        organize dated number information. Carta Lotto presents
-        these layouts together with their corresponding dates and
-        categories.
-      </p>
+<div class="faq">
+<h3>What is Ramalan 4D MTP?</h3>
+<p>
+Ramalan 4D MTP is a scheduled chart category presented by Carta Lotto.
+The corresponding chart date is displayed with every entry.
+</p>
+</div>
 
-    </div>
+<div class="faq">
+<h3>Are Carta Lotto charts guaranteed?</h3>
+<p>
+No. Carta Lotto does not guarantee future outcomes. Highlighted
+positions are visual elements of the published chart and are not
+official results or guaranteed predictions.
+</p>
+</div>
 
+<div class="faq">
+<h3>Is Carta Lotto an official lottery website?</h3>
+<p>
+No. Carta Lotto is an independent informational website and should
+not be confused with an official lottery operator or official results
+publisher.
+</p>
+</div>
 
-    <div class="faq">
-
-      <h3>
-        What is Carta Lotto?
-      </h3>
-
-      <p>
-        Carta Lotto is an independent informational website that
-        organizes dated Carta Ramalan 4D, GDL Perdana and MTP/SGP
-        chart entries.
-      </p>
-
-    </div>
-
-
-    <div class="faq">
-
-      <h3>
-        What is GDL Perdana?
-      </h3>
-
-      <p>
-        GDL Perdana is one of the chart categories published in the
-        Carta Lotto archive. Its entries are organized by individual
-        dates.
-      </p>
-
-    </div>
-
-
-    <div class="faq">
-
-      <h3>
-        What is Ramalan 4D MTP?
-      </h3>
-
-      <p>
-        Ramalan 4D MTP is a scheduled chart category presented by
-        Carta Lotto. The corresponding chart date is displayed with
-        every entry.
-      </p>
-
-    </div>
-
-
-    <div class="faq">
-
-      <h3>
-        Are Carta Lotto charts guaranteed?
-      </h3>
-
-      <p>
-        No. Carta Lotto does not guarantee future outcomes. Highlighted
-        positions are visual elements of the published chart and are
-        not official results or guaranteed predictions.
-      </p>
-
-    </div>
-
-
-    <div class="faq">
-
-      <h3>
-        Is Carta Lotto an official lottery website?
-      </h3>
-
-      <p>
-        No. Carta Lotto is an independent informational website and
-        should not be confused with an official lottery operator or
-        official results publisher.
-      </p>
-
-    </div>
-
-  </article>
+</article>
 
 </section>
 
-
 </main>
-
 
 <footer>
 
-  <div class="footer-inner">
+<div class="footer-inner">
 
-    <div class="footer-logo">
-      Carta<span>Lotto</span>
-    </div>
+<div class="footer-logo">
+Carta<span>Lotto</span>
+</div>
 
-    <div class="footer-links">
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="disclaimer.html">Disclaimer</a>
+<a href="contact.html">Contact</a>
+</div>
 
-      <a href="about.html">About</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="contact.html">Contact</a>
+<p>
+© <span id="year"></span> Carta Lotto. All rights reserved.
+</p>
 
-    </div>
+<p>
+Chart information is provided for informational purposes only.
+</p>
 
-    <p>
-      © <span id="year"></span> Carta Lotto. All rights reserved.
-    </p>
-
-    <p>
-      Chart information is provided for informational purposes only.
-    </p>
-
-  </div>
+</div>
 
 </footer>
-
 
 <script>
 (function(){
 
 "use strict";
 
-
-/* ==========================================================
-EXISTING POST DATABASE
+/*
+============================================================
+PERMANENT POST INDEX
 
 IMPORTANT:
-These are REAL files already created in /Carta-Ramalan/charts/
+The homepage NEVER invents a future URL.
 
-DO NOT use generated query-string URLs.
-DO NOT change these paths unless the physical file name changes.
-========================================================== */
+Only physical HTML files listed here are displayed.
+
+The GitHub Action will add the next real file to this list
+when a new dated post is created.
+============================================================
+*/
 
 const POSTS = [
 
-  /* ---------- MTP / SGP ---------- */
+/* =========================
+MTP / SGP
+========================= */
 
-  {
-    type:"mtp",
-    date:"2026-08-29",
-    title:"Ramalan 4D MTP & SGP — August 29, 2026",
-    url:"./charts/ramalan-4d-mtp-sgp-2026-08-29.html",
-    intro:"Review the dated Ramalan 4D MTP and SGP chart for August 29, 2026. The complete chart layout and date are presented together for easy reference."
-  },
+{
+type:"mtp",
+date:"2026-08-29",
+title:"Ramalan 4D MTP & SGP — August 29, 2026",
+url:"./charts/ramalan-4d-mtp-sgp-2026-08-29.html",
+intro:"Review the dated Ramalan 4D MTP and SGP chart for August 29, 2026. The complete chart layout and date are presented together for easy reference."
+},
 
-  {
-    type:"mtp",
-    date:"2026-08-26",
-    title:"Ramalan 4D MTP & SGP — August 26, 2026",
-    url:"./charts/ramalan-4d-mtp-sgp-2026-08-26.html",
-    intro:"Review the dated Ramalan 4D MTP and SGP chart for August 26, 2026, with the chart date and category clearly identified."
-  },
+{
+type:"mtp",
+date:"2026-08-26",
+title:"Ramalan 4D MTP & SGP — August 26, 2026",
+url:"./charts/ramalan-4d-mtp-sgp-2026-08-26.html",
+intro:"Review the dated Ramalan 4D MTP and SGP chart for August 26, 2026, with the chart date and category clearly identified."
+},
 
-  {
-    type:"mtp",
-    date:"2026-08-22",
-    title:"Ramalan 4D MTP & SGP — August 22, 2026",
-    url:"./charts/ramalan-4d-mtp-sgp-2026-08-22.html",
-    intro:"Review the Ramalan 4D MTP and SGP chart published for August 22, 2026, with the complete dated layout presented in one place."
-  },
+{
+type:"mtp",
+date:"2026-08-22",
+title:"Ramalan 4D MTP & SGP — August 22, 2026",
+url:"./charts/ramalan-4d-mtp-sgp-2026-08-22.html",
+intro:"Review the Ramalan 4D MTP and SGP chart published for August 22, 2026, with the complete dated layout presented in one place."
+},
 
+/* =========================
+GDL PERDANA
+========================= */
 
-  /* ---------- GDL PERDANA ---------- */
+{
+type:"gdl",
+date:"2026-08-28",
+title:"Carta Ramalan GDL Perdana — August 28, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-28.html",
+intro:"Review the dated Carta Ramalan GDL Perdana chart for August 28, 2026. The complete layout is presented together with its exact publishing date."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-28",
-    title:"Carta Ramalan GDL Perdana — August 28, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-28.html",
-    intro:"Review the dated Carta Ramalan GDL Perdana chart for August 28, 2026. The complete layout is presented together with its exact publishing date."
-  },
+{
+type:"gdl",
+date:"2026-08-27",
+title:"Carta Ramalan GDL Perdana — August 27, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-27.html",
+intro:"Review the Carta Ramalan GDL Perdana chart for August 27, 2026, with the dated layout kept separate from other daily entries."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-27",
-    title:"Carta Ramalan GDL Perdana — August 27, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-27.html",
-    intro:"Review the Carta Ramalan GDL Perdana chart for August 27, 2026, with the dated layout kept separate from other daily entries."
-  },
+{
+type:"gdl",
+date:"2026-08-26",
+title:"Carta Ramalan GDL Perdana — August 26, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-26.html",
+intro:"Review the dated GDL Perdana chart for August 26, 2026, with the chart category and date clearly displayed."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-26",
-    title:"Carta Ramalan GDL Perdana — August 26, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-26.html",
-    intro:"Review the dated GDL Perdana chart for August 26, 2026, with the chart category and date clearly displayed."
-  },
+{
+type:"gdl",
+date:"2026-08-25",
+title:"Carta Ramalan GDL Perdana — August 25, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-25.html",
+intro:"Review the GDL Perdana chart information for August 25, 2026, presented as a separate dated chart entry."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-25",
-    title:"Carta Ramalan GDL Perdana — August 25, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-25.html",
-    intro:"Review the GDL Perdana chart information for August 25, 2026, presented as a separate dated chart entry."
-  },
+{
+type:"gdl",
+date:"2026-08-24",
+title:"Carta Ramalan GDL Perdana — August 24, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-24.html",
+intro:"Review the Carta Ramalan GDL Perdana layout for August 24, 2026, with its date preserved as the main reference."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-24",
-    title:"Carta Ramalan GDL Perdana — August 24, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-24.html",
-    intro:"Review the Carta Ramalan GDL Perdana layout for August 24, 2026, with its date preserved as the main reference."
-  },
+{
+type:"gdl",
+date:"2026-08-23",
+title:"Carta Ramalan GDL Perdana — August 23, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-23.html",
+intro:"Review the dated GDL Perdana chart for August 23, 2026, and compare it with other separate daily entries when needed."
+},
 
-  {
-    type:"gdl",
-    date:"2026-08-23",
-    title:"Carta Ramalan GDL Perdana — August 23, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-23.html",
-    intro:"Review the dated GDL Perdana chart for August 23, 2026, and compare it with other separate daily entries when needed."
-  },
-
-  {
-    type:"gdl",
-    date:"2026-08-22",
-    title:"Carta Ramalan GDL Perdana — August 22, 2026",
-    url:"./charts/carta-ramalan-gdl-perdana-2026-08-22.html",
-    intro:"Review the GDL Perdana chart published for August 22, 2026, with its complete dated layout presented for reference."
-  }
+{
+type:"gdl",
+date:"2026-08-22",
+title:"Carta Ramalan GDL Perdana — August 22, 2026",
+url:"./charts/carta-ramalan-gdl-perdana-2026-08-22.html",
+intro:"Review the GDL Perdana chart published for August 22, 2026, with its complete dated layout presented for reference."
+}
 
 ];
 
 
-/* ==========================================================
+/*
+============================================================
 DATE HELPERS
-========================================================== */
+============================================================
+*/
 
 function dateValue(value){
-  return new Date(value+"T12:00:00");
+return new Date(value+"T12:00:00");
 }
 
 function formatDate(value){
 
-  return dateValue(value).toLocaleDateString("en-US",{
-    month:"long",
-    day:"numeric",
-    year:"numeric"
-  });
+return dateValue(value).toLocaleDateString("en-US",{
+month:"long",
+day:"numeric",
+year:"numeric"
+});
 
 }
 
 function formatShortDate(value){
 
-  return dateValue(value).toLocaleDateString("en-US",{
-    weekday:"short",
-    month:"short",
-    day:"numeric",
-    year:"numeric"
-  });
+return dateValue(value).toLocaleDateString("en-US",{
+weekday:"short",
+month:"short",
+day:"numeric",
+year:"numeric"
+});
 
 }
 
 
-/* ==========================================================
-DETERMINISTIC CHART NUMBERS
-
-Same post date + type always produces same visual chart.
-========================================================== */
-
-function seededRandom(seed){
-
-  const x=Math.sin(seed)*10000;
-
-  return x-Math.floor(x);
-
-}
-
-
-function chartSeed(date,type){
-
-  const parts=date.split("-");
-
-  const y=Number(parts[0]);
-  const m=Number(parts[1]);
-  const d=Number(parts[2]);
-
-  const base=
-    y+
-    (m*31)+
-    (d*17);
-
-  return type==="mtp"
-    ?base+701
-    :base+301;
-
-}
-
-
-function generateMatrix(date,type){
-
-  const seed=chartSeed(date,type);
-
-  const values=[];
-
-  for(let i=0;i<16;i++){
-
-    values.push(
-      Math.floor(
-        seededRandom(seed+(i*13)+7)*10
-      )
-    );
-
-  }
-
-  return values;
-
-}
-
-
-const highlightPatterns=[
-
-  [5,6,10,14],
-  [1,5,10,15],
-  [0,4,8,12],
-  [3,6,9,12],
-  [0,5,10,15],
-  [3,7,10,12],
-  [2,5,9,14]
-
-];
-
-
-function getHighlights(date,type){
-
-  const seed=Math.abs(chartSeed(date,type));
-
-  return highlightPatterns[
-    seed%highlightPatterns.length
-  ];
-
-}
-
-
-/* ==========================================================
-CHART HTML
-========================================================== */
-
-function chartHTML(post){
-
-  const isMTP=post.type==="mtp";
-
-  const numbers=generateMatrix(
-    post.date,
-    post.type
-  );
-
-  const highlights=getHighlights(
-    post.date,
-    post.type
-  );
-
-  let cells="";
-
-  numbers.forEach(function(number,index){
-
-    const active=
-      highlights.includes(index);
-
-    cells+=
-      '<div class="cell'+
-      (active?" active":"")+
-      '">'+
-      number+
-      '</div>';
-
-  });
-
-
-  return `
-
-    <div class="chart ${isMTP?"mtp":"gdl"}">
-
-      <div class="chart-heading">
-        ${isMTP
-          ?"RAMALAN 4D MTP & SGP"
-          :"CARTA RAMALAN GDL PERDANA"}
-      </div>
-
-      <div class="chart-date">
-        ${formatDate(post.date)}
-      </div>
-
-      <div class="matrix">
-        ${cells}
-      </div>
-
-      <div class="chart-logos">
-        ${isMTP
-          ?"Magnum • Toto • Damacai • SGP"
-          :"Grand Dragon • GDL • Perdana • Nine Lotto"}
-      </div>
-
-      <div class="watermark">
-        CARTALOTTO.COM
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* ==========================================================
+/*
+============================================================
 SORT
 
 Newest date first.
-If the same date has MTP + GDL,
-MTP is intentionally placed first.
-========================================================== */
+
+If MTP and GDL have exactly the same date:
+MTP appears first.
+============================================================
+*/
 
 function sortPosts(posts){
 
-  return posts.slice().sort(function(a,b){
+return posts.slice().sort(function(a,b){
 
-    const dateDifference=
-      dateValue(b.date)-
-      dateValue(a.date);
+const dateDifference=
+dateValue(b.date)-dateValue(a.date);
 
-    if(dateDifference!==0){
-      return dateDifference;
-    }
+if(dateDifference!==0){
+return dateDifference;
+}
 
-    if(a.type==="mtp" && b.type==="gdl"){
-      return -1;
-    }
+if(a.type==="mtp" && b.type==="gdl"){
+return -1;
+}
 
-    if(a.type==="gdl" && b.type==="mtp"){
-      return 1;
-    }
+if(a.type==="gdl" && b.type==="mtp"){
+return 1;
+}
 
-    return 0;
+return 0;
 
-  });
+});
 
 }
 
 
-/* ==========================================================
+/*
+============================================================
+DETERMINISTIC CHART
+
+Homepage preview uses the same date/type seed.
+============================================================
+*/
+
+function seededRandom(seed){
+
+const x=Math.sin(seed)*10000;
+
+return x-Math.floor(x);
+
+}
+
+function chartSeed(date,type){
+
+const parts=date.split("-");
+
+const y=Number(parts[0]);
+const m=Number(parts[1]);
+const d=Number(parts[2]);
+
+const base=y+(m*31)+(d*17);
+
+return type==="mtp"
+?base+701
+:base+301;
+
+}
+
+const highlightPatterns=[
+[5,6,10,14],
+[1,5,10,15],
+[0,4,8,12],
+[3,6,9,12],
+[0,5,10,15],
+[3,7,10,12],
+[2,5,9,14]
+];
+
+function generateMatrix(date,type){
+
+const seed=chartSeed(date,type);
+const values=[];
+
+for(let i=0;i<16;i++){
+
+values.push(
+Math.floor(
+seededRandom(seed+(i*13)+7)*10
+)
+);
+
+}
+
+return values;
+
+}
+
+function getHighlights(date,type){
+
+const seed=Math.abs(chartSeed(date,type));
+
+return highlightPatterns[
+seed%highlightPatterns.length
+];
+
+}
+
+
+/*
+============================================================
+CHART HTML
+============================================================
+*/
+
+function chartHTML(post){
+
+const isMTP=post.type==="mtp";
+
+const numbers=
+generateMatrix(post.date,post.type);
+
+const highlights=
+getHighlights(post.date,post.type);
+
+let cells="";
+
+numbers.forEach(function(number,index){
+
+const active=
+highlights.includes(index);
+
+cells+=
+'<div class="cell'+
+(active?" active":"")+
+'">'+
+number+
+'</div>';
+
+});
+
+return `
+
+<div class="chart ${isMTP?"mtp":"gdl"}">
+
+<div class="chart-heading">
+${isMTP
+?"RAMALAN 4D MTP & SGP"
+:"CARTA RAMALAN GDL PERDANA"}
+</div>
+
+<div class="chart-date">
+${formatDate(post.date)}
+</div>
+
+<div class="matrix">
+${cells}
+</div>
+
+<div class="chart-logos">
+${isMTP
+?"Magnum • Toto • Damacai • SGP"
+:"Grand Dragon • GDL • Perdana • Nine Lotto"}
+</div>
+
+<div class="watermark">
+CARTALOTTO.COM
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/*
+============================================================
 CREATE CARD
-========================================================== */
+============================================================
+*/
 
 function createCard(post,index){
 
-  const isMTP=post.type==="mtp";
+const isMTP=post.type==="mtp";
+const latest=index===0;
 
-  const latest=
-    index===0;
+return `
 
-  return `
+<article class="post-card ${isMTP?"mtp-post":"gdl-post"}">
 
-    <article class="post-card ${isMTP?"mtp-post":"gdl-post"}">
+<div class="post-content">
 
-      <div class="post-content">
+<div class="post-meta">
 
-        <div class="post-meta">
+<span class="badge ${isMTP?"mtp":"gdl"}">
+${isMTP?"MTP + SGP":"GDL PERDANA"}
+</span>
 
-          <span class="badge ${isMTP?"mtp":"gdl"}">
-            ${isMTP?"MTP + SGP":"GDL PERDANA"}
-          </span>
+${latest
+?`
+<span class="badge latest-badge">
+LATEST
+</span>
+`
+:""}
 
-          ${
-            latest
-            ?`
-              <span class="badge latest-badge">
-                LATEST
-              </span>
-             `
-            :""
-          }
+<span>
+${formatShortDate(post.date)}
+</span>
 
-          <span>
-            ${formatShortDate(post.date)}
-          </span>
+</div>
 
-        </div>
+<h2 class="post-title">
+${post.title}
+</h2>
 
+<p class="post-intro">
+${post.intro}
+</p>
 
-        <h2 class="post-title">
-          ${post.title}
-        </h2>
+<div class="chart-shell">
+${chartHTML(post)}
+</div>
 
+<a
+class="read-post"
+href="${post.url}"
+aria-label="Read full post: ${post.title}">
+Read Full Post →
+</a>
 
-        <p class="post-intro">
-          ${post.intro}
-        </p>
+<div class="post-footer">
 
+<span>Carta Lotto information</span>
 
-        <div class="chart-shell">
-          ${chartHTML(post)}
-        </div>
+<span>${formatDate(post.date)}</span>
 
+</div>
 
-        <a
-          class="read-post"
-          href="${post.url}"
-          aria-label="Read full post: ${post.title}"
-        >
-          Read Full Post →
-        </a>
+</div>
 
+</article>
 
-        <div class="post-footer">
-
-          <span>
-            Carta Lotto information
-          </span>
-
-          <span>
-            ${formatDate(post.date)}
-          </span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  `;
+`;
 
 }
 
 
-/* ==========================================================
-RENDER HOMEPAGE
-
-This uses ONLY the 10 real post files above.
-
-No fake future URL.
-No generated post URL.
-No query-string routing.
-========================================================== */
+/*
+============================================================
+RENDER
+============================================================
+*/
 
 function renderFeed(){
 
-  const feed=
-    document.getElementById("feed");
+const feed=
+document.getElementById("feed");
 
-  const sorted=
-    sortPosts(POSTS);
+const sorted=
+sortPosts(POSTS);
 
-  let html="";
+let html="";
 
-  sorted.forEach(function(post,index){
+sorted.forEach(function(post,index){
 
-    html+=createCard(
-      post,
-      index
-    );
+html+=createCard(post,index);
 
-  });
+});
 
-  feed.innerHTML=html;
+feed.innerHTML=html;
 
 }
 
 
-/* ==========================================================
+/*
+============================================================
 MOBILE MENU
-========================================================== */
+============================================================
+*/
 
 const menuBtn=
-  document.getElementById("menuBtn");
+document.getElementById("menuBtn");
 
 const mobileMenu=
-  document.getElementById("mobileMenu");
-
+document.getElementById("mobileMenu");
 
 function closeMenu(){
 
-  mobileMenu.classList.remove("active");
+mobileMenu.classList.remove("active");
 
-  menuBtn.classList.remove("active");
+menuBtn.classList.remove("active");
 
-  document.body.classList.remove("menu-open");
+document.body.classList.remove("menu-open");
 
-  menuBtn.setAttribute(
-    "aria-expanded",
-    "false"
-  );
+menuBtn.setAttribute(
+"aria-expanded",
+"false"
+);
 
-  menuBtn.setAttribute(
-    "aria-label",
-    "Open menu"
-  );
+menuBtn.setAttribute(
+"aria-label",
+"Open menu"
+);
 
 }
 
-
 menuBtn.addEventListener(
-  "click",
-  function(){
+"click",
+function(){
 
-    const active=
-      !mobileMenu.classList.contains("active");
+const active=
+!mobileMenu.classList.contains("active");
 
-    mobileMenu.classList.toggle(
-      "active",
-      active
-    );
-
-    menuBtn.classList.toggle(
-      "active",
-      active
-    );
-
-    document.body.classList.toggle(
-      "menu-open",
-      active
-    );
-
-    menuBtn.setAttribute(
-      "aria-expanded",
-      active?"true":"false"
-    );
-
-    menuBtn.setAttribute(
-      "aria-label",
-      active?"Close menu":"Open menu"
-    );
-
-  }
+mobileMenu.classList.toggle(
+"active",
+active
 );
 
+menuBtn.classList.toggle(
+"active",
+active
+);
+
+document.body.classList.toggle(
+"menu-open",
+active
+);
+
+menuBtn.setAttribute(
+"aria-expanded",
+active?"true":"false"
+);
+
+menuBtn.setAttribute(
+"aria-label",
+active?"Close menu":"Open menu"
+);
+
+});
 
 mobileMenu
-  .querySelectorAll("a")
-  .forEach(function(link){
+.querySelectorAll("a")
+.forEach(function(link){
 
-    link.addEventListener(
-      "click",
-      closeMenu
-    );
-
-  });
-
-
-document.addEventListener(
-  "keydown",
-  function(event){
-
-    if(event.key==="Escape"){
-      closeMenu();
-    }
-
-  }
+link.addEventListener(
+"click",
+closeMenu
 );
 
+});
 
-/* ==========================================================
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Escape"){
+closeMenu();
+}
+
+});
+
+
+/*
+============================================================
 YEAR
-========================================================== */
+============================================================
+*/
 
 document.getElementById("year").textContent=
-  new Date().getFullYear();
+new Date().getFullYear();
 
 
-/* ==========================================================
+/*
+============================================================
 START
-========================================================== */
+============================================================
+*/
 
 renderFeed();
 
 })();
 </script>
-
 
 </body>
 </html>
