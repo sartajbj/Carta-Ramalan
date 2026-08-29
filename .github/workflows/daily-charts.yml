@@ -1,4 +1,4 @@
-name: Generate Daily Charts
+name: Generate Daily Carta Lotto Charts
 
 on:
   workflow_dispatch:
@@ -21,19 +21,13 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate daily chart pages
+      - name: Generate daily charts
         run: python scripts/generate-daily-charts.py
 
       - name: Commit generated charts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add charts/
-
-          if git diff --cached --quiet; then
-            echo "No chart changes to commit."
-          else
-            git commit -m "Update daily charts"
-            git push
-          fi
+          git diff --cached --quiet || git commit -m "Update daily Carta Lotto charts"
+          git push
