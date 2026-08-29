@@ -1497,13 +1497,13 @@ const date=new Date(today);
 
 date.setDate(today.getDate()-i);
 
-html+=createChartCard(date,"gdl");
-
 if(isMTPDay(date)){
 
 html+=createChartCard(date,"mtp");
 
 }
+
+html+=createChartCard(date,"gdl");
 
 }
 
