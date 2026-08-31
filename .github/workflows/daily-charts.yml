@@ -1,4 +1,4 @@
-name: Generate Daily Carta Lotto Charts
+name: Maintain Carta Lotto Archive
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  generate:
+  maintain:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,13 +21,19 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate daily charts
+      - name: Maintain archive pages
         run: python scripts/generate-daily-charts.py
 
-      - name: Commit generated charts
+      - name: Commit archive maintenance
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add charts/
-          git diff --cached --quiet || git commit -m "Update daily Carta Lotto charts"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No archive changes to commit."
+          else
+            git commit -m "Maintain Carta Lotto archive"
+            git push
+          fi
