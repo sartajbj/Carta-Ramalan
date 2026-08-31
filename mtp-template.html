@@ -201,13 +201,116 @@ h1{
 
 
 /* =========================
+   CHART
+========================= */
+
+.chart-section{
+  padding:20px 23px;
+  background:#f8fafc;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.chart-shell{
+  padding:8px;
+  border-radius:13px;
+  overflow:hidden;
+  background:#171b26;
+}
+
+.chart{
+  width:min(360px,100%);
+  margin:auto;
+  padding:10px;
+  border-radius:10px;
+  background:#fffdf2;
+}
+
+.chart.mtp{
+  border-top:4px solid #1a1d24;
+}
+
+.chart-heading{
+  text-align:center;
+  color:#202939;
+  font-size:13px;
+  line-height:1.25;
+  font-weight:900;
+}
+
+.chart-date{
+  margin:3px 0 8px;
+  text-align:center;
+  color:#667085;
+  font-size:11px;
+  font-weight:800;
+}
+
+.matrix{
+  width:100%;
+  max-width:320px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:2px solid #202939;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.cell{
+  aspect-ratio:1/1;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border-right:1px solid #aab2bf;
+  border-bottom:1px solid #aab2bf;
+  color:#111827;
+  font-size:24px;
+  line-height:1;
+  font-weight:900;
+}
+
+.cell:nth-child(4n){
+  border-right:0;
+}
+
+.cell:nth-last-child(-n+4){
+  border-bottom:0;
+}
+
+.chart.mtp .cell.active{
+  background:#f5c542;
+  color:#171b26;
+}
+
+.chart-note{
+  margin-top:7px;
+  padding-top:6px;
+  border-top:1px solid #e5e7eb;
+  text-align:center;
+  color:#667085;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.watermark{
+  margin-top:5px;
+  text-align:center;
+  color:#98a2b3;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+
+/* =========================
    DATE CARD
 ========================= */
 
 .archive-summary{
   padding:20px 23px;
   background:#f8fafc;
-  border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
 }
 
@@ -439,6 +542,10 @@ footer{
     font-size:14px;
   }
 
+  .chart-section{
+    padding:14px;
+  }
+
   .archive-summary{
     padding:14px;
   }
@@ -560,12 +667,17 @@ footer{
 
 
         <p class="lead">
-          This page is the dated MTP &amp; SGP archive entry for
-          {{DATE_LONG}}. Its date and category remain attached to
-          this permanent archive page.
+          {{INTRO}}
         </p>
 
       </header>
+
+
+      <!-- CHART -->
+
+      <section class="chart-section">
+        {{CHART_HTML}}
+      </section>
 
 
       <!-- DATE SUMMARY -->
@@ -596,14 +708,14 @@ footer{
       <div class="article-body">
 
         <h2>
-          MTP &amp; SGP Archive for {{DATE_LONG}}
+          How to Read This MTP &amp; SGP Chart
         </h2>
 
         <p>
-          This Carta Lotto page preserves the MTP &amp; SGP entry
-          associated with {{DATE_LONG}}. Each archive entry has its
-          own permanent dated URL so older pages remain separate from
-          newer records.
+          The chart above shows sixteen positions arranged in four
+          rows and four columns for {{DATE_LONG}}. The highlighted
+          cells are visual markers within this specific dated layout
+          — they are not official results and not guaranteed numbers.
         </p>
 
         <p>
@@ -649,9 +761,9 @@ footer{
 
         <p>
           MTP &amp; SGP is maintained here as a dated archive
-          category. The purpose of this page is to preserve the
-          category and publication date in a consistent reference
-          format.
+          category, published every Wednesday, Saturday and Sunday.
+          This page preserves the category and publication date
+          alongside the chart shown above.
         </p>
 
         <p>
@@ -662,19 +774,22 @@ footer{
 
 
         <h2>
-          Permanent Dated Reference
+          Official Results vs. This Chart
         </h2>
 
         <p>
-          The permanent URL contains the same date shown within this
-          article. This prevents separate dated archive entries from
-          being confused with one another.
+          This page is Carta Lotto's own dated, organized chart
+          layout — a useful reference and archive record, not a
+          substitute for an official operator's results page. Always
+          verify official information directly with the relevant
+          official source.
         </p>
 
 
         <div class="notice">
-          This page is provided as a dated informational archive
-          reference only.
+          This page is a dated informational archive reference only.
+          It does not guarantee any winning number or official
+          result.
         </div>
 
 
@@ -762,7 +877,7 @@ footer{
 
 
     <p>
-      © 2026 Carta Lotto. All rights reserved.
+      © <span id="year">2026</span> Carta Lotto. All rights reserved.
     </p>
 
     <p>
