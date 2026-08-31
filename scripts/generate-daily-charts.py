@@ -1,271 +1,548 @@
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
 import re
-from html import escape
 
 ROOT = Path(__file__).resolve().parents[1]
 CHARTS = ROOT / "charts"
-GDL_TEMPLATE = ROOT / "gdl-template.html"
-MTP_TEMPLATE = ROOT / "mtp-template.html"
-INDEX = ROOT / "index.html"
 
 SITE = "https://www.cartalotto.com"
 
-# Publication schedule
-GDL_WEEKDAYS = {0, 1, 2, 3, 4, 5, 6}
-MTP_WEEKDAYS = {2, 5, 6}  # Wednesday, Saturday, Sunday
-
-# IMPORTANT:
-# This generator deliberately creates TODAY only.
-# It never creates future dated pages.
-GENERATE_FUTURE_DAYS = False
-
-# IMPORTANT:
-# These values are the current chart-layout data already used by the project.
-# They are NOT official lottery results. Do not describe them as official results.
-#
-# Replace this data only when you have the real/published chart information.
-MTP_VALUES = [
-    "8", "1", "6", "4",
-    "3", "7", "0", "9",
-    "5", "2", "8", "1",
-    "6", "4", "3", "7"
-]
-MTP_ACTIVE = {0, 3, 5, 10}
+GDL_PREFIX = "carta-ramalan-gdl-perdana"
+MTP_PREFIX = "ramalan-4d-mtp-sgp"
 
 
-def long_date(d):
-    return d.strftime("%B %d, %Y").replace(" 0", " ")
+def parse_archive_date(filename, prefix):
+    """
+    Example:
+    carta-ramalan-gdl-perdana-2026-08-31.html
+    """
+
+    pattern = re.compile(
+        rf"^{re.escape(prefix)}-(\d{{4}}-\d{{2}}-\d{{2}})\.html$"
+    )
+
+    match = pattern.match(filename)
+
+    if not match:
+        return None
+
+    try:
+        return datetime.strptime(
+            match.group(1),
+            "%Y-%m-%d"
+        ).date()
+
+    except ValueError:
+        return None
 
 
-def display_date(d):
-    return d.strftime("%d/%m/%Y")
+def archive_url(prefix, archive_date):
+    return (
+        f"{SITE}/charts/"
+        f"{prefix}-{archive_date.isoformat()}.html"
+    )
 
 
-def iso_date(d):
-    return d.strftime("%Y-%m-%d")
+def existing_archive_pages(prefix):
+    """
+    Return existing CURRENT/PAST archive pages only.
 
+    Future-dated files are intentionally excluded
+    from navigation.
+    """
 
-def slug_for(d):
-    return f"ramalan-4d-mtp-sgp-{iso_date(d)}.html"
-
-
-def url_for(d):
-    return f"{SITE}/charts/{slug_for(d)}"
-
-
-def existing_dates(prefix):
-    pattern = re.compile(rf"^{re.escape(prefix)}-(\d{{4}}-\d{{2}}-\d{{2}})\.html$")
-    result = []
+    today = date.today()
+    pages = []
 
     if not CHARTS.exists():
-        return result
+        return pages
 
     for path in CHARTS.glob("*.html"):
-        match = pattern.match(path.name)
-        if not match:
-            continue
-        try:
-            y, m, d = map(int, match.group(1).split("-"))
-            result.append(date(y, m, d))
-        except ValueError:
-            pass
 
-    return sorted(set(result))
-
-
-def make_matrix(values, active_positions):
-    if len(values) != 16:
-        raise ValueError("MTP chart must contain exactly 16 positions.")
-
-    cells = []
-    for i, value in enumerate(values):
-        cls = "cell active" if i in active_positions else "cell"
-        cells.append(f'<div class="{cls}">{escape(str(value))}</div>')
-    return "\n".join(cells)
-
-
-def nav_link(url, label):
-    return f'<a class="btn" href="{escape(url, quote=True)}">{escape(label)}</a>'
-
-
-def find_previous_next(d, dates):
-    older = [x for x in dates if x < d]
-    newer = [x for x in dates if x > d]
-    previous_date = max(older) if older else None
-    next_date = min(newer) if newer else None
-    return previous_date, next_date
-
-
-def build_page(d, template, all_dates):
-    previous_date, next_date = find_previous_next(d, all_dates)
-
-    # Do not create links to files that do not exist.
-    previous_link = (
-        nav_link(url_for(previous_date), f"← Previous Chart · {display_date(previous_date)}")
-        if previous_date else ""
-    )
-    next_link = (
-        nav_link(url_for(next_date), f"Next Chart · {display_date(next_date)} →")
-        if next_date else ""
-    )
-
-    title = f"Ramalan 4D MTP & SGP — {long_date(d)}"
-    description = (
-        f"Ramalan 4D MTP & SGP chart for {long_date(d)}. "
-        "View the dated 4 × 4 chart layout and use the existing archive links "
-        "to browse previous and next MTP/SGP chart pages."
-    )
-
-    lead = (
-        f"This dated Ramalan 4D MTP & SGP page presents the 4 × 4 chart layout "
-        f"for {long_date(d)}. Check the date and category before using the chart, "
-        "and remember that the highlighted positions are layout markers, not official results."
-    )
-
-    heading_1 = f"Ramalan 4D MTP & SGP Chart for {long_date(d)}"
-    paragraph_1 = (
-        f"The chart above is organized for the {display_date(d)} MTP & SGP date. "
-        "All sixteen positions are displayed so the complete 4 × 4 layout can be read without opening another view."
-    )
-    paragraph_2 = (
-        "Highlighted cells identify positions that are visually marked in this chart layout. "
-        "They do not represent an official draw result, a guaranteed number, or a promise of winnings."
-    )
-
-    heading_2 = "Reading This 4D Chart"
-    paragraph_3 = (
-        "Start with the category and date, then read the grid from left to right and top to bottom. "
-        "When comparing dates, use the archive navigation rather than assuming that one page contains the next update."
-    )
-    paragraph_4 = (
-        "Carta Lotto keeps dated pages separate so an older archive entry remains tied to its own date. "
-        "For official draw results, use the relevant official lottery source instead of treating this chart as an official results page."
-    )
-
-    replacements = {
-        "{{TITLE}}": escape(title),
-        "{{DESCRIPTION}}": escape(description, quote=True),
-        "{{SLUG}}": slug_for(d),
-        "{{DATE}}": iso_date(d),
-        "{{DATE_TEXT}}": escape(long_date(d)),
-        "{{DATE_SHORT}}": escape(display_date(d)),
-        "{{LEAD}}": escape(lead),
-        "{{MATRIX}}": make_matrix(MTP_VALUES, MTP_ACTIVE),
-        "{{HEADING_1}}": escape(heading_1),
-        "{{PARAGRAPH_1}}": escape(paragraph_1),
-        "{{PARAGRAPH_2}}": escape(paragraph_2),
-        "{{HEADING_2}}": escape(heading_2),
-        "{{PARAGRAPH_3}}": escape(paragraph_3),
-        "{{PARAGRAPH_4}}": escape(paragraph_4),
-        "{{PREVIOUS_LINK}}": previous_link,
-        "{{NEXT_LINK}}": next_link,
-        "{{GDL_URL}}": f"{SITE}/charts/carta-ramalan-gdl-perdana-{iso_date(latest_gdl_date(d))}.html",
-    }
-
-    content = template
-    for key, value in replacements.items():
-        content = content.replace(key, value)
-
-    # Fail closed: no unresolved generator tokens may reach production.
-    unresolved = sorted(set(re.findall(r"\{\{[A-Z0-9_]+\}\}", content)))
-    if unresolved:
-        raise RuntimeError(f"Unresolved template placeholders: {unresolved}")
-
-    return content
-
-
-def latest_gdl_date(today):
-    dates = [d for d in existing_dates("carta-ramalan-gdl-perdana") if d <= today]
-    if not dates:
-        raise RuntimeError(
-            "No existing GDL dated page was found. MTP page generation stopped "
-            "so the GDL navigation cannot point to a non-existing file."
+        archive_date = parse_archive_date(
+            path.name,
+            prefix
         )
-    return max(dates)
 
-
-def generate_mtp(today):
-    if today.weekday() not in MTP_WEEKDAYS:
-        print(f"No MTP/SGP page generated: {today} is not a scheduled MTP/SGP day.")
-        return
-
-    template = MTP_TEMPLATE.read_text(encoding="utf-8")
-
-    existing = existing_dates("ramalan-4d-mtp-sgp")
-    all_dates = sorted(set(existing + [today]))
-
-    filename = slug_for(today)
-    html = build_page(today, template, all_dates)
-
-    path = CHARTS / filename
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(html, encoding="utf-8")
-
-    print(f"Generated: {path}")
-
-
-def update_existing_mtp_navigation():
-    """
-    Rebuild navigation links for existing MTP pages without creating future pages.
-    This fixes old pages that previously pointed to URLs without .html.
-    """
-    dates = existing_dates("ramalan-4d-mtp-sgp")
-    if not dates:
-        return
-
-    template = MTP_TEMPLATE.read_text(encoding="utf-8")
-
-    for d in dates:
-        path = CHARTS / slug_for(d)
-        if not path.exists():
+        if archive_date is None:
             continue
 
-        # Existing page may contain old placeholder-free content, so navigation
-        # is repaired directly rather than regenerating old editorial content.
-        html = path.read_text(encoding="utf-8")
+        if archive_date > today:
+            print(
+                f"Future page ignored: {path.name}"
+            )
+            continue
 
-        previous_date, next_date = find_previous_next(d, dates)
-        previous_html = (
-            nav_link(url_for(previous_date), f"← Previous Chart · {display_date(previous_date)}")
-            if previous_date else ""
-        )
-        next_html = (
-            nav_link(url_for(next_date), f"Next Chart · {display_date(next_date)} →")
-            if next_date else ""
+        pages.append(
+            (archive_date, path)
         )
 
-        # Replace only the old navigation block if it is identifiable.
-        pattern = re.compile(
-            r'<div class="actions">.*?</div>',
-            re.DOTALL
-        )
-        replacement = (
-            '<div class="actions">'
-            '<a class="btn primary" href="/">← Home</a>'
-            f'{previous_html}{next_html}'
-            f'<a class="btn" href="{SITE}/charts/carta-ramalan-gdl-perdana-{iso_date(latest_gdl_date(d))}.html">Latest GDL Perdana</a>'
-            '</div>'
+    pages.sort(
+        key=lambda item: item[0]
+    )
+
+    return pages
+
+
+def navigation_html(
+    prefix,
+    previous_date,
+    next_date
+):
+    """
+    Build Previous / Home / Next navigation.
+
+    Buttons are shown only when the corresponding
+    existing archive page is available.
+    """
+
+    if previous_date:
+
+        previous_button = f"""
+<a
+  class="btn previous"
+  href="{archive_url(prefix, previous_date)}">
+  ← Previous
+</a>
+"""
+
+    else:
+
+        previous_button = """
+<span></span>
+"""
+
+
+    if next_date:
+
+        next_button = f"""
+<a
+  class="btn next"
+  href="{archive_url(prefix, next_date)}">
+  Next →
+</a>
+"""
+
+    else:
+
+        next_button = """
+<span></span>
+"""
+
+
+    return f"""
+<nav
+  class="post-navigation"
+  aria-label="Archive post navigation">
+
+  <div class="nav-label">
+    Browse archive entries
+  </div>
+
+  <div class="actions">
+
+    {previous_button}
+
+    <a
+      class="btn home"
+      href="/">
+      Home
+    </a>
+
+    {next_button}
+
+  </div>
+
+</nav>
+"""
+
+
+def repair_canonical(
+    html,
+    prefix,
+    archive_date
+):
+    """
+    Ensure canonical URL points to the real
+    .html archive file.
+    """
+
+    correct_url = archive_url(
+        prefix,
+        archive_date
+    )
+
+    canonical_pattern = re.compile(
+        r'<link\s+rel=["\']canonical["\']\s+'
+        r'href=["\'][^"\']+["\']\s*/?>',
+        re.IGNORECASE
+    )
+
+    replacement = (
+        '<link\n'
+        '  rel="canonical"\n'
+        f'  href="{correct_url}"\n'
+        '>'
+    )
+
+    if canonical_pattern.search(html):
+
+        html = canonical_pattern.sub(
+            replacement,
+            html,
+            count=1
         )
 
-        new_html, count = pattern.subn(replacement, html, count=1)
-        if count:
-            path.write_text(new_html, encoding="utf-8")
+    return html
+
+
+def repair_og_url(
+    html,
+    prefix,
+    archive_date
+):
+    """
+    Correct Open Graph URL when present.
+    """
+
+    correct_url = archive_url(
+        prefix,
+        archive_date
+    )
+
+    pattern = re.compile(
+        r'<meta\s+property=["\']og:url["\']\s+'
+        r'content=["\'][^"\']+["\']\s*/?>',
+        re.IGNORECASE
+    )
+
+    replacement = (
+        '<meta\n'
+        '  property="og:url"\n'
+        f'  content="{correct_url}"\n'
+        '>'
+    )
+
+    if pattern.search(html):
+
+        html = pattern.sub(
+            replacement,
+            html,
+            count=1
+        )
+
+    return html
+
+
+def repair_navigation(
+    html,
+    prefix,
+    previous_date,
+    next_date
+):
+    """
+    Supports both:
+
+    NEW template:
+    <nav class="post-navigation">...</nav>
+
+    OLD pages:
+    <div class="actions">...</div>
+    """
+
+    new_navigation = navigation_html(
+        prefix,
+        previous_date,
+        next_date
+    )
+
+
+    # New template navigation
+    nav_pattern = re.compile(
+        r'<nav\s+class=["\']post-navigation["\']'
+        r'.*?</nav>',
+        re.IGNORECASE | re.DOTALL
+    )
+
+    if nav_pattern.search(html):
+
+        return nav_pattern.sub(
+            new_navigation,
+            html,
+            count=1
+        )
+
+
+    # Older generated pages
+    actions_pattern = re.compile(
+        r'<div\s+class=["\']actions["\']>'
+        r'.*?</div>',
+        re.IGNORECASE | re.DOTALL
+    )
+
+    if actions_pattern.search(html):
+
+        return actions_pattern.sub(
+            new_navigation,
+            html,
+            count=1
+        )
+
+
+    print(
+        "Navigation block not found."
+    )
+
+    return html
+
+
+def remove_unwanted_lines(html):
+    """
+    Remove old duplicated chart-description text
+    when it still exists on legacy pages.
+    """
+
+    patterns = [
+
+        re.compile(
+            r'<p\s+class=["\']chart-numbers["\']>'
+            r'.*?</p>',
+            re.IGNORECASE | re.DOTALL
+        ),
+
+        re.compile(
+            r'Displayed digits:\s*'
+            r'[^<\n]+',
+            re.IGNORECASE
+        )
+
+    ]
+
+    for pattern in patterns:
+
+        html = pattern.sub(
+            "",
+            html
+        )
+
+    return html
+
+
+def unresolved_placeholders(html):
+    """
+    Detect template tokens accidentally published
+    to production.
+    """
+
+    return sorted(
+        set(
+            re.findall(
+                r"\{\{[A-Z0-9_]+\}\}",
+                html
+            )
+        )
+    )
+
+
+def repair_category(prefix):
+    """
+    Repair one archive category.
+    """
+
+    pages = existing_archive_pages(
+        prefix
+    )
+
+    if not pages:
+
+        print(
+            f"No usable archive pages found: {prefix}"
+        )
+
+        return
+
+
+    dates = [
+        item[0]
+        for item in pages
+    ]
+
+
+    for index, (archive_date, path) in enumerate(pages):
+
+        previous_date = (
+            dates[index - 1]
+            if index > 0
+            else None
+        )
+
+        next_date = (
+            dates[index + 1]
+            if index < len(dates) - 1
+            else None
+        )
+
+
+        html = path.read_text(
+            encoding="utf-8"
+        )
+
+
+        html = remove_unwanted_lines(
+            html
+        )
+
+
+        html = repair_canonical(
+            html,
+            prefix,
+            archive_date
+        )
+
+
+        html = repair_og_url(
+            html,
+            prefix,
+            archive_date
+        )
+
+
+        html = repair_navigation(
+            html,
+            prefix,
+            previous_date,
+            next_date
+        )
+
+
+        placeholders = unresolved_placeholders(
+            html
+        )
+
+
+        if placeholders:
+
+            print(
+                f"WARNING: {path.name}"
+            )
+
+            print(
+                "Unresolved placeholders:",
+                ", ".join(placeholders)
+            )
+
+
+        path.write_text(
+            html,
+            encoding="utf-8"
+        )
+
+
+        print(
+            f"Updated: {path.name}"
+        )
+
+
+def show_future_files():
+    """
+    Future files are not modified automatically.
+    They are only reported.
+    """
+
+    today = date.today()
+
+    for prefix in (
+        GDL_PREFIX,
+        MTP_PREFIX
+    ):
+
+        for path in CHARTS.glob(
+            f"{prefix}-*.html"
+        ):
+
+            archive_date = parse_archive_date(
+                path.name,
+                prefix
+            )
+
+            if (
+                archive_date
+                and archive_date > today
+            ):
+
+                print(
+                    "Future-dated file excluded:",
+                    path.name
+                )
 
 
 def main():
-    CHARTS.mkdir(parents=True, exist_ok=True)
-    today = date.today()
 
-    generate_mtp(today)
-    update_existing_mtp_navigation()
+    if not CHARTS.exists():
 
-    print("Carta Lotto MTP/SGP generator completed.")
-    print(f"Today: {today}")
-    print("MTP/SGP schedule: Wednesday, Saturday, Sunday")
-    print("Future pages: DISABLED")
-    print("Navigation: existing-file-only, .html URLs")
-    print("Unresolved template tokens: blocked")
+        print(
+            "charts directory not found."
+        )
+
+        return
+
+
+    print(
+        "Carta Lotto archive maintenance"
+    )
+
+    print(
+        "Today:",
+        date.today().isoformat()
+    )
+
+    print()
+
+
+    print(
+        "Checking GDL archive..."
+    )
+
+    repair_category(
+        GDL_PREFIX
+    )
+
+
+    print()
+
+
+    print(
+        "Checking MTP/SGP archive..."
+    )
+
+    repair_category(
+        MTP_PREFIX
+    )
+
+
+    print()
+
+
+    show_future_files()
+
+
+    print()
+
+    print(
+        "Archive maintenance completed."
+    )
+
+    print(
+        "No new pages were generated."
+    )
+
+    print(
+        "Future-dated pages were excluded from navigation."
+    )
+
+    print(
+        "Previous/Home/Next links use existing .html pages only."
+    )
 
 
 if __name__ == "__main__":
