@@ -6,29 +6,44 @@
 
 <title>{{TITLE}} | Carta Lotto</title>
 
-<meta name="description" content="View the Carta Ramalan GDL Perdana chart for {{DATE_LONG}}, with its dated chart layout and informational guide from Carta Lotto.">
+<meta
+  name="description"
+  content="Browse the dated GDL Perdana archive entry for {{DATE_LONG}} on Carta Lotto."
+>
 
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta
+  name="robots"
+  content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+>
 
-<link rel="canonical" href="https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}">
+<link
+  rel="canonical"
+  href="https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}.html"
+>
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Carta Lotto">
 <meta property="og:title" content="{{TITLE}}">
-<meta property="og:description" content="Dated Carta Ramalan GDL Perdana chart information for {{DATE_LONG}}.">
-<meta property="og:url" content="https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}">
+<meta
+  property="og:description"
+  content="Dated GDL Perdana informational archive entry for {{DATE_LONG}}."
+>
+<meta
+  property="og:url"
+  content="https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}.html"
+>
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
   "headline":"{{TITLE}}",
-  "description":"Carta Ramalan GDL Perdana chart information for {{DATE_LONG}}.",
+  "description":"Dated GDL Perdana informational archive entry for {{DATE_LONG}}.",
   "datePublished":"{{DATE}}",
   "dateModified":"{{DATE}}",
   "mainEntityOfPage":{
     "@type":"WebPage",
-    "@id":"https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}"
+    "@id":"https://www.cartalotto.com/charts/carta-ramalan-gdl-perdana-{{DATE}}.html"
   },
   "publisher":{
     "@type":"Organization",
@@ -40,592 +55,722 @@
 </script>
 
 <style>
-*{box-sizing:border-box}
+:root{
+  --red:#b42318;
+  --red-dark:#8f1d14;
+  --red-soft:#fff0ee;
+  --heading:#101828;
+  --text:#475467;
+  --muted:#667085;
+  --border:#e4e7ec;
+  --background:#f4f6f8;
+  --white:#ffffff;
+  --shadow:0 8px 26px rgba(16,24,40,.07);
+}
 
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-margin:0;
-background:#f4f6f8;
-color:#172033;
-font-family:Arial,Helvetica,sans-serif;
-line-height:1.65
+  margin:0;
+  background:var(--background);
+  color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.65;
+}
+
+a{
+  color:inherit;
 }
 
 .container{
-width:min(900px,calc(100% - 22px));
-margin:auto
+  width:min(900px,calc(100% - 24px));
+  margin-inline:auto;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 .site-header{
-background:linear-gradient(135deg,#a51f16,#b42318);
-box-shadow:0 3px 18px rgba(0,0,0,.12)
+  background:linear-gradient(135deg,#a51f16,var(--red));
+  box-shadow:0 3px 18px rgba(0,0,0,.12);
 }
 
 .header-inner{
-min-height:64px;
-display:flex;
-align-items:center;
-justify-content:space-between
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 }
 
 .logo{
-color:#fff;
-text-decoration:none;
-font-size:22px;
-font-weight:900;
-letter-spacing:-.5px
+  color:#fff;
+  text-decoration:none;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.5px;
 }
 
-.logo span{color:#ffe08a}
+.logo span{
+  color:#ffe08a;
+}
 
 .home-link{
-color:#fff;
-text-decoration:none;
-font-size:13px;
-font-weight:800
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
 }
 
-main{padding:25px 0 42px}
+.home-link:hover{
+  color:#ffe08a;
+}
+
+
+/* =========================
+   ARTICLE
+========================= */
+
+main{
+  padding:26px 0 42px;
+}
 
 .article{
-background:#fff;
-border:1px solid #e4e7ec;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 8px 26px rgba(16,24,40,.07)
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:var(--shadow);
 }
 
-.article-top{
-padding:25px 21px 20px;
-border-top:5px solid #b42318
+.article-header{
+  padding:27px 23px 23px;
+  border-top:5px solid var(--red);
 }
 
 .breadcrumb{
-margin-bottom:11px;
-color:#667085;
-font-size:12px
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:13px;
+  color:var(--muted);
+  font-size:12px;
 }
 
 .breadcrumb a{
-color:#b42318;
-text-decoration:none;
-font-weight:800
+  color:var(--red);
+  text-decoration:none;
+  font-weight:800;
 }
 
 .badge{
-display:inline-flex;
-padding:5px 10px;
-border-radius:999px;
-background:#fff0ee;
-color:#b42318;
-font-size:10px;
-font-weight:900
+  display:inline-flex;
+  padding:5px 10px;
+  border-radius:999px;
+  background:var(--red-soft);
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.2px;
 }
 
 h1{
-margin:13px 0 10px;
-color:#101828;
-font-size:clamp(28px,5vw,40px);
-line-height:1.18;
-letter-spacing:-.8px
+  margin:13px 0 10px;
+  color:var(--heading);
+  font-size:clamp(28px,5vw,40px);
+  line-height:1.18;
+  letter-spacing:-.8px;
 }
 
 .lead{
-margin:0;
-color:#475467;
-font-size:15px
+  max-width:760px;
+  margin:0;
+  color:var(--text);
+  font-size:15px;
 }
 
-.chart-area{
-padding:19px;
-background:#f8fafc
+
+/* =========================
+   DATE CARD
+========================= */
+
+.archive-summary{
+  padding:20px 23px;
+  background:#f8fafc;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 
-.chart-shell{
-padding:9px;
-background:#171b26;
-border-radius:13px
+.date-card{
+  padding:20px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:5px solid var(--red);
+  border-radius:13px;
 }
 
-.chart{
-width:min(370px,100%);
-margin:auto;
-padding:12px;
-background:#fff;
-border-radius:10px;
-border-top:4px solid #b42318
+.date-label{
+  margin-bottom:5px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.5px;
 }
 
-.chart-heading{
-text-align:center;
-color:#202939;
-font-size:14px;
-line-height:1.25;
-font-weight:900
+.date-value{
+  color:var(--heading);
+  font-size:24px;
+  line-height:1.2;
+  font-weight:900;
 }
 
-.chart-date{
-margin:4px 0 11px;
-text-align:center;
-color:#667085;
-font-size:11px;
-font-weight:800
+.category-line{
+  margin-top:6px;
+  color:var(--text);
+  font-size:13px;
 }
 
-.matrix{
-width:100%;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-border:2px solid #202939;
-border-radius:5px;
-overflow:hidden
-}
 
-.cell{
-aspect-ratio:1/1;
-display:grid;
-place-items:center;
-background:#fff;
-border-right:1px solid #aab2bf;
-border-bottom:1px solid #aab2bf;
-color:#111827;
-font-size:25px;
-line-height:1;
-font-weight:900
-}
-
-.cell:nth-child(4n){border-right:0}
-.cell:nth-last-child(-n+4){border-bottom:0}
-
-.cell.active{
-background:#c6281c;
-color:#fff
-}
-
-.chart-info{
-margin-top:8px;
-padding-top:7px;
-border-top:1px solid #e5e7eb;
-text-align:center;
-color:#667085;
-font-size:9px;
-font-weight:800
-}
-
-.watermark{
-margin-top:5px;
-text-align:center;
-color:#98a2b3;
-font-size:8px;
-font-weight:900;
-letter-spacing:1px
-}
+/* =========================
+   BODY
+========================= */
 
 .article-body{
-padding:25px 21px 30px
+  padding:27px 23px 31px;
 }
 
 .article-body h2{
-margin:26px 0 9px;
-color:#101828;
-font-size:22px;
-line-height:1.3
+  margin:27px 0 9px;
+  color:var(--heading);
+  font-size:22px;
+  line-height:1.3;
 }
 
-.article-body h2:first-child{margin-top:0}
+.article-body h2:first-child{
+  margin-top:0;
+}
 
 .article-body p{
-margin:0 0 15px;
-color:#475467;
-font-size:15px
+  margin:0 0 15px;
+  color:var(--text);
+  font-size:15px;
 }
 
 .info-box{
-margin:20px 0;
-padding:15px;
-background:#f8fafc;
-border:1px solid #e4e7ec;
-border-radius:10px
+  margin:20px 0;
+  padding:15px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:11px;
 }
 
 .info-box strong{
-display:block;
-margin-bottom:4px;
-color:#101828;
-font-size:13px
+  display:block;
+  margin-bottom:4px;
+  color:var(--heading);
+  font-size:13px;
 }
 
 .info-box span{
-color:#475467;
-font-size:13px
+  color:var(--text);
+  font-size:13px;
 }
 
-.disclaimer{
-margin:21px 0;
-padding:15px;
-background:#fff8e6;
-border-left:4px solid #b27a00;
-border-radius:7px;
-color:#5d4a16;
-font-size:14px
+.notice{
+  margin:22px 0;
+  padding:15px;
+  background:#fff8e6;
+  border-left:4px solid #b27a00;
+  border-radius:8px;
+  color:#5d4a16;
+  font-size:14px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.post-navigation{
+  margin-top:30px;
+  padding-top:22px;
+  border-top:1px solid var(--border);
+}
+
+.nav-label{
+  margin-bottom:11px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
 }
 
 .actions{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-gap:9px;
-margin-top:27px
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:10px;
 }
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-min-height:40px;
-padding:9px 16px;
-border:1px solid #d0d5dd;
-border-radius:999px;
-background:#fff;
-color:#344054;
-text-decoration:none;
-font-size:12px;
-font-weight:900
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:43px;
+  padding:9px 15px;
+  border:1px solid #d0d5dd;
+  border-radius:999px;
+  background:#fff;
+  color:#344054;
+  text-decoration:none;
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
 }
 
-.btn.primary{
-background:#b42318;
-border-color:#b42318;
-color:#fff
+.btn:hover{
+  border-color:#98a2b3;
+  background:#f8fafc;
 }
+
+.btn.home{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+}
+
+.btn.home:hover{
+  background:var(--red-dark);
+}
+
+.btn.previous{
+  justify-self:start;
+}
+
+.btn.next{
+  justify-self:end;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:linear-gradient(135deg,#8f1d14,#b42318);
-color:#fff
+  background:linear-gradient(135deg,#8f1d14,var(--red));
+  color:#fff;
 }
 
 .footer-inner{
-padding:27px 15px;
-text-align:center
+  padding:28px 15px;
+  text-align:center;
 }
 
 .footer-logo{
-margin-bottom:8px;
-font-size:20px;
-font-weight:900
+  margin-bottom:8px;
+  font-size:20px;
+  font-weight:900;
 }
 
-.footer-logo span{color:#ffe08a}
+.footer-logo span{
+  color:#ffe08a;
+}
 
 .footer-links{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin-bottom:11px
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:11px;
 }
 
 .footer-links a{
-color:#fff;
-text-decoration:none;
-font-size:12px;
-font-weight:800
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
+}
+
+.footer-links a:hover{
+  color:#ffe08a;
 }
 
 .footer-inner p{
-margin:4px 0;
-color:#ffe9e5;
-font-size:11px
+  margin:4px 0;
+  color:#ffe9e5;
+  font-size:11px;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
-.container{width:calc(100% - 20px)}
+  .container{
+    width:calc(100% - 20px);
+  }
 
-main{padding:20px 0 35px}
+  main{
+    padding:20px 0 35px;
+  }
 
-.article-top{padding:22px 16px 18px}
+  .article-header{
+    padding:22px 16px 19px;
+  }
 
-h1{font-size:29px}
+  h1{
+    font-size:29px;
+  }
 
-.lead{font-size:14px}
+  .lead{
+    font-size:14px;
+  }
 
-.chart-area{padding:13px}
+  .archive-summary{
+    padding:14px;
+  }
 
-.chart-shell{padding:7px}
+  .date-card{
+    padding:17px;
+  }
 
-.chart{padding:9px}
+  .date-value{
+    font-size:21px;
+  }
 
-.cell{font-size:22px}
+  .article-body{
+    padding:23px 16px 27px;
+  }
 
-.article-body{padding:22px 16px 27px}
+  .article-body h2{
+    font-size:20px;
+  }
 
-.article-body h2{font-size:20px}
+  .article-body p{
+    font-size:14px;
+  }
 
-.article-body p{font-size:14px}
+  .actions{
+    grid-template-columns:1fr 1fr;
+  }
 
-.home-link{font-size:12px}
+  .btn.previous,
+  .btn.next{
+    width:100%;
+    justify-self:stretch;
+  }
+
+  .btn.home{
+    grid-column:1 / -1;
+    grid-row:1;
+  }
 
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="site-header">
 
-<div class="header-inner container">
+  <div class="header-inner container">
 
-<a class="logo" href="/">
-Carta<span>Lotto</span>
-</a>
+    <a
+      class="logo"
+      href="/">
+      Carta<span>Lotto</span>
+    </a>
 
-<a class="home-link" href="/">
-Home
-</a>
+    <a
+      class="home-link"
+      href="/">
+      Home
+    </a>
 
-</div>
+  </div>
 
 </header>
 
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
-<div class="container">
+  <div class="container">
 
-<article class="article">
+    <article class="article">
 
-<div class="article-top">
 
-<div class="breadcrumb">
+      <!-- ARTICLE HEADER -->
 
-<a href="/">
-Carta Lotto
-</a>
+      <header class="article-header">
 
-<span> / </span>
+        <nav
+          class="breadcrumb"
+          aria-label="Breadcrumb">
 
-<span>GDL Perdana</span>
+          <a href="/">
+            Carta Lotto
+          </a>
 
-<span> / </span>
+          <span>›</span>
 
-<span>{{DATE_LONG}}</span>
+          <span>
+            GDL Perdana
+          </span>
 
-</div>
+          <span>›</span>
 
-<span class="badge">
-GDL PERDANA
-</span>
+          <span>
+            {{DATE_LONG}}
+          </span>
 
-<h1>
-{{TITLE}}
-</h1>
+        </nav>
 
-<p class="lead">
-This dated Carta Ramalan GDL Perdana entry is dedicated to
-{{DATE_LONG}}. The chart category and publishing date are kept
-together so this page remains a permanent reference even when
-new daily updates are published.
-</p>
 
-</div>
+        <span class="badge">
+          GDL PERDANA ARCHIVE
+        </span>
 
-<div class="chart-area">
 
-<div class="chart-shell">
+        <h1>
+          {{TITLE}}
+        </h1>
 
-<div class="chart">
 
-<div class="chart-heading">
-CARTA RAMALAN GDL PERDANA
-</div>
+        <p class="lead">
+          This page is the dated GDL Perdana archive entry for
+          {{DATE_LONG}}. Its date and category remain attached to
+          this permanent archive page.
+        </p>
 
-<div class="chart-date">
-{{DATE_DISPLAY}}
-</div>
+      </header>
 
-<div class="matrix">
 
-{{MATRIX}}
+      <!-- DATE SUMMARY -->
 
-</div>
+      <section class="archive-summary">
 
-<div class="chart-info">
-Grand Dragon • GDL • Perdana • Nine Lotto
-</div>
+        <div class="date-card">
 
-<div class="watermark">
-CARTALOTTO.COM
-</div>
+          <div class="date-label">
+            Archive date
+          </div>
 
-</div>
+          <div class="date-value">
+            {{DATE_DISPLAY}}
+          </div>
 
-</div>
+          <div class="category-line">
+            Category: GDL Perdana
+          </div>
 
-</div>
+        </div>
 
-<div class="article-body">
+      </section>
 
-<h2>
-Carta Ramalan GDL Perdana for {{DATE_LONG}}
-</h2>
 
-<p>
-This Carta Lotto page records the GDL Perdana chart for
-{{DATE_LONG}}. It is maintained as an individual dated entry so
-visitors can identify this particular update without mixing it with
-other chart dates.
-</p>
+      <!-- ARTICLE CONTENT -->
 
-<p>
-The chart layout is presented in a compact four-by-four format.
-The date shown above belongs specifically to this page and does not
-change when another daily entry is published.
-</p>
+      <div class="article-body">
 
-<div class="info-box">
+        <h2>
+          GDL Perdana Archive for {{DATE_LONG}}
+        </h2>
 
-<strong>
-Daily Chart Details
-</strong>
+        <p>
+          This Carta Lotto page preserves the GDL Perdana entry
+          associated with {{DATE_LONG}}. Keeping each entry on its
+          own dated URL makes the archive easier to browse without
+          changing older pages whenever a newer entry is added.
+        </p>
 
-<span>
-GDL Perdana · {{DATE_LONG}} · Four-by-four visual chart layout
-</span>
+        <p>
+          The page title, publication date and archive category all
+          refer to the same entry. Visitors can therefore distinguish
+          this page from earlier or later GDL Perdana archive records.
+        </p>
 
-</div>
 
-<h2>
-Reading the {{DATE_LONG}} Chart
-</h2>
+        <div class="info-box">
 
-<p>
-Begin by checking the chart heading and exact date. Then review the
-complete four-by-four grid. Highlighted cells are visual markers
-within this particular dated layout.
-</p>
+          <strong>
+            Archive details
+          </strong>
 
-<p>
-When comparing another Carta Lotto entry, use its own date and
-category as the reference. Each daily page is intentionally kept
-separate so the archive remains clear.
-</p>
+          <span>
+            GDL Perdana · {{DATE_LONG}} · Permanent dated archive page
+          </span>
 
-<h2>
-Why This GDL Perdana Entry Is Dated
-</h2>
+        </div>
 
-<p>
-Daily chart information is easier to follow when every update has
-its own date. This page therefore preserves {{DATE_LONG}} as part
-of the page title, chart and article context.
-</p>
 
-<p>
-A future GDL Perdana update creates a new dated page. It does not
-replace the date, content or permanent URL of this page.
-</p>
+        <h2>
+          How This Archive Is Organized
+        </h2>
 
-<h2>
-GDL Perdana Chart Information
-</h2>
+        <p>
+          Carta Lotto separates archive entries by category and date.
+          An older dated page remains associated with its original
+          date rather than being automatically renamed when another
+          entry is published.
+        </p>
 
-<p>
-GDL Perdana is one of the chart categories covered by Carta Lotto.
-The archive organizes entries by date and category to make regular
-updates easier to browse on mobile and desktop devices.
-</p>
+        <p>
+          Use the navigation at the bottom of the page to return home
+          or move between available dated archive entries.
+        </p>
 
-<p>
-This page is an independent informational chart reference. It is
-not an official lottery result page and does not guarantee any
-future outcome.
-</p>
 
-<h2>
-Free Chart Information
-</h2>
+        <h2>
+          About the GDL Perdana Category
+        </h2>
 
-<p>
-Carta Lotto provides chart and forecast information free of charge
-for informational and educational purposes. We do not sell lottery
-tickets, guaranteed numbers or promises of winning results.
-</p>
+        <p>
+          GDL Perdana is maintained here as one of the site's dated
+          archive categories. The purpose of this page is to record
+          the category and publication date in a consistent,
+          easy-to-reference format.
+        </p>
 
-<p>
-Visitors should use the information responsibly and follow all laws
-and regulations that apply to them.
-</p>
+        <p>
+          For another date, use the previous or next archive controls
+          below rather than treating this page as a continuously
+          changing entry.
+        </p>
 
-<h2>
-Disclaimer
-</h2>
 
-<div class="disclaimer">
+        <h2>
+          Permanent Dated Reference
+        </h2>
 
-<strong>Carta Lotto Disclaimer</strong><br>
+        <p>
+          The permanent URL for this page contains the same date shown
+          in the article. This helps prevent confusion between separate
+          archive entries and keeps older pages stable.
+        </p>
 
-Carta Lotto provides chart and forecast information for informational
-and educational purposes only. The charts are not official lottery
-results and no winning outcome is guaranteed. We do not sell lottery
-tickets or guaranteed numbers and do not promote illegal activities.
 
-</div>
+        <div class="notice">
+          This page is provided as a dated informational archive
+          reference only.
+        </div>
 
-<div class="actions">
 
-<a class="btn primary" href="/">
-← Home
-</a>
+        <!-- =========================
+             PREVIOUS / HOME / NEXT
+        ========================= -->
 
-<a class="btn" href="{{NEXT_URL}}">
-Next Chart →
-</a>
+        <nav
+          class="post-navigation"
+          aria-label="Archive post navigation">
 
-<a class="btn" href="{{PREVIOUS_URL}}">
-← Previous Chart
-</a>
+          <div class="nav-label">
+            Browse archive entries
+          </div>
 
-</div>
+          <div class="actions">
 
-</div>
+            <a
+              class="btn previous"
+              href="{{PREVIOUS_URL}}">
+              ← Previous
+            </a>
 
-</article>
+            <a
+              class="btn home"
+              href="/">
+              Home
+            </a>
 
-</div>
+            <a
+              class="btn next"
+              href="{{NEXT_URL}}">
+              Next →
+            </a>
+
+          </div>
+
+        </nav>
+
+      </div>
+
+    </article>
+
+  </div>
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<div class="footer-inner">
+  <div class="footer-inner">
 
-<div class="footer-logo">
-Carta<span>Lotto</span>
-</div>
+    <div class="footer-logo">
+      Carta<span>Lotto</span>
+    </div>
 
-<div class="footer-links">
 
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
-<a href="/disclaimer.html">Disclaimer</a>
-<a href="/contact.html">Contact</a>
+    <div class="footer-links">
 
-</div>
+      <a href="/">
+        Home
+      </a>
 
-<p>
-© 2026 Carta Lotto. All rights reserved.
-</p>
+      <a href="/about.html">
+        About
+      </a>
 
-<p>
-Chart information is provided for informational purposes only.
-</p>
+      <a href="/privacy-policy.html">
+        Privacy Policy
+      </a>
 
-</div>
+      <a href="/disclaimer.html">
+        Disclaimer
+      </a>
+
+      <a href="/contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <p>
+      © 2026 Carta Lotto. All rights reserved.
+    </p>
+
+    <p>
+      Dated archive information is provided for informational purposes.
+    </p>
+
+  </div>
 
 </footer>
+
 
 </body>
 </html>
